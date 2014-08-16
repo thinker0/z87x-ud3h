@@ -3,20 +3,20 @@
  * AML Disassembler version 20131218-64 [Jan  8 2014]
  * Copyright (c) 2000 - 2013 Intel Corporation
  * 
- * Disassembly of iASLNsj4bI.aml, Sat Aug 16 17:26:51 2014
+ * Disassembly of iASLXFokiZ.aml, Sat Aug 16 20:53:30 2014
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x0000C2E6 (49894)
+ *     Length           0x0000C795 (51093)
  *     Revision         0x02
- *     Checksum         0xB6
+ *     Checksum         0x31
  *     OEM ID           "Apple "
  *     OEM Table ID     "A M I"
  *     OEM Revision     0x000000F9 (249)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20091112 (537465106)
+ *     Compiler Version 0x20131218 (538120728)
  */
-DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
+DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 {
     /*
      * iASL Warning: There were 8 external control methods found during
@@ -60,8 +60,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.PCI0.GFX0.STAT)
     External (_SB_.PCI0.GFX0.TCHE)
     External (_SB_.PCI0.PEG0.PEGP)
-//    
-//    
+//    External (_SB_.PCI0.PEG1)
+//    External (_SB_.PCI0.PEG2)
     External (D1F0)
     External (D1F1)
     External (D1F2)
@@ -214,8 +214,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Name (SS2, Zero)
     Name (SS3, One)
     Name (SS4, One)
-    Name (IOST, 0x0000)
-    Name (TOPM, 0x00000000)
+    Name (IOST, Zero)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0xAE1E8C18, 0x027E)
@@ -4298,8 +4298,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -4555,8 +4555,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -4812,8 +4812,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -5069,8 +5069,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -5326,8 +5326,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -6359,8 +6359,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -6616,8 +6616,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -6873,8 +6873,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (RPAV, Zero)
                 Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_1, Zero)
+                    Name (T_0, Zero)
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
@@ -7107,17 +7107,42 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Name (_ADR, 0x00020000)  // _ADR: Address
                 Device (GFX0)
                 {
-                    Name (_ADR, 0x0000FFFE)  // _ADR: Address
+                    Name (_ADR, 0xFFFE)  // _ADR: Address
                     Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
-                        Store (Package (0x02)
+                        Store (Package (0x0E)
+                        {
+                            "AAPL,slot-name", 
+                            "Built In", 
+                            "name", 
+                            "Intel Graphics Controller", 
+                            "model", 
+                            Buffer (0x17)
                             {
-                                "hda-gfx", 
-                                Buffer (0x0A)
-                                {
-                                    "onboard-1"
-                                }
-                            }, Local0)
+                                "Intel HD Graphics 4600"
+                            }, 
+
+                            "device_type", 
+                            Buffer (0x14)
+                            {
+                                "Graphics Controller"
+                            }, 
+
+                            "device-id", 
+                            Buffer (0x04)
+                            {
+                                 0x12, 0x04, 0x00, 0x00
+                            }, 
+
+                            "AAPL,ig-platform-id", 
+                            Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d },
+
+                            "hda-gfx", 
+                            Buffer (0x0A)
+                            {
+                                "onboard-2"
+                            }
+                        }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)
                     }
@@ -7221,7 +7246,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Name (RPA5, 0x001C0005)
     Name (RPA6, 0x001C0006)
     Name (RPA7, 0x001C0007)
-    Name (PCHS, 0x00000001)
+    Name (PCHS, One)
     Scope (\)
     {
         OperationRegion (IO_D, SystemIO, 0x0810, 0x04)
@@ -7449,6 +7474,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Return (TEMP)
             }
+
             Return (Zero)
         }
 
@@ -7467,6 +7493,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Return (TEMP)
             }
+
             Return (Zero)
         }
 
@@ -7652,7 +7679,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Store (Package (0x0E)
                     {
                         "built-in", 
-                        Buffer (0x01)
+                        Buffer (One)
                         {
                              0x00
                         }, 
@@ -7697,7 +7724,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Local0)
             }
 
-            Name (_SUN, 0x00000002)  // _SUN: Slot User Number
+            Name (_SUN, 0x02)  // _SUN: Slot User Number
         }
 
         Device (EHC1)
@@ -7892,7 +7919,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV1, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -7980,7 +8007,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV2, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -8068,7 +8095,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV1, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -8156,7 +8183,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV2, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -8248,21 +8275,44 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x15) {
-                    "AAPL,slot-name", "Built In",
-                    "name", "Intel EHCI Controller",
-                    "model", Buffer(0x3E) {"Intel 8 Series Chipset Family USB Enhanced Host Controller #1"},
-                    "device_type", Buffer (0x0E) {"USB Controller"},
-                    "AAPL,current-available", 0x0834,
-                    "AAPL,current-extra", 0x0A8C,
-                    "AAPL,current-in-sleep", 0x03E8,
-                    "AAPL,current-extra-in-sleep", 0x0834,
-                    "AAPL,max-port-current-in-sleep", 0x0A8C,
-                    "AAPL,device-internal", 0x02,
-                    Buffer (One) {0x00}
-                }, Local0)
+                Store (Package (0x15)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Intel EHCI Controller", 
+                        "model", 
+                        Buffer (0x3E)
+                        {
+                            "Intel 8 Series Chipset Family USB Enhanced Host Controller #1"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x0F)
+                        {
+                            "USB Controller"
+                        }, 
+
+                        "AAPL,current-available", 
+                        0x0834, 
+                        "AAPL,current-extra", 
+                        0x0A8C, 
+                        "AAPL,current-in-sleep", 
+                        0x03E8, 
+                        "AAPL,current-extra-in-sleep", 
+                        0x0834, 
+                        "AAPL,max-port-current-in-sleep", 
+                        0x0A8C, 
+                        "AAPL,device-internal", 
+                        0x02, 
+                        Buffer (One)
+                        {
+                             0x00
+                        }
+                    }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
@@ -8396,7 +8446,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV1, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -8484,7 +8534,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Alias (SBV2, SDGV)
                         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                            Name (T_0, Zero)
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
                                         /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
@@ -8634,21 +8684,44 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x15) {
-                    "AAPL,slot-name", "Built In",
-                    "name", "Intel EHCI Controller",
-                    "model", Buffer (0x3E) {"Intel 8 Series Chipset Family USB Enhanced Host Controller #2"},
-                    "device_type", Buffer (0x0E) {"USB Controller"},
-                    "AAPL,current-available", 0x0834,
-                    "AAPL,current-extra", 0x0A8C,
-                    "AAPL,current-in-sleep", 0x03E8,
-                    "AAPL,current-extra-in-sleep", 0x0834,
-                    "AAPL,max-port-current-in-sleep", 0x0A8C,
-                    "AAPL,device-internal", 0x02,
-                    Buffer (One) {0x00}
-                }, Local0)
+                Store (Package (0x15)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Intel EHCI Controller", 
+                        "model", 
+                        Buffer (0x3E)
+                        {
+                            "Intel 8 Series Chipset Family USB Enhanced Host Controller #2"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x0F)
+                        {
+                            "USB Controller"
+                        }, 
+
+                        "AAPL,current-available", 
+                        0x0834, 
+                        "AAPL,current-extra", 
+                        0x0A8C, 
+                        "AAPL,current-in-sleep", 
+                        0x03E8, 
+                        "AAPL,current-extra-in-sleep", 
+                        0x0834, 
+                        "AAPL,max-port-current-in-sleep", 
+                        0x0A8C, 
+                        "AAPL,device-internal", 
+                        0x02, 
+                        Buffer (One)
+                        {
+                             0x00
+                        }
+                    }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
@@ -8657,8 +8730,6 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Device (XHC1)
         {
             Name (_ADR, 0x00140000)  // _ADR: Address
-            
-
             OperationRegion (XPRT, PCI_Config, Zero, 0x0100)
             Field (XPRT, DWordAcc, NoLock, Preserve)
             {
@@ -9835,21 +9906,44 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x15) {
-                    "AAPL,slot-name", "Built In",
-                    "name", "Intel XHCI Controller",
-                    "model", Buffer (0x37) {"Intel 8 Series Chipset Family USB xHCI Host Controller"},
-                    "device_type", Buffer (0x0E) {"USB Controller"},
-                    "AAPL,current-available", 0x0834,
-                    "AAPL,current-extra", 0x0A8C,
-                    "AAPL,current-in-sleep", 0x03E8,
-                    "AAPL,current-extra-in-sleep", 0x0834,
-                    "AAPL,max-port-current-in-sleep", 0x0A8C,
-                    "AAPL,device-internal", 0x02,
-                    Buffer (One) {0x00}
-                }, Local0)
+                Store (Package (0x15)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Intel XHCI Controller", 
+                        "model", 
+                        Buffer (0x37)
+                        {
+                            "Intel 8 Series Chipset Family USB xHCI Host Controller"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x0F)
+                        {
+                            "USB Controller"
+                        }, 
+
+                        "AAPL,current-available", 
+                        0x0834, 
+                        "AAPL,current-extra", 
+                        0x0A8C, 
+                        "AAPL,current-in-sleep", 
+                        0x03E8, 
+                        "AAPL,current-extra-in-sleep", 
+                        0x0834, 
+                        "AAPL,max-port-current-in-sleep", 
+                        0x0A8C, 
+                        "AAPL,device-internal", 
+                        0x02, 
+                        Buffer (One)
+                        {
+                             0x00
+                        }
+                    }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
@@ -9877,23 +9971,50 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x10) {
-                    "AAPL,slot-name", "Built In",
-                    "name", "Realtek Audio Controller",
-                    "model", Buffer () {"Realtek ALC898 Audio Controller"},
-                    "device_type", Buffer (0x10) {"Audio Controller"},
-                    "layout-id", Buffer (0x04) {0x01,0x00,0x00,0x00},
-                    "PinConfigurations", Buffer (Zero) {},
-                    "MaximumBootBeepVolume", Buffer(One) {0x40},
-                    "hda-gfx", Buffer (0x0A) {"onboard-1"}
-                }, Local0)
+                Store (Package (0x10)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Realtek Audio Controller", 
+                        "model", 
+                        Buffer (0x20)
+                        {
+                            "Realtek ALC898 Audio Controller"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x11)
+                        {
+                            "Audio Controller"
+                        }, 
+
+                        "layout-id", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00
+                        }, 
+
+                        "PinConfigurations", 
+                        Buffer (Zero) {}, 
+                        "MaximumBootBeepVolume", 
+                        Buffer (One)
+                        {
+                             0x40
+                        }, 
+
+                        "hda-gfx", 
+                        Buffer (0x0A)
+                        {
+                            "onboard-1"
+                        }
+                    }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
-
-            
         }
 
         Device (SATA)
@@ -9951,7 +10072,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Else
                     {
                         ADBG ("SAta DEP NULL")
-                        Return (Package (Zero) {})
+                        Return (Package (0x00) {})
                     }
                 }
 
@@ -10015,22 +10136,31 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Return (PIB2)
                 }
             }
-            Method (_DSM, 4, NotSerialized)
+
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x08) {
-                    "AAPL,slot-name", "Built In",
-                    "name", "Intel AHCI Controller",
-                    "model", Buffer (0x2D) {"Intel 8 Series Chipset Family SATA Controller"},
-                    "device_type", Buffer (0x0F) {"AHCI Controller"},
-                }, Local0)
+                Store (Package (0x08)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Intel AHCI Controller", 
+                        "model", 
+                        Buffer (0x2E)
+                        {
+                            "Intel 8 Series Chipset Family SATA Controller"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x10)
+                        {
+                            "AHCI Controller"
+                        }
+                    }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
-
-            
         }
-
-        
 
         Device (SBUS)
         {
@@ -10554,7 +10684,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Method (UXDV, 1, Serialized)
     {
-        Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+        Name (T_0, Zero)
         Store (0xFF, Local0)
         While (One)
         {
@@ -10621,7 +10751,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Method (RRIO, 4, Serialized)
     {
-        Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+        Name (T_0, Zero)
         While (One)
         {
             Store (Add (Arg0, Zero), T_0)
@@ -11006,13 +11136,12 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Method (ADBG, 1, Serialized)
     {
-        
         If (CondRefOf (MDBG))
         {
             Return (MDBG)
         }
-        Return (Zero)
 
+        Return (Zero)
     }
 
     OperationRegion (SPRT, SystemIO, 0xB2, 0x02)
@@ -11882,7 +12011,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+                Name (T_0, Zero)
                 If (LEqual (Arg0, Buffer (0x10)
                         {
                             /* 0000 */   0xE0, 0xBF, 0xFE, 0xB8, 0xF8, 0xBA, 0x4B, 0x45,
@@ -13106,6 +13235,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (0x0201D824)
             }
+
             Return (Zero)
         }
 
@@ -13161,8 +13291,8 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
         {
-            Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
-            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_1, Zero)
+            Name (T_0, Zero)
             If (LEqual (Arg0, Buffer (0x10)
                     {
                         /* 0000 */   0xA6, 0xFA, 0xDD, 0x3D, 0x1B, 0x36, 0xB4, 0x4E,
@@ -13419,13 +13549,13 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Name (GSCV, 0x69)
             Method (GACI, 0, NotSerialized)
             {
-                OperationRegion (GCAD, SystemMemory, 0xAE1D8018, 0x00FC)
+                OperationRegion (GCAD, SystemMemory, 0xAE1D8018, 0xFC)
                 Field (GCAD, ByteAcc, NoLock, Preserve)
                 {
                     XBUF,   2016
                 }
 
-                Name (XTMP, Buffer (0x00FC) {})
+                Name (XTMP, Buffer (0xFC) {})
                 Store (XBUF, XTMP)
                 Name (RPKG, Package (0x02) {})
                 Store (Zero, Index (RPKG, Zero))
@@ -13490,7 +13620,7 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     })
                 }
 
-                OperationRegion (PRFA, SystemMemory, 0x00000000, 0x0000)
+                OperationRegion (PRFA, SystemMemory, Zero, Zero)
                 Field (PRFA, ByteAcc, NoLock, Preserve)
                 {
                     XMP1,   0, 
@@ -13715,28 +13845,38 @@ DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Method (PINI, 0, NotSerialized)
     {
     }
+
     Method (DTGP, 5, NotSerialized)
     {
         If (LEqual (Arg0, Buffer (0x10)
+                {
+                    /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,
+                    /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
+                }))
         {
-            /* 0000 */	0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,
-            /* 0008 */	0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
-        }))
-        {
-            If (LEqual (Arg1, One)) {
-                If (LEqual (Arg2, Zero)) {
-                    Store (Buffer (One) { 0x03 }, Arg4)
+            If (LEqual (Arg1, One))
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Store (Buffer (One)
+                        {
+                             0x03
+                        }, Arg4)
                     Return (One)
                 }
-                If (LEqual (Arg2, One)) {
+
+                If (LEqual (Arg2, One))
+                {
                     Return (One)
                 }
             }
         }
-        Store (Buffer (One) { 0x00 }, Arg4)
+
+        Store (Buffer (One)
+            {
+                 0x00
+            }, Arg4)
         Return (Zero)
     }
-
-    
 }
 
