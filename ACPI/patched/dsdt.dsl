@@ -202,8 +202,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Name (SS2, Zero)
     Name (SS3, One)
     Name (SS4, One)
-    Name (IOST, 0x0000)
-    Name (TOPM, 0x00000000)
+    Name (IOST, Zero)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0xAE1E8C18, 0x027E)
@@ -9868,8 +9868,28 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Method (_DSM, 4, NotSerialized)
             {
-                Store (Package (0x04)
+                Store (Package (0x06)
                     {
+                        "device-id",
+                        Buffer (0x04) { 0x8c, 0x20, 0x00, 0x00 },
+                            "codec-id",
+                            Buffer (0x04)
+                            {
+                                0x85, 0x08, 0xEC, 0x10
+                            },
+
+                            "layout-id", 
+                            Buffer (0x04)
+                            {
+                                0x01, 0x00, 0x00, 0x00
+                            }, 
+                            
+                            "device-type",
+                            Buffer ()
+                            {
+                                "ALC898"
+                            },
+                        
                         "MaximumBootBeepVolume", 
                         Buffer (0x01)
                         {
@@ -13075,7 +13095,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         })
         Device (WMI1)
         {
-            Name (_HID, "pnp0c14")
+            Name (_HID, "PNP0C14")
             Name (_UID, "MXM2")
             Name (_WDG, Buffer (0x14)
             {
