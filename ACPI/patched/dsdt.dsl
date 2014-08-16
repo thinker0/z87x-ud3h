@@ -86,7 +86,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Return (TCH9)
     }
 
-    Method (STR9, 2, NotSerialized)
+    Method (STR9, 2, Serialized)
     {
         Name (STR8, Buffer (0x50) {})
         Name (STR9, Buffer (0x50) {})
@@ -1922,169 +1922,169 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             })
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateWordField (BUF0, \_SB.PCI0._Y00._MAX, PBMX)  // _MAX: Maximum Base Address
+                CreateWordField (BUF0, ^_Y00._MAX, PBMX)  // _MAX: Maximum Base Address
                 Store (Subtract (ShiftRight (PELN, 0x14), 0x02), PBMX)
-                CreateWordField (BUF0, \_SB.PCI0._Y00._LEN, PBLN)  // _LEN: Length
+                CreateWordField (BUF0, ^_Y00._LEN, PBLN)  // _LEN: Length
                 Store (Subtract (ShiftRight (PELN, 0x14), One), PBLN)
                 If (PM1L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y01._LEN, C0LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y01._LEN, C0LN)  // _LEN: Length
                     Store (Zero, C0LN)
                 }
 
                 If (LEqual (PM1L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y01._RW, C0RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y01._RW, C0RW)  // _RW_: Read-Write Status
                     Store (Zero, C0RW)
                 }
 
                 If (PM1H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y02._LEN, C4LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y02._LEN, C4LN)  // _LEN: Length
                     Store (Zero, C4LN)
                 }
 
                 If (LEqual (PM1H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y02._RW, C4RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y02._RW, C4RW)  // _RW_: Read-Write Status
                     Store (Zero, C4RW)
                 }
 
                 If (PM2L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y03._LEN, C8LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y03._LEN, C8LN)  // _LEN: Length
                     Store (Zero, C8LN)
                 }
 
                 If (LEqual (PM2L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y03._RW, C8RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y03._RW, C8RW)  // _RW_: Read-Write Status
                     Store (Zero, C8RW)
                 }
 
                 If (PM2H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y04._LEN, CCLN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y04._LEN, CCLN)  // _LEN: Length
                     Store (Zero, CCLN)
                 }
 
                 If (LEqual (PM2H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y04._RW, CCRW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y04._RW, CCRW)  // _RW_: Read-Write Status
                     Store (Zero, CCRW)
                 }
 
                 If (PM3L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y05._LEN, D0LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y05._LEN, D0LN)  // _LEN: Length
                     Store (Zero, D0LN)
                 }
 
                 If (LEqual (PM3L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y05._RW, D0RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y05._RW, D0RW)  // _RW_: Read-Write Status
                     Store (Zero, D0RW)
                 }
 
                 If (PM3H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y06._LEN, D4LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y06._LEN, D4LN)  // _LEN: Length
                     Store (Zero, D4LN)
                 }
 
                 If (LEqual (PM3H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y06._RW, D4RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y06._RW, D4RW)  // _RW_: Read-Write Status
                     Store (Zero, D4RW)
                 }
 
                 If (PM4L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y07._LEN, D8LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y07._LEN, D8LN)  // _LEN: Length
                     Store (Zero, D8LN)
                 }
 
                 If (LEqual (PM4L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y07._RW, D8RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y07._RW, D8RW)  // _RW_: Read-Write Status
                     Store (Zero, D8RW)
                 }
 
                 If (PM4H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y08._LEN, DCLN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y08._LEN, DCLN)  // _LEN: Length
                     Store (Zero, DCLN)
                 }
 
                 If (LEqual (PM4H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y08._RW, DCRW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y08._RW, DCRW)  // _RW_: Read-Write Status
                     Store (Zero, DCRW)
                 }
 
                 If (PM5L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y09._LEN, E0LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y09._LEN, E0LN)  // _LEN: Length
                     Store (Zero, E0LN)
                 }
 
                 If (LEqual (PM5L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y09._RW, E0RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y09._RW, E0RW)  // _RW_: Read-Write Status
                     Store (Zero, E0RW)
                 }
 
                 If (PM5H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y0A._LEN, E4LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y0A._LEN, E4LN)  // _LEN: Length
                     Store (Zero, E4LN)
                 }
 
                 If (LEqual (PM5H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y0A._RW, E4RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y0A._RW, E4RW)  // _RW_: Read-Write Status
                     Store (Zero, E4RW)
                 }
 
                 If (PM6L)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y0B._LEN, E8LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y0B._LEN, E8LN)  // _LEN: Length
                     Store (Zero, E8LN)
                 }
 
                 If (LEqual (PM6L, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y0B._RW, E8RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y0B._RW, E8RW)  // _RW_: Read-Write Status
                     Store (Zero, E8RW)
                 }
 
                 If (PM6H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y0C._LEN, ECLN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y0C._LEN, ECLN)  // _LEN: Length
                     Store (Zero, ECLN)
                 }
 
                 If (LEqual (PM6H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y0C._RW, ECRW)  // _RW_: Read-Write Status
                     Store (Zero, ECRW)
                 }
 
                 If (PM0H)
                 {
-                    CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
+                    CreateDWordField (BUF0, ^_Y0D._LEN, F0LN)  // _LEN: Length
                     Store (Zero, F0LN)
                 }
 
                 If (LEqual (PM0H, One))
                 {
-                    CreateBitField (BUF0, \_SB.PCI0._Y0D._RW, F0RW)  // _RW_: Read-Write Status
+                    CreateBitField (BUF0, ^_Y0D._RW, F0RW)  // _RW_: Read-Write Status
                     Store (Zero, F0RW)
                 }
 
-                CreateDWordField (BUF0, \_SB.PCI0._Y0E._MIN, M1MN)  // _MIN: Minimum Base Address
-                CreateDWordField (BUF0, \_SB.PCI0._Y0E._MAX, M1MX)  // _MAX: Maximum Base Address
-                CreateDWordField (BUF0, \_SB.PCI0._Y0E._LEN, M1LN)  // _LEN: Length
+                CreateDWordField (BUF0, ^_Y0E._MIN, M1MN)  // _MIN: Minimum Base Address
+                CreateDWordField (BUF0, ^_Y0E._MAX, M1MX)  // _MAX: Maximum Base Address
+                CreateDWordField (BUF0, ^_Y0E._LEN, M1LN)  // _LEN: Length
                 ShiftLeft (TLUD, 0x14, M1MN)
                 Add (Subtract (M1MX, M1MN), One, M1LN)
                 Return (BUF0)
@@ -3054,20 +3054,20 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     })
                     Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y0F._MIN, IO0M)  // _MIN: Minimum Base Address
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y0F._MAX, IO0X)  // _MAX: Maximum Base Address
+                        CreateWordField (BUF0, ^_Y0F._MIN, IO0M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, ^_Y0F._MAX, IO0X)  // _MAX: Maximum Base Address
                         Store (GPBS, IO0M)
                         Store (GPBS, IO0X)
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y10._MIN, IO1M)  // _MIN: Minimum Base Address
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y10._MAX, IO1X)  // _MAX: Maximum Base Address
+                        CreateWordField (BUF0, ^_Y10._MIN, IO1M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, ^_Y10._MAX, IO1X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0100), IO1M)
                         Store (Add (GPBS, 0x0100), IO1X)
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y11._MIN, IO2M)  // _MIN: Minimum Base Address
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y11._MAX, IO2X)  // _MAX: Maximum Base Address
+                        CreateWordField (BUF0, ^_Y11._MIN, IO2M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, ^_Y11._MAX, IO2X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0200), IO2M)
                         Store (Add (GPBS, 0x0200), IO2X)
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y12._MIN, IO3M)  // _MIN: Minimum Base Address
-                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y12._MAX, IO3X)  // _MAX: Maximum Base Address
+                        CreateWordField (BUF0, ^_Y12._MIN, IO3M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, ^_Y12._MAX, IO3X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0300), IO3M)
                         Store (Add (GPBS, 0x0300), IO3X)
                         Return (BUF0)
@@ -3174,9 +3174,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     {
                         If (LAnd (LLess (SP1O, 0x03F0), LGreater (SP1O, 0xF0)))
                         {
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._MIN, IOIM)  // _MIN: Minimum Base Address
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._MAX, IOIX)  // _MAX: Maximum Base Address
-                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._LEN, IOIL)  // _LEN: Length
+                            CreateWordField (CRS, ^_Y13._MIN, IOIM)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, ^_Y13._MAX, IOIX)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, ^_Y13._LEN, IOIL)  // _LEN: Length
                             Store (SP1O, IOIM)
                             Store (SP1O, IOIX)
                             Store (0x02, IOIL)
@@ -3184,9 +3184,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (GPIB)
                         {
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._MIN, GP0M)  // _MIN: Minimum Base Address
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._MAX, GP0X)  // _MAX: Maximum Base Address
-                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._LEN, GP0L)  // _LEN: Length
+                            CreateWordField (CRS, ^_Y14._MIN, GP0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, ^_Y14._MAX, GP0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, ^_Y14._LEN, GP0L)  // _LEN: Length
                             Store (GPIB, GP0M)
                             Store (GPIB, GP0X)
                             Store (GPIL, GP0L)
@@ -3194,9 +3194,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (HWMB)
                         {
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._MIN, HW0M)  // _MIN: Minimum Base Address
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._MAX, HW0X)  // _MAX: Maximum Base Address
-                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._LEN, HW0L)  // _LEN: Length
+                            CreateWordField (CRS, ^_Y15._MIN, HW0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, ^_Y15._MAX, HW0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, ^_Y15._LEN, HW0L)  // _LEN: Length
                             Store (HWMB, HW0M)
                             Store (HWMB, HW0X)
                             Store (HWML, HW0L)
@@ -3204,9 +3204,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (PMEB)
                         {
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._MIN, PM0M)  // _MIN: Minimum Base Address
-                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._MAX, PM0X)  // _MAX: Maximum Base Address
-                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._LEN, PM0L)  // _LEN: Length
+                            CreateWordField (CRS, ^_Y16._MIN, PM0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, ^_Y16._MAX, PM0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, ^_Y16._LEN, PM0L)  // _LEN: Length
                             Store (PMEB, PM0M)
                             Store (PMEB, PM0X)
                             Store (PMEL, PM0L)
@@ -3442,11 +3442,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         DMA (Compatibility, NotBusMaster, Transfer8, _Y18)
                             {}
                     })
-                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y17._INT, IRQM)  // _INT: Interrupts
-                    CreateByteField (CRS1, \_SB.PCI0.LPCB.SIO1._Y18._DMA, DMAM)  // _DMA: Direct Memory Access
-                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._MIN, IO11)  // _MIN: Minimum Base Address
-                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._MAX, IO12)  // _MAX: Maximum Base Address
-                    CreateByteField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._LEN, LEN1)  // _LEN: Length
+                    CreateWordField (CRS1, _Y17._INT, IRQM)  // _INT: Interrupts
+                    CreateByteField (CRS1, _Y18._DMA, DMAM)  // _DMA: Direct Memory Access
+                    CreateWordField (CRS1, _Y19._MIN, IO11)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS1, _Y19._MAX, IO12)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS1, _Y19._LEN, LEN1)  // _LEN: Length
                     Name (CRS2, ResourceTemplate ()
                     {
                         IO (Decode16,
@@ -3466,14 +3466,14 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         DMA (Compatibility, NotBusMaster, Transfer8, _Y1B)
                             {2}
                     })
-                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1A._INT, IRQE)  // _INT: Interrupts
-                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1B._DMA, DMAE)  // _DMA: Direct Memory Access
-                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._MIN, IO21)  // _MIN: Minimum Base Address
-                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._MAX, IO22)  // _MAX: Maximum Base Address
-                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._LEN, LEN2)  // _LEN: Length
-                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._MIN, IO31)  // _MIN: Minimum Base Address
-                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._MAX, IO32)  // _MAX: Maximum Base Address
-                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._LEN, LEN3)  // _LEN: Length
+                    CreateWordField (CRS2, _Y1A._INT, IRQE)  // _INT: Interrupts
+                    CreateByteField (CRS2, _Y1B._DMA, DMAE)  // _DMA: Direct Memory Access
+                    CreateWordField (CRS2, _Y1C._MIN, IO21)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS2, _Y1C._MAX, IO22)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS2, _Y1C._LEN, LEN2)  // _LEN: Length
+                    CreateWordField (CRS2, _Y1D._MIN, IO31)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS2, _Y1D._MAX, IO32)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS2, _Y1D._LEN, LEN3)  // _LEN: Length
                     Name (CRS4, ResourceTemplate ()
                     {
                         IO (Decode16,
@@ -3485,11 +3485,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         IRQ (Edge, ActiveLow, Shared, _Y1E)
                             {}
                     })
-                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1E._INT, IRQL)  // _INT: Interrupts
-                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._MIN, IOHL)  // _MIN: Minimum Base Address
-                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._MAX, IORL)  // _MAX: Maximum Base Address
-                    CreateByteField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._ALN, ALMN)  // _ALN: Alignment
-                    CreateByteField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._LEN, LENG)  // _LEN: Length
+                    CreateWordField (CRS4, _Y1E._INT, IRQL)  // _INT: Interrupts
+                    CreateWordField (CRS4, _Y1F._MIN, IOHL)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS4, _Y1F._MAX, IORL)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS4, _Y1F._ALN, ALMN)  // _ALN: Alignment
+                    CreateByteField (CRS4, _Y1F._LEN, LENG)  // _LEN: Length
                     Method (DCRS, 2, NotSerialized)
                     {
                         ENFG (CGLD (Arg0))
@@ -7459,7 +7459,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB)
     {
-        Method (RDGI, 1, NotSerialized)
+        Method (RDGI, 1, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7478,7 +7478,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Return (Zero)
         }
 
-        Method (RDGP, 1, NotSerialized)
+        Method (RDGP, 1, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7497,7 +7497,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Return (Zero)
         }
 
-        Method (WTGP, 2, NotSerialized)
+        Method (WTGP, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7514,7 +7514,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (WTIN, 2, NotSerialized)
+        Method (WTIN, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7531,7 +7531,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (WPGP, 2, NotSerialized)
+        Method (WPGP, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7547,7 +7547,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (GP2N, 2, NotSerialized)
+        Method (GP2N, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7563,7 +7563,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (GP2A, 2, NotSerialized)
+        Method (GP2A, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7622,7 +7622,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (GP2B, 2, NotSerialized)
+        Method (GP2B, 2, Serialized)
         {
             If (LLessEqual (Arg0, 0x5E))
             {
@@ -7784,7 +7784,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -7812,7 +7812,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -7841,7 +7841,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -7870,7 +7870,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -7905,7 +7905,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -7993,7 +7993,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8081,7 +8081,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8169,7 +8169,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8257,7 +8257,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8375,7 +8375,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -8403,7 +8403,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8432,7 +8432,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8520,7 +8520,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8608,7 +8608,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8637,7 +8637,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8666,7 +8666,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
-                            Name (PLDP, Package (0x01)
+                            Name (PLDP, Package (One)
                             {
                                 Buffer (0x10)
                                 {
@@ -8877,7 +8877,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -8918,7 +8918,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -8959,7 +8959,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9005,7 +9005,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9046,7 +9046,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9087,7 +9087,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9128,7 +9128,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9169,7 +9169,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9210,7 +9210,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9278,7 +9278,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9341,7 +9341,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9404,7 +9404,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9467,7 +9467,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9519,7 +9519,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9571,7 +9571,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9623,7 +9623,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9675,7 +9675,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9727,7 +9727,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9779,7 +9779,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9831,7 +9831,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -9883,7 +9883,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
-                        Name (PLDP, Package (0x01)
+                        Name (PLDP, Package (One)
                         {
                             Buffer (0x10)
                             {
@@ -10033,7 +10033,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+                Method (_GTF, 0, Serialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS0, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
@@ -10064,7 +10064,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     If (LAnd (LEqual (S0ID, One), And (PEPY, 0x02)))
                     {
                         ADBG ("SAta DEP")
-                        Return (Package (0x01)
+                        Return (Package (One)
                         {
                             PEPD
                         })
@@ -10072,7 +10072,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Else
                     {
                         ADBG ("SAta DEP NULL")
-                        Return (Package (0x00) {})
+                        Return (Package (Zero) {})
                     }
                 }
 
@@ -10084,7 +10084,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+                Method (_GTF, 0, Serialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS1, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
@@ -10117,7 +10117,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
+                Method (_GTF, 0, Serialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS3, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
@@ -11933,12 +11933,12 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Name (DEVS, Package (0x03)
             {
                 0x02, 
-                Package (0x01)
+                Package (One)
                 {
                     "\\_SB.PCI0.GFX0"
                 }, 
 
-                Package (0x01)
+                Package (One)
                 {
                     "\\_SB.PCI0.SATA.PRT1"
                 }
@@ -12044,7 +12044,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                     Return (Package (0x02)
                                     {
                                         One, 
-                                        Package (0x01)
+                                        Package (One)
                                         {
                                             "\\_SB.PCI0.GFX0"
                                         }
@@ -12057,7 +12057,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         Return (Package (0x02)
                                         {
                                             One, 
-                                            Package (0x01)
+                                            Package (One)
                                             {
                                                 "\\_SB.PCI0.SATA.PRT1"
                                             }
@@ -12071,7 +12071,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         }
                                         Else
                                         {
-                                            Return (Package (0x01)
+                                            Return (Package (One)
                                             {
                                                 Zero
                                             })
@@ -12230,27 +12230,27 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             })
             Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y20._BAS, RBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y20._BAS, RBR0)  // _BAS: Base Address
                 ShiftLeft (^^LPCB.RCBA, 0x0E, RBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y21._BAS, TBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y21._BAS, TBR0)  // _BAS: Base Address
                 Store (TBAB, TBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y21._LEN, TBLN)  // _LEN: Length
+                CreateDWordField (BUF0, ^_Y21._LEN, TBLN)  // _LEN: Length
                 If (LEqual (TBAB, Zero))
                 {
                     Store (Zero, TBLN)
                 }
 
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y22._BAS, SNR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y22._BAS, SNR0)  // _BAS: Base Address
                 Store (SRMB, SNR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y23._BAS, MBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y23._BAS, MBR0)  // _BAS: Base Address
                 ShiftLeft (MHBR, 0x0F, MBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y24._BAS, DBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y24._BAS, DBR0)  // _BAS: Base Address
                 ShiftLeft (DIBR, 0x0C, DBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y25._BAS, EBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y25._BAS, EBR0)  // _BAS: Base Address
                 ShiftLeft (EPBR, 0x0C, EBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y26._BAS, XBR0)  // _BAS: Base Address
+                CreateDWordField (BUF0, ^_Y26._BAS, XBR0)  // _BAS: Base Address
                 ShiftLeft (PXBR, 0x1A, XBR0)
-                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y26._LEN, XSZ0)  // _LEN: Length
+                CreateDWordField (BUF0, ^_Y26._LEN, XSZ0)  // _LEN: Length
                 ShiftRight (0x10000000, PXSZ, XSZ0)
                 Return (BUF0)
             }
@@ -12683,7 +12683,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
             Name (_UID, Zero)  // _UID: Unique ID
-            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
+            Name (_PR0, Package (One)  // _PR0: Power Resources for D0
             {
                 FN00
             })
@@ -12732,7 +12732,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
             Name (_UID, One)  // _UID: Unique ID
-            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
+            Name (_PR0, Package (One)  // _PR0: Power Resources for D0
             {
                 FN01
             })
@@ -12781,7 +12781,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
             Name (_UID, 0x02)  // _UID: Unique ID
-            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
+            Name (_PR0, Package (One)  // _PR0: Power Resources for D0
             {
                 FN02
             })
@@ -12830,7 +12830,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
             Name (_UID, 0x03)  // _UID: Unique ID
-            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
+            Name (_PR0, Package (One)  // _PR0: Power Resources for D0
             {
                 FN03
             })
@@ -12871,7 +12871,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
             Name (_UID, 0x04)  // _UID: Unique ID
-            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
+            Name (_PR0, Package (One)  // _PR0: Power Resources for D0
             {
                 FN04
             })
@@ -12931,23 +12931,23 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (0x0AAC)
             }
 
-            Name (_AL0, Package (0x01)  // _ALx: Active List
+            Name (_AL0, Package (One)  // _ALx: Active List
             {
                 FAN0
             })
-            Name (_AL1, Package (0x01)  // _ALx: Active List
+            Name (_AL1, Package (One)  // _ALx: Active List
             {
                 FAN1
             })
-            Name (_AL2, Package (0x01)  // _ALx: Active List
+            Name (_AL2, Package (One)  // _ALx: Active List
             {
                 FAN2
             })
-            Name (_AL3, Package (0x01)  // _ALx: Active List
+            Name (_AL3, Package (One)  // _ALx: Active List
             {
                 FAN3
             })
-            Name (_AL4, Package (0x01)  // _ALx: Active List
+            Name (_AL4, Package (One)  // _ALx: Active List
             {
                 FAN4
             })
@@ -13115,7 +13115,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     })
                 }
 
-                Return (Package (0x01)
+                Return (Package (One)
                 {
                     \_PR.CPU0
                 })
@@ -13168,7 +13168,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
         {
-            Name (PLDP, Package (0x01)
+            Name (PLDP, Package (One)
             {
                 Buffer (0x14)
                 {
@@ -13547,7 +13547,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
             Name (IVER, 0x00010000)
             Name (GSCV, 0x69)
-            Method (GACI, 0, NotSerialized)
+            Method (GACI, 0, Serialized)
             {
                 OperationRegion (GCAD, SystemMemory, 0xAE1D8018, 0xFC)
                 Field (GCAD, ByteAcc, NoLock, Preserve)
@@ -13563,7 +13563,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (RPKG)
             }
 
-            Method (GDSV, 1, NotSerialized)
+            Method (GDSV, 1, Serialized)
             {
                 OperationRegion (GDAD, SystemMemory, 0xAE1D6018, 0x05F8)
                 Field (GDAD, DWordAcc, NoLock, Preserve)
@@ -13580,7 +13580,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
 
                 Store (Arg0, DBG8)
-                Return (Package (0x01)
+                Return (Package (One)
                 {
                     One
                 })
@@ -13600,13 +13600,13 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Zero)
             }
 
-            Method (GXDV, 1, NotSerialized)
+            Method (GXDV, 1, Serialized)
             {
                 Name (PRF1, 0x03)
                 Name (PRF2, 0x03)
                 If (LAnd (LEqual (PRF1, One), LEqual (Arg0, One)))
                 {
-                    Return (Package (0x01)
+                    Return (Package (One)
                     {
                         0x02
                     })
@@ -13614,7 +13614,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 If (LAnd (LEqual (PRF2, One), LEqual (Arg0, 0x02)))
                 {
-                    Return (Package (0x01)
+                    Return (Package (One)
                     {
                         0x02
                     })
@@ -13645,7 +13645,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Return (RPKG)
                 }
 
-                Return (Package (0x01)
+                Return (Package (One)
                 {
                     One
                 })
