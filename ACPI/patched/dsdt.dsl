@@ -29,10 +29,18 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
      *     iasl -e <ssdt1.aml,ssdt2.aml...> -d <dsdt.aml>
      *     iasl -e <dsdt.aml,ssdt2.aml...> -d <ssdt1.aml>
      */
+    External (_SB_.PCI0.GFX0)
+    
     External (_SB_.PCI0.GFX0.GLID, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
     External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
     External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
+
+    External (_SB_.PCI0.PEG0)
     External (_SB_.PCI0.PEG0.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+
+    External (_SB_.PCI0.PEG1)
+    External (_SB_.PCI0.PEG2)
+    
     External (_SB_.PCI0.PEG1.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
     External (_SB_.PCI0.PEG2.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
     External (_SB_.TPM_.PTS_, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
@@ -60,8 +68,6 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.PCI0.GFX0.STAT)
     External (_SB_.PCI0.GFX0.TCHE)
     External (_SB_.PCI0.PEG0.PEGP)
-//    External (_SB_.PCI0.PEG1)
-//    External (_SB_.PCI0.PEG2)
     External (D1F0)
     External (D1F1)
     External (D1F2)
