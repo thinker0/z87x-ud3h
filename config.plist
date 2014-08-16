@@ -7,36 +7,9 @@
 		<key>DSDT</key>
 		<dict>
 			<key>Debug</key>
-			<true/>
+			<false/>
 			<key>DropOEM_DSM</key>
-			<dict>
-				<key>ATI</key>
-				<true/>
-				<key>Firewire</key>
-				<true/>
-				<key>HDA</key>
-				<true/>
-				<key>HDMI</key>
-				<true/>
-				<key>IDE</key>
-				<true/>
-				<key>IntelGFX</key>
-				<true/>
-				<key>LAN</key>
-				<true/>
-				<key>LPC</key>
-				<true/>
-				<key>NVidia</key>
-				<true/>
-				<key>SATA</key>
-				<true/>
-				<key>SmBUS</key>
-				<true/>
-				<key>USB</key>
-				<true/>
-				<key>WIFI</key>
-				<true/>
-			</dict>
+			<false/>
 			<key>Fixes</key>
 			<dict>
 				<key>AddDTGP_0001</key>
@@ -97,15 +70,13 @@
 				<true/>
 			</dict>
 			<key>ReuseFFFF</key>
-			<true/>
+			<false/>
 		</dict>
 		<key>DropTables</key>
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>DMAR</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -115,19 +86,23 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>DMAR</string>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>CpuPm</string>
+				<string>Cpu0Ist</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
 		<true/>
 		<key>PatchAPIC</key>
 		<true/>
+		<key>ResetAddress</key>
+		<string>0xfffffffffec00000</string>
 		<key>SSDT</key>
 		<dict>
 			<key>DropOem</key>
@@ -150,7 +125,7 @@
 		<key>Arguments</key>
 		<string>dart=0 kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
-		<string>WinBoot</string>
+		<string>WinBOOT</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Log</key>
@@ -160,7 +135,7 @@
 		<key>Timeout</key>
 		<integer>5</integer>
 		<key>XMPDetection</key>
-		<string>Yes</string>
+		<false/>
 	</dict>
 	<key>CPU</key>
 	<dict>
@@ -203,12 +178,6 @@
 			<key>XHCI</key>
 			<string>0x8c318086</string>
 		</dict>
-		<key>ForceHPET</key>
-		<true/>
-		<key>Inject</key>
-		<true/>
-		<key>LpcTune</key>
-		<true/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -220,8 +189,6 @@
 			<key>Inject</key>
 			<true/>
 		</dict>
-		<key>UseIntelHDMI</key>
-		<true/>
 	</dict>
 	<key>DisableDrivers</key>
 	<array>
@@ -326,16 +293,30 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Patch_against_assertions</string>
+				<key>Find</key>
+				<data>
+				U291bmQgYXNzZXJ0aW9uIA==
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				QcdHCAAAQAA=
+				dTpIiwU9nQAA
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				QcdHCAAAAAA=
+				6zpIiwU9nQAA
 				</data>
 			</dict>
 			<dict>
@@ -354,16 +335,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Trim enabler patch</string>
+				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				QVBQTEUgU1NEAA==
+				QcdHCAAAQAA=
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				AAAAAAAAAAAAAA==
+				QcdHCAAAAAA=
 				</data>
 			</dict>
 			<dict>
@@ -378,48 +359,6 @@
 				<key>Replace</key>
 				<data>
 				601Ii7voAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_against_assertions</string>
-				<key>Find</key>
-				<data>
-				U291bmQgYXNzZXJ0aW9uIA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Mac_Pro5.1</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Find</key>
-				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>configurePM BT</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -452,16 +391,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
+				<string>Mac_Pro5.1</string>
 				<key>Find</key>
 				<data>
-				dTpIiwU9nQAA
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
 				</data>
 				<key>Name</key>
-				<string>AppleUSBXHCI</string>
+				<string>AppleTyMCEDriver</string>
 				<key>Replace</key>
 				<data>
-				6zpIiwU9nQAA
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -476,6 +415,34 @@
 				<key>Replace</key>
 				<data>
 				Zj0AAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Trim enabler patch</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NEAA==
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IOBluetoothHostControllerUSBTransport</string>
+				<key>Find</key>
+				<data>
+				AAAAD4UHAQAA
+				</data>
+				<key>Name</key>
+				<string>configurePM BT</string>
+				<key>Replace</key>
+				<data>
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 		</array>
