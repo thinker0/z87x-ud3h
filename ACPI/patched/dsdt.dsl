@@ -1,70 +1,82 @@
 /*
  * Intel ACPI Component Architecture
- * AML Disassembler version 20091214
- *
- * Disassembly of ./dsdt.dat, Sat Aug 16 13:28:10 2014
- *
+ * AML Disassembler version 20131218-64 [Jan  8 2014]
+ * Copyright (c) 2000 - 2013 Intel Corporation
+ * 
+ * Disassembly of iASLNsj4bI.aml, Sat Aug 16 17:26:51 2014
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x0000C2BE (49854)
+ *     Length           0x0000C2E6 (49894)
  *     Revision         0x02
- *     Checksum         0x40
+ *     Checksum         0xB6
  *     OEM ID           "Apple "
  *     OEM Table ID     "A M I"
  *     OEM Revision     0x000000F9 (249)
  *     Compiler ID      "INTL"
  *     Compiler Version 0x20091112 (537465106)
  */
-DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
+DefinitionBlock ("iASLNsj4bI.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 {
-    External (GSMI)
-    External (D1F2)
-    External (D1F1)
+    /*
+     * iASL Warning: There were 8 external control methods found during
+     * disassembly, but additional ACPI tables to resolve these externals
+     * were not specified. This resulting disassembler output file may not
+     * compile because the disassembler did not know how many arguments
+     * to assign to these methods. To specify the tables needed to resolve
+     * external control method references, use the one of the following
+     * example iASL invocations:
+     *     iasl -e <ssdt1.aml,ssdt2.aml...> -d <dsdt.aml>
+     *     iasl -e <dsdt.aml,ssdt2.aml...> -d <ssdt1.aml>
+     */
+    External (_SB_.PCI0.GFX0.GLID, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.PEG0.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.PEG1.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.PEG2.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+    External (_SB_.TPM_.PTS_, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
+    External (LIDS, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+
+    External (_PR_.AAC0)
+    External (_PR_.ACRT)
+    External (_PR_.APSV)
+    External (_PR_.CFGD)
+    External (_PR_.CPU0._PPC)
+    External (_SB_.IAOE.ECTM)
+    External (_SB_.IAOE.FFSE)
+    External (_SB_.IAOE.IBT1)
+    External (_SB_.IAOE.ITMR)
+    External (_SB_.IAOE.PTSL)
+    External (_SB_.IAOE.RCTM)
+    External (_SB_.IAOE.WKRS)
+    External (_SB_.IETM)
+    External (_SB_.IFFS.FFSS)
+    External (_SB_.PCCD)
+    External (_SB_.PCCD.PENB)
+    External (_SB_.PCI0.GFX0.CLID)
+    External (_SB_.PCI0.GFX0.DD1F)
+    External (_SB_.PCI0.GFX0.GSSE)
+    External (_SB_.PCI0.GFX0.STAT)
+    External (_SB_.PCI0.GFX0.TCHE)
+    External (_SB_.PCI0.PEG0.PEGP)
+//    
+//    
     External (D1F0)
+    External (D1F1)
+    External (D1F2)
     External (DIDX)
-    External (PDC7)
-    External (PDC6)
-    External (PDC5)
-    External (PDC4)
-    External (PDC3)
-    External (PDC2)
-    External (PDC1)
-    External (PDC0)
+    External (GSMI)
     External (IGDS, IntObj)
-    External (LIDS, MethodObj)    // 0 Arguments
     External (MDBG, IntObj)
-    External (\_PR_.APSV)
-    External (\_PR_.AAC0)
-    External (\_PR_.ACRT)
-    External (\_SB_.PCCD)
-    External (\_SB_.IETM)
-    External (\_PR_.CFGD)
-    External (\_SB_.PCI0.PEG2)
-    External (\_SB_.PCI0.PEG1)
-    External (\_SB_.PCCD.PENB)
-    External (\_PR_.CPU0._PPC)
-    External (\_SB_.IAOE.RCTM)
-    External (\_SB_.IAOE.WKRS)
-    External (\_SB_.IAOE.IBT1)
-    External (\_SB_.TPM_.PTS_, MethodObj)    // 1 Arguments
-    External (\_SB_.IAOE.FFSE)
-    External (\_SB_.IFFS.FFSS)
-    External (\_SB_.IAOE.ECTM)
-    External (\_SB_.IAOE.ITMR)
-    External (\_SB_.IAOE.PTSL)
-    External (\_SB_.PCI0.GFX0.GLID, MethodObj)    // 1 Arguments
-    External (\_SB_.PCI0.GFX0.GSCI, MethodObj)    // 0 Arguments
-    External (\_SB_.PCI0.GFX0.GSSE)
-    External (\_SB_.PCI0.PEG2.HPME, MethodObj)    // 0 Arguments
-    External (\_SB_.PCI0.PEG1.HPME, MethodObj)    // 0 Arguments
-    External (\_SB_.PCI0.PEG0.PEGP)
-    External (\_SB_.PCI0.PEG0.HPME, MethodObj)    // 0 Arguments
-    External (\_SB_.PCI0.GFX0.DD1F)
-    External (\_SB_.PCI0.GFX0.CLID)
-    External (\_SB_.PCI0.GFX0.IUEH, MethodObj)    // 1 Arguments
-    External (\_SB_.PCI0.GFX0.STAT)
-    External (\_SB_.PCI0.GFX0.TCHE)
+    External (PDC0)
+    External (PDC1)
+    External (PDC2)
+    External (PDC3)
+    External (PDC4)
+    External (PDC5)
+    External (PDC6)
+    External (PDC7)
 
     Name (VER0, "Clover autopatched")
     Name (WXP1, "Windows 2001")
@@ -202,8 +214,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Name (SS2, Zero)
     Name (SS3, One)
     Name (SS4, One)
-    Name (IOST, Zero)
-    Name (TOPM, Zero)
+    Name (IOST, 0x0000)
+    Name (TOPM, 0x00000000)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0xAE1E8C18, 0x027E)
@@ -234,10 +246,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         DTS1,   8, 
         DTS2,   8, 
         DTSF,   8, 
-                Offset (0x1E), 
-                Offset (0x25), 
+        Offset (0x1E), 
+        Offset (0x25), 
         REVN,   8, 
-                Offset (0x28), 
+        Offset (0x28), 
         APIC,   8, 
         TCNT,   8, 
         PCP0,   8, 
@@ -258,10 +270,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         EMAE,   8, 
         EMAP,   16, 
         EMAL,   16, 
-                Offset (0x42), 
+        Offset (0x42), 
         MEFE,   8, 
         DSTS,   8, 
-                Offset (0x48), 
+        Offset (0x48), 
         MORD,   8, 
         TCGP,   8, 
         PPRP,   32, 
@@ -274,12 +286,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         BID,    16, 
         PLID,   8, 
         ECTG,   8, 
-                Offset (0x70), 
+        Offset (0x70), 
         OSCC,   8, 
         NEXP,   8, 
         SBV1,   8, 
         SBV2,   8, 
-                Offset (0x7A), 
+        Offset (0x7A), 
         DSEN,   8, 
         ECON,   8, 
         GPIC,   8, 
@@ -295,7 +307,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         VFN7,   8, 
         VFN8,   8, 
         VFN9,   8, 
-                Offset (0x8F), 
+        Offset (0x8F), 
         ATMC,   8, 
         PTMC,   8, 
         ATRA,   8, 
@@ -316,7 +328,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         AC1F,   8, 
         DTS3,   8, 
         DTS4,   8, 
-                Offset (0xB0), 
+        Offset (0xB0), 
         LTR1,   8, 
         LTR2,   8, 
         LTR3,   8, 
@@ -401,7 +413,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         SNHE,   8, 
         S0ID,   8, 
         CTDB,   8, 
-                Offset (0x207), 
+        Offset (0x207), 
         PWRE,   8, 
         PWRP,   8, 
         XHPR,   8, 
@@ -431,7 +443,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         VRRD,   16, 
         PSCP,   8, 
         RWAG,   8, 
-                Offset (0x22D), 
+        Offset (0x22D), 
         RCG0,   8, 
         ECDB,   8, 
         P2ME,   8, 
@@ -1679,21 +1691,21 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Alias (PRSA, PRSH)
         Device (PCI0)
         {
-            Name (_HID, EisaId ("PNP0A08"))
-            Name (_CID, EisaId ("PNP0A03"))
-            Name (_ADR, Zero)
+            Name (_HID, EisaId ("PNP0A08"))  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0A03"))  // _CID: Compatible ID
+            Name (_ADR, Zero)  // _ADR: Address
             Method (^BN00, 0, NotSerialized)
             {
                 Return (Zero)
             }
 
-            Method (_BBN, 0, NotSerialized)
+            Method (_BBN, 0, NotSerialized)  // _BBN: BIOS Bus Number
             {
                 Return (BN00 ())
             }
 
-            Name (_UID, Zero)
-            Method (_PRT, 0, NotSerialized)
+            Name (_UID, Zero)  // _UID: Unique ID
+            Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
             {
                 If (PICM)
                 {
@@ -1706,68 +1718,68 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             OperationRegion (HBUS, PCI_Config, Zero, 0x0100)
             Field (HBUS, DWordAcc, NoLock, Preserve)
             {
-                        Offset (0x40), 
+                Offset (0x40), 
                 EPEN,   1, 
                     ,   11, 
                 EPBR,   20, 
-                        Offset (0x48), 
+                Offset (0x48), 
                 MHEN,   1, 
                     ,   14, 
                 MHBR,   17, 
-                        Offset (0x50), 
+                Offset (0x50), 
                 GCLK,   1, 
-                        Offset (0x54), 
+                Offset (0x54), 
                 D0EN,   1, 
                 D1F2,   1, 
                 D1F1,   1, 
                 D1F0,   1, 
-                        Offset (0x60), 
+                Offset (0x60), 
                 PXEN,   1, 
                 PXSZ,   2, 
                     ,   23, 
                 PXBR,   6, 
-                        Offset (0x68), 
+                Offset (0x68), 
                 DIEN,   1, 
                     ,   11, 
                 DIBR,   20, 
-                        Offset (0x70), 
+                Offset (0x70), 
                     ,   20, 
                 MEBR,   12, 
-                        Offset (0x80), 
+                Offset (0x80), 
                     ,   4, 
                 PM0H,   2, 
-                        Offset (0x81), 
+                Offset (0x81), 
                 PM1L,   2, 
                     ,   2, 
                 PM1H,   2, 
-                        Offset (0x82), 
+                Offset (0x82), 
                 PM2L,   2, 
                     ,   2, 
                 PM2H,   2, 
-                        Offset (0x83), 
+                Offset (0x83), 
                 PM3L,   2, 
                     ,   2, 
                 PM3H,   2, 
-                        Offset (0x84), 
+                Offset (0x84), 
                 PM4L,   2, 
                     ,   2, 
                 PM4H,   2, 
-                        Offset (0x85), 
+                Offset (0x85), 
                 PM5L,   2, 
                     ,   2, 
                 PM5H,   2, 
-                        Offset (0x86), 
+                Offset (0x86), 
                 PM6L,   2, 
                     ,   2, 
                 PM6H,   2, 
-                        Offset (0x87), 
-                        Offset (0xA8), 
+                Offset (0x87), 
+                Offset (0xA8), 
                     ,   20, 
                 TUUD,   19, 
-                        Offset (0xBC), 
+                Offset (0xBC), 
                     ,   20, 
                 TLUD,   12, 
-                        Offset (0xC8), 
+                Offset (0xC8), 
                     ,   7, 
                 HTSE,   1
             }
@@ -1781,7 +1793,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     0x00FF,             // Range Maximum
                     0x0000,             // Translation Offset
                     0x0100,             // Length
-                    ,, )
+                    ,, _Y00)
                 DWordIO (ResourceProducer, MinFixed, MaxFixed, PosDecode, EntireRange,
                     0x00000000,         // Granularity
                     0x00000000,         // Range Minimum
@@ -1815,264 +1827,264 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     0x000C3FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y01, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000C4000,         // Range Minimum
                     0x000C7FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y02, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000C8000,         // Range Minimum
                     0x000CBFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y03, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000CC000,         // Range Minimum
                     0x000CFFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y04, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000D0000,         // Range Minimum
                     0x000D3FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y05, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000D4000,         // Range Minimum
                     0x000D7FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y06, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000D8000,         // Range Minimum
                     0x000DBFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y07, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000DC000,         // Range Minimum
                     0x000DFFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y08, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000E0000,         // Range Minimum
                     0x000E3FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y09, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000E4000,         // Range Minimum
                     0x000E7FFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y0A, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000E8000,         // Range Minimum
                     0x000EBFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y0B, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000EC000,         // Range Minimum
                     0x000EFFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00004000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y0C, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x000F0000,         // Range Minimum
                     0x000FFFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0x00010000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y0D, AddressRangeMemory, TypeStatic)
                 DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, Cacheable, ReadWrite,
                     0x00000000,         // Granularity
                     0x00000000,         // Range Minimum
                     0xFEAFFFFF,         // Range Maximum
                     0x00000000,         // Translation Offset
                     0xFEB00000,         // Length
-                    ,, , AddressRangeMemory, TypeStatic)
+                    ,, _Y0E, AddressRangeMemory, TypeStatic)
             })
-            Method (_CRS, 0, Serialized)
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateWordField (BUF0, 0x0A, PBMX)
+                CreateWordField (BUF0, \_SB.PCI0._Y00._MAX, PBMX)  // _MAX: Maximum Base Address
                 Store (Subtract (ShiftRight (PELN, 0x14), 0x02), PBMX)
-                CreateWordField (BUF0, 0x0E, PBLN)
+                CreateWordField (BUF0, \_SB.PCI0._Y00._LEN, PBLN)  // _LEN: Length
                 Store (Subtract (ShiftRight (PELN, 0x14), One), PBLN)
                 If (PM1L)
                 {
-                    CreateDWordField (BUF0, 0x7C, C0LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y01._LEN, C0LN)  // _LEN: Length
                     Store (Zero, C0LN)
                 }
 
                 If (LEqual (PM1L, One))
                 {
-                    CreateBitField (BUF0, 0x0358, C0RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y01._RW, C0RW)  // _RW_: Read-Write Status
                     Store (Zero, C0RW)
                 }
 
                 If (PM1H)
                 {
-                    CreateDWordField (BUF0, 0x96, C4LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y02._LEN, C4LN)  // _LEN: Length
                     Store (Zero, C4LN)
                 }
 
                 If (LEqual (PM1H, One))
                 {
-                    CreateBitField (BUF0, 0x0428, C4RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y02._RW, C4RW)  // _RW_: Read-Write Status
                     Store (Zero, C4RW)
                 }
 
                 If (PM2L)
                 {
-                    CreateDWordField (BUF0, 0xB0, C8LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y03._LEN, C8LN)  // _LEN: Length
                     Store (Zero, C8LN)
                 }
 
                 If (LEqual (PM2L, One))
                 {
-                    CreateBitField (BUF0, 0x04F8, C8RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y03._RW, C8RW)  // _RW_: Read-Write Status
                     Store (Zero, C8RW)
                 }
 
                 If (PM2H)
                 {
-                    CreateDWordField (BUF0, 0xCA, CCLN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y04._LEN, CCLN)  // _LEN: Length
                     Store (Zero, CCLN)
                 }
 
                 If (LEqual (PM2H, One))
                 {
-                    CreateBitField (BUF0, 0x05C8, CCRW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y04._RW, CCRW)  // _RW_: Read-Write Status
                     Store (Zero, CCRW)
                 }
 
                 If (PM3L)
                 {
-                    CreateDWordField (BUF0, 0xE4, D0LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y05._LEN, D0LN)  // _LEN: Length
                     Store (Zero, D0LN)
                 }
 
                 If (LEqual (PM3L, One))
                 {
-                    CreateBitField (BUF0, 0x0698, D0RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y05._RW, D0RW)  // _RW_: Read-Write Status
                     Store (Zero, D0RW)
                 }
 
                 If (PM3H)
                 {
-                    CreateDWordField (BUF0, 0xFE, D4LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y06._LEN, D4LN)  // _LEN: Length
                     Store (Zero, D4LN)
                 }
 
                 If (LEqual (PM3H, One))
                 {
-                    CreateBitField (BUF0, 0x0768, D4RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y06._RW, D4RW)  // _RW_: Read-Write Status
                     Store (Zero, D4RW)
                 }
 
                 If (PM4L)
                 {
-                    CreateDWordField (BUF0, 0x0118, D8LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y07._LEN, D8LN)  // _LEN: Length
                     Store (Zero, D8LN)
                 }
 
                 If (LEqual (PM4L, One))
                 {
-                    CreateBitField (BUF0, 0x0838, D8RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y07._RW, D8RW)  // _RW_: Read-Write Status
                     Store (Zero, D8RW)
                 }
 
                 If (PM4H)
                 {
-                    CreateDWordField (BUF0, 0x0132, DCLN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y08._LEN, DCLN)  // _LEN: Length
                     Store (Zero, DCLN)
                 }
 
                 If (LEqual (PM4H, One))
                 {
-                    CreateBitField (BUF0, 0x0908, DCRW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y08._RW, DCRW)  // _RW_: Read-Write Status
                     Store (Zero, DCRW)
                 }
 
                 If (PM5L)
                 {
-                    CreateDWordField (BUF0, 0x014C, E0LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y09._LEN, E0LN)  // _LEN: Length
                     Store (Zero, E0LN)
                 }
 
                 If (LEqual (PM5L, One))
                 {
-                    CreateBitField (BUF0, 0x09D8, E0RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y09._RW, E0RW)  // _RW_: Read-Write Status
                     Store (Zero, E0RW)
                 }
 
                 If (PM5H)
                 {
-                    CreateDWordField (BUF0, 0x0166, E4LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0A._LEN, E4LN)  // _LEN: Length
                     Store (Zero, E4LN)
                 }
 
                 If (LEqual (PM5H, One))
                 {
-                    CreateBitField (BUF0, 0x0AA8, E4RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y0A._RW, E4RW)  // _RW_: Read-Write Status
                     Store (Zero, E4RW)
                 }
 
                 If (PM6L)
                 {
-                    CreateDWordField (BUF0, 0x0180, E8LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0B._LEN, E8LN)  // _LEN: Length
                     Store (Zero, E8LN)
                 }
 
                 If (LEqual (PM6L, One))
                 {
-                    CreateBitField (BUF0, 0x0B78, E8RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y0B._RW, E8RW)  // _RW_: Read-Write Status
                     Store (Zero, E8RW)
                 }
 
                 If (PM6H)
                 {
-                    CreateDWordField (BUF0, 0x019A, ECLN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0C._LEN, ECLN)  // _LEN: Length
                     Store (Zero, ECLN)
                 }
 
                 If (LEqual (PM6H, One))
                 {
-                    CreateBitField (BUF0, 0x0C48, ECRW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y0C._RW, ECRW)  // _RW_: Read-Write Status
                     Store (Zero, ECRW)
                 }
 
                 If (PM0H)
                 {
-                    CreateDWordField (BUF0, 0x01B4, F0LN)
+                    CreateDWordField (BUF0, \_SB.PCI0._Y0D._LEN, F0LN)  // _LEN: Length
                     Store (Zero, F0LN)
                 }
 
                 If (LEqual (PM0H, One))
                 {
-                    CreateBitField (BUF0, 0x0D18, F0RW)
+                    CreateBitField (BUF0, \_SB.PCI0._Y0D._RW, F0RW)  // _RW_: Read-Write Status
                     Store (Zero, F0RW)
                 }
 
-                CreateDWordField (BUF0, 0x01C2, M1MN)
-                CreateDWordField (BUF0, 0x01C6, M1MX)
-                CreateDWordField (BUF0, 0x01CE, M1LN)
+                CreateDWordField (BUF0, \_SB.PCI0._Y0E._MIN, M1MN)  // _MIN: Minimum Base Address
+                CreateDWordField (BUF0, \_SB.PCI0._Y0E._MAX, M1MX)  // _MAX: Maximum Base Address
+                CreateDWordField (BUF0, \_SB.PCI0._Y0E._LEN, M1LN)  // _LEN: Length
                 ShiftLeft (TLUD, 0x14, M1MN)
                 Add (Subtract (M1MX, M1MN), One, M1LN)
                 Return (BUF0)
@@ -2080,21 +2092,21 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Name (GUID, Buffer (0x10)
             {
-                /* 0000 */    0x5B, 0x4D, 0xDB, 0x33, 0xF7, 0x1F, 0x1C, 0x40, 
-                /* 0008 */    0x96, 0x57, 0x74, 0x41, 0xC0, 0x3D, 0xD7, 0x66
+                /* 0000 */   0x5B, 0x4D, 0xDB, 0x33, 0xF7, 0x1F, 0x1C, 0x40,
+                /* 0008 */   0x96, 0x57, 0x74, 0x41, 0xC0, 0x3D, 0xD7, 0x66
             })
             Name (SUPP, Zero)
             Name (CTRL, Zero)
             Name (XCNT, Zero)
-            Method (_OSC, 4, Serialized)
+            Method (_OSC, 4, Serialized)  // _OSC: Operating System Capabilities
             {
                 Store (Arg3, Local0)
                 CreateDWordField (Local0, Zero, CDW1)
                 CreateDWordField (Local0, 0x04, CDW2)
                 CreateDWordField (Local0, 0x08, CDW3)
-                If (^XHC.CUID (Arg0))
+                If (^XHC1.CUID (Arg0))
                 {
-                    Return (^XHC.POSC (Arg1, Arg2, Arg3))
+                    Return (^XHC1.POSC (Arg1, Arg2, Arg3))
                 }
                 Else
                 {
@@ -2102,7 +2114,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     {
                         If (LEqual (XCNT, Zero))
                         {
-                            ^XHC.XSEL ()
+                            ^XHC1.XSEL ()
                             Increment (XCNT)
                         }
                     }
@@ -2279,8 +2291,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (TPMX)
             {
-                Name (_HID, EisaId ("PNP0C01"))
-                Name (_UID, One)
+                Name (_HID, EisaId ("PNP0C01"))  // _HID: Hardware ID
+                Name (_UID, One)  // _UID: Unique ID
                 Name (CRS, ResourceTemplate ()
                 {
                     Memory32Fixed (ReadOnly,
@@ -2288,12 +2300,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         0x00005000,         // Address Length
                         )
                 })
-                Method (_CRS, 0, NotSerialized)
+                Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                 {
                     Return (CRS)
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (TPMF)
                     {
@@ -2306,47 +2318,47 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (LPCB)
             {
-                Name (_ADR, 0x001F0000)
+                Name (_ADR, 0x001F0000)  // _ADR: Address
                 Scope (\_SB)
                 {
                     OperationRegion (PCI0.LPCB.LPC1, PCI_Config, Zero, 0x0100)
                     Field (PCI0.LPCB.LPC1, AnyAcc, NoLock, Preserve)
                     {
-                                Offset (0x02), 
+                        Offset (0x02), 
                         CDID,   16, 
-                                Offset (0x08), 
+                        Offset (0x08), 
                         CRID,   8, 
-                                Offset (0x60), 
+                        Offset (0x60), 
                         PARC,   8, 
                         PBRC,   8, 
                         PCRC,   8, 
                         PDRC,   8, 
-                                Offset (0x68), 
+                        Offset (0x68), 
                         PERC,   8, 
                         PFRC,   8, 
                         PGRC,   8, 
                         PHRC,   8, 
-                                Offset (0xAC), 
-                                Offset (0xAD), 
-                                Offset (0xAE), 
+                        Offset (0xAC), 
+                        Offset (0xAD), 
+                        Offset (0xAE), 
                         XUSB,   1
                     }
 
                     Device (LNKA)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, One)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, One)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PARC, 0x80, PARC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSA)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLA, ResourceTemplate ()
                             {
@@ -2359,7 +2371,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLA)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2367,7 +2379,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PARC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PARC, 0x80))
                             {
@@ -2382,19 +2394,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKB)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x02)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x02)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PBRC, 0x80, PBRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSB)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLB, ResourceTemplate ()
                             {
@@ -2407,7 +2419,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLB)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2415,7 +2427,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PBRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PBRC, 0x80))
                             {
@@ -2430,19 +2442,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKC)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x03)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x03)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PCRC, 0x80, PCRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSC)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLC, ResourceTemplate ()
                             {
@@ -2455,7 +2467,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLC)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2463,7 +2475,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PCRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PCRC, 0x80))
                             {
@@ -2478,19 +2490,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKD)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x04)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x04)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PDRC, 0x80, PDRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSD)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLD, ResourceTemplate ()
                             {
@@ -2503,7 +2515,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLD)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2511,7 +2523,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PDRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PDRC, 0x80))
                             {
@@ -2526,19 +2538,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKE)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x05)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x05)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PERC, 0x80, PERC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSE)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLE, ResourceTemplate ()
                             {
@@ -2551,7 +2563,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLE)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2559,7 +2571,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PERC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PERC, 0x80))
                             {
@@ -2574,19 +2586,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKF)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x06)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x06)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PFRC, 0x80, PFRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSF)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLF, ResourceTemplate ()
                             {
@@ -2599,7 +2611,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLF)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2607,7 +2619,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PFRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PFRC, 0x80))
                             {
@@ -2622,19 +2634,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKG)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x07)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x07)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PGRC, 0x80, PGRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSG)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLG, ResourceTemplate ()
                             {
@@ -2647,7 +2659,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLG)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2655,7 +2667,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PGRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PGRC, 0x80))
                             {
@@ -2670,19 +2682,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (LNKH)
                     {
-                        Name (_HID, EisaId ("PNP0C0F"))
-                        Name (_UID, 0x08)
-                        Method (_DIS, 0, Serialized)
+                        Name (_HID, EisaId ("PNP0C0F"))  // _HID: Hardware ID
+                        Name (_UID, 0x08)  // _UID: Unique ID
+                        Method (_DIS, 0, Serialized)  // _DIS: Disable Device
                         {
                             Or (PHRC, 0x80, PHRC)
                         }
 
-                        Method (_PRS, 0, Serialized)
+                        Method (_PRS, 0, Serialized)  // _PRS: Possible Resource Settings
                         {
                             Return (PRSH)
                         }
 
-                        Method (_CRS, 0, Serialized)
+                        Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                         {
                             Name (RTLH, ResourceTemplate ()
                             {
@@ -2695,7 +2707,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (RTLH)
                         }
 
-                        Method (_SRS, 1, Serialized)
+                        Method (_SRS, 1, Serialized)  // _SRS: Set Resource Settings
                         {
                             CreateWordField (Arg0, One, IRQ0)
                             FindSetRightBit (IRQ0, Local0)
@@ -2703,7 +2715,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Store (Local0, PHRC)
                         }
 
-                        Method (_STA, 0, Serialized)
+                        Method (_STA, 0, Serialized)  // _STA: Status
                         {
                             If (And (PHRC, 0x80))
                             {
@@ -2720,22 +2732,22 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 OperationRegion (LPC0, PCI_Config, 0x40, 0xC0)
                 Field (LPC0, AnyAcc, NoLock, Preserve)
                 {
-                            Offset (0x40), 
+                    Offset (0x40), 
                     IOD0,   8, 
                     IOD1,   8, 
-                            Offset (0x78), 
+                    Offset (0x78), 
                         ,   6, 
                     GR03,   2, 
-                            Offset (0x7A), 
+                    Offset (0x7A), 
                     GR08,   2, 
                     GR09,   2, 
                     GR0A,   2, 
                     GR0B,   2, 
-                            Offset (0x7C), 
+                    Offset (0x7C), 
                         ,   2, 
                     GR19,   2, 
-                            Offset (0x80), 
-                            Offset (0xB0), 
+                    Offset (0x80), 
+                    Offset (0xB0), 
                     RAEN,   1, 
                         ,   13, 
                     RCBA,   18
@@ -2743,8 +2755,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (DMAC)
                 {
-                    Name (_HID, EisaId ("PNP0200"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0200"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x0000,             // Range Minimum
@@ -2777,8 +2789,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (FWHD)
                 {
-                    Name (_HID, EisaId ("INT0800"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("INT0800"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         Memory32Fixed (ReadOnly,
                             0xFF000000,         // Address Base
@@ -2789,17 +2801,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HPET)
                 {
-                    Name (_HID, EisaId ("PNP0103"))
-                    Name (_CID, EisaId ("PNP0C01"))
-                    Name (_STA, 0x0F)
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0103"))  // _HID: Hardware ID
+                    Name (_CID, EisaId ("PNP0C01"))  // _CID: Compatible ID
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
-       					IRQNoFlags ()
-					          {0}
-					       IRQNoFlags ()
-					          {8}
-					       IRQNoFlags ()
-					          {11}
+                        IRQNoFlags ()
+                            {0,8,11}
                         Memory32Fixed (ReadWrite,
                             0xFED00000,         // Address Base
                             0x00000400,         // Address Length
@@ -2809,8 +2817,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (IPIC)
                 {
-                    Name (_HID, EisaId ("PNP0000"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0000"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x0020,             // Range Minimum
@@ -2919,8 +2927,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (LDRC)
                 {
-                    Name (_HID, EisaId ("PNP0C02"))
-                    Name (_UID, 0x02)
+                    Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+                    Name (_UID, 0x02)  // _UID: Unique ID
                     Name (BUF0, ResourceTemplate ()
                     {
                         IO (Decode16,
@@ -3012,25 +3020,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             0x0800,             // Range Maximum
                             0x01,               // Alignment
                             0xFF,               // Length
-                            )
+                            _Y0F)
                         IO (Decode16,
                             0x0900,             // Range Minimum
                             0x0900,             // Range Maximum
                             0x01,               // Alignment
                             0xFF,               // Length
-                            )
+                            _Y10)
                         IO (Decode16,
                             0x0A00,             // Range Minimum
                             0x0A00,             // Range Maximum
                             0x01,               // Alignment
                             0xFF,               // Length
-                            )
+                            _Y11)
                         IO (Decode16,
                             0x0B00,             // Range Minimum
                             0x0B00,             // Range Maximum
                             0x01,               // Alignment
                             0xFF,               // Length
-                            )
+                            _Y12)
                         IO (Decode16,
                             0x1800,             // Range Minimum
                             0x1800,             // Range Maximum
@@ -3044,22 +3052,22 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             0x02,               // Length
                             )
                     })
-                    Method (_CRS, 0, NotSerialized)
+                    Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
-                        CreateWordField (BUF0, 0x72, IO0M)
-                        CreateWordField (BUF0, 0x74, IO0X)
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y0F._MIN, IO0M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y0F._MAX, IO0X)  // _MAX: Maximum Base Address
                         Store (GPBS, IO0M)
                         Store (GPBS, IO0X)
-                        CreateWordField (BUF0, 0x7A, IO1M)
-                        CreateWordField (BUF0, 0x7C, IO1X)
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y10._MIN, IO1M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y10._MAX, IO1X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0100), IO1M)
                         Store (Add (GPBS, 0x0100), IO1X)
-                        CreateWordField (BUF0, 0x82, IO2M)
-                        CreateWordField (BUF0, 0x84, IO2X)
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y11._MIN, IO2M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y11._MAX, IO2X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0200), IO2M)
                         Store (Add (GPBS, 0x0200), IO2X)
-                        CreateWordField (BUF0, 0x8A, IO3M)
-                        CreateWordField (BUF0, 0x8C, IO3X)
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y12._MIN, IO3M)  // _MIN: Minimum Base Address
+                        CreateWordField (BUF0, \_SB.PCI0.LPCB.LDRC._Y12._MAX, IO3X)  // _MAX: Maximum Base Address
                         Store (Add (GPBS, 0x0300), IO3M)
                         Store (Add (GPBS, 0x0300), IO3X)
                         Return (BUF0)
@@ -3068,8 +3076,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (RTC)
                 {
-                    Name (_HID, EisaId ("PNP0B00"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0B00"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x0070,             // Range Minimum
@@ -3082,8 +3090,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (TIMR)
                 {
-                    Name (_HID, EisaId ("PNP0100"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0100"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x0040,             // Range Minimum
@@ -3102,8 +3110,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (CWDT)
                 {
-                    Name (_HID, EisaId ("INT3F0D"))
-                    Name (_CID, EisaId ("PNP0C02"))
+                    Name (_HID, EisaId ("INT3F0D"))  // _HID: Hardware ID
+                    Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
                     Name (BUF0, ResourceTemplate ()
                     {
                         IO (Decode16,
@@ -3113,7 +3121,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             0x04,               // Length
                             )
                     })
-                    Method (_STA, 0, Serialized)
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (WDTE, One))
                         {
@@ -3125,7 +3133,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_CRS, 0, Serialized)
+                    Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
                     {
                         Return (BUF0)
                     }
@@ -3133,42 +3141,42 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SIO1)
                 {
-                    Name (_HID, EisaId ("PNP0C02"))
-                    Name (_UID, 0x0111)
+                    Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+                    Name (_UID, 0x0111)  // _UID: Unique ID
                     Name (CRS, ResourceTemplate ()
                     {
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x00,               // Alignment
-                            0x00,               // Length
-                            )
+                            0x01,               // Length
+                            _Y13)
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x00,               // Alignment
-                            0x00,               // Length
-                            )
+                            0x01,               // Length
+                            _Y14)
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x00,               // Alignment
-                            0x00,               // Length
-                            )
+                            0x01,               // Length
+                            _Y15)
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x00,               // Alignment
-                            0x00,               // Length
-                            )
+                            0x01,               // Length
+                            _Y16)
                     })
-                    Method (_CRS, 0, NotSerialized)
+                    Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
                         If (LAnd (LLess (SP1O, 0x03F0), LGreater (SP1O, 0xF0)))
                         {
-                            CreateWordField (CRS, 0x02, IOIM)
-                            CreateWordField (CRS, 0x04, IOIX)
-                            CreateByteField (CRS, 0x07, IOIL)
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._MIN, IOIM)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._MAX, IOIX)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y13._LEN, IOIL)  // _LEN: Length
                             Store (SP1O, IOIM)
                             Store (SP1O, IOIX)
                             Store (0x02, IOIL)
@@ -3176,9 +3184,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (GPIB)
                         {
-                            CreateWordField (CRS, 0x0A, GP0M)
-                            CreateWordField (CRS, 0x0C, GP0X)
-                            CreateByteField (CRS, 0x0F, GP0L)
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._MIN, GP0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._MAX, GP0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y14._LEN, GP0L)  // _LEN: Length
                             Store (GPIB, GP0M)
                             Store (GPIB, GP0X)
                             Store (GPIL, GP0L)
@@ -3186,9 +3194,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (HWMB)
                         {
-                            CreateWordField (CRS, 0x12, HW0M)
-                            CreateWordField (CRS, 0x14, HW0X)
-                            CreateByteField (CRS, 0x17, HW0L)
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._MIN, HW0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._MAX, HW0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y15._LEN, HW0L)  // _LEN: Length
                             Store (HWMB, HW0M)
                             Store (HWMB, HW0X)
                             Store (HWML, HW0L)
@@ -3196,9 +3204,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         If (PMEB)
                         {
-                            CreateWordField (CRS, 0x1A, PM0M)
-                            CreateWordField (CRS, 0x1C, PM0X)
-                            CreateByteField (CRS, 0x1F, PM0L)
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._MIN, PM0M)  // _MIN: Minimum Base Address
+                            CreateWordField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._MAX, PM0X)  // _MAX: Maximum Base Address
+                            CreateByteField (CRS, \_SB.PCI0.LPCB.SIO1._Y16._LEN, PM0L)  // _LEN: Length
                             Store (PMEB, PM0M)
                             Store (PMEB, PM0X)
                             Store (PMEL, PM0L)
@@ -3290,29 +3298,29 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     IndexField (INDX, DATA, ByteAcc, NoLock, Preserve)
                     {
-                                Offset (0x07), 
+                        Offset (0x07), 
                         LDN,    8, 
-                                Offset (0x21), 
+                        Offset (0x21), 
                         SCF1,   8, 
                         SCF2,   8, 
                         SCF3,   8, 
                         SCF4,   8, 
                         SCF5,   8, 
                         SCF6,   8, 
-                                Offset (0x29), 
+                        Offset (0x29), 
                         CKCF,   8, 
-                                Offset (0x30), 
+                        Offset (0x30), 
                         ACTR,   8, 
-                                Offset (0x60), 
+                        Offset (0x60), 
                         IOAH,   8, 
                         IOAL,   8, 
                         IOH2,   8, 
                         IOL2,   8, 
-                                Offset (0x70), 
+                        Offset (0x70), 
                         INTR,   8, 
-                                Offset (0x74), 
+                        Offset (0x74), 
                         DMCH,   8, 
-                                Offset (0xE0), 
+                        Offset (0xE0), 
                         RGE0,   8, 
                         RGE1,   8, 
                         RGE2,   8, 
@@ -3323,7 +3331,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         RGE7,   8, 
                         RGE8,   8, 
                         RGE9,   8, 
-                                Offset (0xF0), 
+                        Offset (0xF0), 
                         OPT0,   8, 
                         OPT1,   8, 
                         OPT2,   8, 
@@ -3340,14 +3348,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Field (RNTR, ByteAcc, NoLock, Preserve)
                     {
                         PMES,   8, 
-                                Offset (0x04), 
+                        Offset (0x04), 
                         PMEE,   1, 
-                                Offset (0x05), 
-                                Offset (0x08), 
+                        Offset (0x05), 
+                        Offset (0x08), 
                         PMS3,   8, 
                         PMS2,   8, 
                         PMS1,   8, 
-                                Offset (0x0C), 
+                        Offset (0x0C), 
                         PME3,   8, 
                         PME2,   8, 
                         PME1,   8
@@ -3427,61 +3435,61 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x01,               // Alignment
-                            0x00,               // Length
-                            )
-                        IRQNoFlags ()
+                            0x01,               // Length
+                            _Y19)
+                        IRQNoFlags (_Y17)
                             {}
-                        DMA (Compatibility, NotBusMaster, Transfer8, )
+                        DMA (Compatibility, NotBusMaster, Transfer8, _Y18)
                             {}
                     })
-                    CreateWordField (CRS1, 0x09, IRQM)
-                    CreateByteField (CRS1, 0x0C, DMAM)
-                    CreateWordField (CRS1, 0x02, IO11)
-                    CreateWordField (CRS1, 0x04, IO12)
-                    CreateByteField (CRS1, 0x07, LEN1)
+                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y17._INT, IRQM)  // _INT: Interrupts
+                    CreateByteField (CRS1, \_SB.PCI0.LPCB.SIO1._Y18._DMA, DMAM)  // _DMA: Direct Memory Access
+                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._MIN, IO11)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._MAX, IO12)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS1, \_SB.PCI0.LPCB.SIO1._Y19._LEN, LEN1)  // _LEN: Length
                     Name (CRS2, ResourceTemplate ()
                     {
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x01,               // Alignment
-                            0x00,               // Length
-                            )
+                            0x01,               // Length
+                            _Y1C)
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x01,               // Alignment
-                            0x00,               // Length
-                            )
-                        IRQNoFlags ()
+                            0x01,               // Length
+                            _Y1D)
+                        IRQNoFlags (_Y1A)
                             {}
-                        DMA (Compatibility, NotBusMaster, Transfer8, )
+                        DMA (Compatibility, NotBusMaster, Transfer8, _Y1B)
                             {2}
                     })
-                    CreateWordField (CRS2, 0x11, IRQE)
-                    CreateByteField (CRS2, 0x14, DMAE)
-                    CreateWordField (CRS2, 0x02, IO21)
-                    CreateWordField (CRS2, 0x04, IO22)
-                    CreateByteField (CRS2, 0x07, LEN2)
-                    CreateWordField (CRS2, 0x0A, IO31)
-                    CreateWordField (CRS2, 0x0C, IO32)
-                    CreateByteField (CRS2, 0x0F, LEN3)
+                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1A._INT, IRQE)  // _INT: Interrupts
+                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1B._DMA, DMAE)  // _DMA: Direct Memory Access
+                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._MIN, IO21)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._MAX, IO22)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1C._LEN, LEN2)  // _LEN: Length
+                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._MIN, IO31)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._MAX, IO32)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS2, \_SB.PCI0.LPCB.SIO1._Y1D._LEN, LEN3)  // _LEN: Length
                     Name (CRS4, ResourceTemplate ()
                     {
                         IO (Decode16,
                             0x0000,             // Range Minimum
                             0x0000,             // Range Maximum
                             0x01,               // Alignment
-                            0x00,               // Length
-                            )
-                        IRQ (Edge, ActiveLow, Shared, )
+                            0x01,               // Length
+                            _Y1F)
+                        IRQ (Edge, ActiveLow, Shared, _Y1E)
                             {}
                     })
-                    CreateWordField (CRS4, 0x09, IRQL)
-                    CreateWordField (CRS4, 0x02, IOHL)
-                    CreateWordField (CRS4, 0x04, IORL)
-                    CreateByteField (CRS4, 0x06, ALMN)
-                    CreateByteField (CRS4, 0x07, LENG)
+                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1E._INT, IRQL)  // _INT: Interrupts
+                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._MIN, IOHL)  // _MIN: Minimum Base Address
+                    CreateWordField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._MAX, IORL)  // _MAX: Maximum Base Address
+                    CreateByteField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._ALN, ALMN)  // _ALN: Alignment
+                    CreateByteField (CRS4, \_SB.PCI0.LPCB.SIO1._Y1F._LEN, LENG)  // _LEN: Length
                     Method (DCRS, 2, NotSerialized)
                     {
                         ENFG (CGLD (Arg0))
@@ -3735,17 +3743,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (PS2K)
                 {
-                    Method (_HID, 0, NotSerialized)
+                    Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
                     {
                         Return (HIDK)
                     }
 
-                    Method (_CID, 0, NotSerialized)
+                    Method (_CID, 0, NotSerialized)  // _CID: Compatible ID
                     {
                         Return (CIDK)
                     }
 
-                    Method (_STA, 0, NotSerialized)
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (And (IOST, 0x0400))
                         {
@@ -3757,7 +3765,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x0060,             // Range Minimum
@@ -3774,7 +3782,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         IRQNoFlags ()
                             {1}
                     })
-                    Name (_PRS, ResourceTemplate ()
+                    Name (_PRS, ResourceTemplate ()  // _PRS: Possible Resource Settings
                     {
                         StartDependentFn (0x00, 0x00)
                         {
@@ -3795,7 +3803,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                         EndDependentFn ()
                     })
-                    Method (_PSW, 1, NotSerialized)
+                    Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
                     {
                         Store (Arg0, KBFG)
                     }
@@ -3806,24 +3814,24 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (KBFG, One)
                 }
 
-                Method (PS2K._PRW, 0, NotSerialized)
+                Method (PS2K._PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x1D, 0x03))
                 }
 
                 Device (PS2M)
                 {
-                    Method (_HID, 0, NotSerialized)
+                    Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
                     {
                         Return (HIDM)
                     }
 
-                    Method (_CID, 0, NotSerialized)
+                    Method (_CID, 0, NotSerialized)  // _CID: Compatible ID
                     {
                         Return (CIDM)
                     }
 
-                    Method (_STA, 0, NotSerialized)
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         If (And (IOST, 0x4000))
                         {
@@ -3857,7 +3865,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         IRQNoFlags ()
                             {12}
                     })
-                    Method (_CRS, 0, NotSerialized)
+                    Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
                         If (And (IOST, 0x0400))
                         {
@@ -3869,7 +3877,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_PRS, ResourceTemplate ()
+                    Name (_PRS, ResourceTemplate ()  // _PRS: Possible Resource Settings
                     {
                         StartDependentFn (0x00, 0x00)
                         {
@@ -3878,7 +3886,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                         EndDependentFn ()
                     })
-                    Method (_PSW, 1, NotSerialized)
+                    Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
                     {
                         Store (Arg0, MSFG)
                     }
@@ -3889,40 +3897,40 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (MSFG, One)
                 }
 
-                Method (PS2M._PRW, 0, NotSerialized)
+                Method (PS2M._PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                 {
                     Return (GPRW (0x1D, 0x03))
                 }
 
                 Device (UAR1)
                 {
-                    Name (_UID, One)
-                    Method (_HID, 0, NotSerialized)
+                    Name (_UID, One)  // _UID: Unique ID
+                    Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
                     {
                         Return (^^SIO1.UHID (Zero))
                     }
 
-                    Method (_STA, 0, NotSerialized)
+                    Method (_STA, 0, NotSerialized)  // _STA: Status
                     {
                         Return (^^SIO1.DSTA (Zero))
                     }
 
-                    Method (_DIS, 0, NotSerialized)
+                    Method (_DIS, 0, NotSerialized)  // _DIS: Disable Device
                     {
                         ^^SIO1.DCNT (Zero, Zero)
                     }
 
-                    Method (_CRS, 0, NotSerialized)
+                    Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
                         Return (^^SIO1.DCRS (Zero, Zero))
                     }
 
-                    Method (_SRS, 1, NotSerialized)
+                    Method (_SRS, 1, NotSerialized)  // _SRS: Set Resource Settings
                     {
                         ^^SIO1.DSRS (Arg0, Zero)
                     }
 
-                    Name (_PRS, ResourceTemplate ()
+                    Name (_PRS, ResourceTemplate ()  // _PRS: Possible Resource Settings
                     {
                         StartDependentFn (0x00, 0x00)
                         {
@@ -3995,8 +4003,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (RMSC)
                 {
-                    Name (_HID, EisaId ("PNP0C02"))
-                    Name (_UID, 0x10)
+                    Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+                    Name (_UID, 0x10)  // _UID: Unique ID
                     Name (CRS1, ResourceTemplate ()
                     {
                         IO (Decode16,
@@ -4159,7 +4167,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             0x02,               // Length
                             )
                     })
-                    Method (_CRS, 0, NotSerialized)
+                    Method (_CRS, 0, NotSerialized)  // _CRS: Current Resource Settings
                     {
                         If (And (MBEC, 0xFFFF))
                         {
@@ -4172,10 +4180,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Device (COPR)
+                Device (MATH)
                 {
-                    Name (_HID, EisaId ("PNP0C04"))
-                    Name (_CRS, ResourceTemplate ()
+                    Name (_HID, EisaId ("PNP0C04"))  // _HID: Hardware ID
+                    Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
                     {
                         IO (Decode16,
                             0x00F0,             // Range Minimum
@@ -4188,14 +4196,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     })
                 }
 
-                Method (_DSM, 4, NotSerialized)
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     Store (Package (0x06)
                         {
                             "device-id", 
                             Buffer (0x04)
                             {
-                                0x18, 0x3A, 0x00, 0x00
+                                 0x18, 0x3A, 0x00, 0x00
                             }, 
 
                             "name", 
@@ -4217,57 +4225,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP01)
             {
-                Name (_ADR, 0x001C0000)
+                Name (_ADR, 0x001C0000)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -4288,17 +4296,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -4336,16 +4344,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -4397,25 +4405,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -4461,7 +4469,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -4474,57 +4482,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP02)
             {
-                Name (_ADR, 0x001C0001)
+                Name (_ADR, 0x001C0001)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -4545,17 +4553,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -4593,16 +4601,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -4654,25 +4662,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -4718,7 +4726,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -4731,57 +4739,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP03)
             {
-                Name (_ADR, 0x001C0002)
+                Name (_ADR, 0x001C0002)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -4802,17 +4810,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -4850,16 +4858,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -4911,25 +4919,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -4975,7 +4983,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -4988,57 +4996,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP04)
             {
-                Name (_ADR, 0x001C0003)
+                Name (_ADR, 0x001C0003)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -5059,17 +5067,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -5107,16 +5115,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -5168,25 +5176,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -5232,7 +5240,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -5245,57 +5253,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP05)
             {
-                Name (_ADR, 0x001C0004)
+                Name (_ADR, 0x001C0004)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -5316,17 +5324,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -5364,16 +5372,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -5425,25 +5433,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -5489,7 +5497,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -5501,7 +5509,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (MVL1)
                 {
-                    Name (_ADR, Zero)
+                    Name (_ADR, Zero)  // _ADR: Address
                     OperationRegion (CF40, PCI_Config, 0x40, 0x04)
                     Field (CF40, ByteAcc, NoLock, Preserve)
                     {
@@ -5510,7 +5518,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             ,   1, 
                         CAB0,   1, 
                         CHE1,   1, 
-                                Offset (0x01), 
+                        Offset (0x01), 
                         AHEN,   1, 
                             ,   3, 
                         PRT0,   1, 
@@ -5522,7 +5530,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         PATA,   1, 
                             ,   6, 
                         WTEN,   1, 
-                                Offset (0x04)
+                        Offset (0x04)
                     }
 
                     Name (PIOT, Package (0x05)
@@ -5571,8 +5579,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (FLGS, 0x1F)
                     Device (IDE0)
                     {
-                        Name (_ADR, Zero)
-                        Method (_GTM, 0, NotSerialized)
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Method (_GTM, 0, NotSerialized)  // _GTM: Get Timing Mode
                         {
                             Store (DerefOf (Index (PIOT, PIO0)), Local0)
                             Store (DerefOf (Index (PIOT, PIO1)), Local2)
@@ -5618,7 +5626,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (IDEB)
                         }
 
-                        Method (_STM, 3, NotSerialized)
+                        Method (_STM, 3, NotSerialized)  // _STM: Set Timing Mode
                         {
                             Store (Arg0, IDEB)
                             Store (GTM0, Local0)
@@ -5664,16 +5672,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV0)
                         {
-                            Name (_ADR, Zero)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -5697,16 +5705,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV1)
                         {
-                            Name (_ADR, One)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, One)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -5731,8 +5739,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (IDE1)
                     {
-                        Name (_ADR, One)
-                        Method (_GTM, 0, NotSerialized)
+                        Name (_ADR, One)  // _ADR: Address
+                        Method (_GTM, 0, NotSerialized)  // _GTM: Get Timing Mode
                         {
                             Store (DerefOf (Index (PIOT, PIO2)), Local0)
                             Store (DerefOf (Index (PIOT, PIO3)), Local2)
@@ -5778,7 +5786,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (IDEB)
                         }
 
-                        Method (_STM, 3, NotSerialized)
+                        Method (_STM, 3, NotSerialized)  // _STM: Set Timing Mode
                         {
                             Store (Arg0, IDEB)
                             Store (GTM0, Local0)
@@ -5824,16 +5832,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV0)
                         {
-                            Name (_ADR, Zero)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -5857,16 +5865,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV1)
                         {
-                            Name (_ADR, One)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, One)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -5892,7 +5900,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (MVL2)
                 {
-                    Name (_ADR, One)
+                    Name (_ADR, One)  // _ADR: Address
                     OperationRegion (CF40, PCI_Config, 0x40, 0x04)
                     Field (CF40, ByteAcc, NoLock, Preserve)
                     {
@@ -5901,7 +5909,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             ,   1, 
                         CAB0,   1, 
                         CHE1,   1, 
-                                Offset (0x01), 
+                        Offset (0x01), 
                         AHEN,   1, 
                             ,   3, 
                         PRT0,   1, 
@@ -5913,7 +5921,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         PATA,   1, 
                             ,   6, 
                         WTEN,   1, 
-                                Offset (0x04)
+                        Offset (0x04)
                     }
 
                     Name (PIOT, Package (0x05)
@@ -5962,8 +5970,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (FLGS, 0x1F)
                     Device (IDE0)
                     {
-                        Name (_ADR, Zero)
-                        Method (_GTM, 0, NotSerialized)
+                        Name (_ADR, Zero)  // _ADR: Address
+                        Method (_GTM, 0, NotSerialized)  // _GTM: Get Timing Mode
                         {
                             Store (DerefOf (Index (PIOT, PIO0)), Local0)
                             Store (DerefOf (Index (PIOT, PIO1)), Local2)
@@ -6006,7 +6014,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (IDEB)
                         }
 
-                        Method (_STM, 3, NotSerialized)
+                        Method (_STM, 3, NotSerialized)  // _STM: Set Timing Mode
                         {
                             Store (Arg0, IDEB)
                             Store (GTM0, Local0)
@@ -6052,16 +6060,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV0)
                         {
-                            Name (_ADR, Zero)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -6085,16 +6093,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV1)
                         {
-                            Name (_ADR, One)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, One)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -6119,8 +6127,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (IDE1)
                     {
-                        Name (_ADR, One)
-                        Method (_GTM, 0, NotSerialized)
+                        Name (_ADR, One)  // _ADR: Address
+                        Method (_GTM, 0, NotSerialized)  // _GTM: Get Timing Mode
                         {
                             Store (DerefOf (Index (PIOT, PIO2)), Local0)
                             Store (DerefOf (Index (PIOT, PIO3)), Local2)
@@ -6163,7 +6171,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (IDEB)
                         }
 
-                        Method (_STM, 3, NotSerialized)
+                        Method (_STM, 3, NotSerialized)  // _STM: Set Timing Mode
                         {
                             Store (Arg0, IDEB)
                             Store (GTM0, Local0)
@@ -6209,16 +6217,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV0)
                         {
-                            Name (_ADR, Zero)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, Zero)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xA0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -6242,16 +6250,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         Device (DRV1)
                         {
-                            Name (_ADR, One)
-                            Method (_GTF, 0, NotSerialized)
+                            Name (_ADR, One)  // _ADR: Address
+                            Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                             {
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local0)
                                 Store (Buffer (0x07)
                                     {
-                                        0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                                         0x03, 0x00, 0x00, 0x00, 0x00, 0xB0, 0xEF
                                     }, Local1)
                                 CreateByteField (Local0, One, PIOM)
                                 CreateByteField (Local1, One, DMAM)
@@ -6278,57 +6286,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP06)
             {
-                Name (_ADR, 0x001C0005)
+                Name (_ADR, 0x001C0005)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -6349,17 +6357,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -6397,16 +6405,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -6458,25 +6466,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -6522,7 +6530,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -6535,57 +6543,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP07)
             {
-                Name (_ADR, 0x001C0006)
+                Name (_ADR, 0x001C0006)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -6606,17 +6614,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -6654,16 +6662,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -6715,25 +6723,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -6779,7 +6787,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -6792,57 +6800,57 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (RP08)
             {
-                Name (_ADR, 0x001C0007)
+                Name (_ADR, 0x001C0007)  // _ADR: Address
                 OperationRegion (PXCS, PCI_Config, Zero, 0x0380)
                 Field (PXCS, AnyAcc, NoLock, Preserve)
                 {
                     VDID,   32, 
-                            Offset (0x50), 
+                    Offset (0x50), 
                     L0SE,   1, 
                         ,   3, 
                     LDIS,   1, 
-                            Offset (0x51), 
-                            Offset (0x52), 
+                    Offset (0x51), 
+                    Offset (0x52), 
                         ,   13, 
                     LASX,   1, 
-                            Offset (0x54), 
+                    Offset (0x54), 
                         ,   6, 
                     HPCE,   1, 
-                            Offset (0x5A), 
+                    Offset (0x5A), 
                     ABPX,   1, 
                         ,   2, 
                     PDCX,   1, 
                         ,   2, 
                     PDSX,   1, 
-                            Offset (0x5B), 
-                            Offset (0x60), 
-                            Offset (0x62), 
+                    Offset (0x5B), 
+                    Offset (0x60), 
+                    Offset (0x62), 
                     PSPX,   1, 
                     PMEP,   1, 
-                            Offset (0xA4), 
+                    Offset (0xA4), 
                     D3HT,   2, 
-                            Offset (0xD8), 
+                    Offset (0xD8), 
                         ,   30, 
                     HPEX,   1, 
                     PMEX,   1, 
-                            Offset (0xE2), 
+                    Offset (0xE2), 
                         ,   2, 
                     L23E,   1, 
                     L23R,   1, 
-                            Offset (0x324), 
+                    Offset (0x324), 
                         ,   3, 
                     LEDM,   1
                 }
 
                 Field (PXCS, AnyAcc, NoLock, WriteAsZeros)
                 {
-                            Offset (0xDC), 
+                    Offset (0xDC), 
                         ,   30, 
                     HPSX,   1, 
                     PMSX,   1
                 }
 
-                Method (_STA, 0, NotSerialized)
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     If (LEqual (VDID, 0xFFFFFFFF))
                     {
@@ -6863,17 +6871,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
+                Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                 {
-                    Name (T_1, Zero)
-                    Name (T_0, Zero)
+                    Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+                    Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                     While (One)
                     {
                         Store (ToInteger (Arg0), T_0)
                         If (LEqual (T_0, Buffer (0x10)
                                 {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
+                                    /* 0000 */   0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D,
+                                    /* 0008 */   0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
                                 }))
                         {
                             While (One)
@@ -6911,16 +6919,16 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                             Else
                                             {
                                                 Return (Buffer (0x10)
                                                 {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                                    /* 0000 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                                    /* 0008 */   0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                                 })
                                             }
                                         }
@@ -6972,25 +6980,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Return (Buffer (One)
                     {
-                        0x00
+                         0x00
                     })
                 }
 
                 Device (PXSX)
                 {
-                    Name (_ADR, Zero)
-                    Method (_PRW, 0, NotSerialized)
+                    Name (_ADR, Zero)  // _ADR: Address
+                    Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
                     {
                         Return (GPRW (0x09, 0x04))
                     }
 
-                    Method (_RMV, 0, NotSerialized)
+                    Method (_RMV, 0, NotSerialized)  // _RMV: Removal Status
                     {
                         Return (HPCE)
                     }
                 }
 
-                Method (_REG, 2, NotSerialized)
+                Method (_REG, 2, NotSerialized)  // _REG: Region Availability
                 {
                     If (LAnd (LEqual (Arg0, 0x02), LEqual (Arg1, One)))
                     {
@@ -7036,7 +7044,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                 }
 
-                Method (_PRT, 0, NotSerialized)
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -7049,8 +7057,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (P0P2)
             {
-                Name (_ADR, 0x00010000)
-                Method (_PRT, 0, NotSerialized)
+                Name (_ADR, 0x00010000)  // _ADR: Address
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -7063,8 +7071,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (P0PA)
             {
-                Name (_ADR, 0x00010001)
-                Method (_PRT, 0, NotSerialized)
+                Name (_ADR, 0x00010001)  // _ADR: Address
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -7077,8 +7085,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (P0PB)
             {
-                Name (_ADR, 0x00010002)
-                Method (_PRT, 0, NotSerialized)
+                Name (_ADR, 0x00010002)  // _ADR: Address
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
                     {
@@ -7091,37 +7099,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (B0D4)
             {
-                Name (_ADR, 0x00040000)
+                Name (_ADR, 0x00040000)  // _ADR: Address
             }
 
             Device (PEG0)
             {
-                Name (_ADR, 0x00020000)
+                Name (_ADR, 0x00020000)  // _ADR: Address
                 Device (GFX0)
                 {
-                    Name (_ADR, 0x0000FFFE)
-                    Method (_DSM, 4, NotSerialized)
+                    Name (_ADR, 0x0000FFFE)  // _ADR: Address
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
-                        Store (Package (0x8)
+                        Store (Package (0x02)
                             {
-                                "device_type", 
-                                Buffer (0x08)
+                                "hda-gfx", 
+                                Buffer (0x0A)
                                 {
-                                    "display"
-                                }, 
-
-                                "model", 
-                                Buffer ()
-                                {
-                                    "Intel HD Graphics 4600"
-                                }, 
-
-                                "built-in", 
-                                Buffer (One)
-                                {
-                                    0x00
+                                    "onboard-1"
                                 }
-								,								"AAPL,ig-platform-id",								Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d }                            }, Local0)
+                            }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)
                     }
@@ -7130,26 +7126,26 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (MCHC)
             {
-                Name (_ADR, Zero)
+                Name (_ADR, Zero)  // _ADR: Address
             }
 
             Device (IMEI)
             {
-                Name (_ADR, 0x00160000)
-                Method (_DSM, 4, NotSerialized)
+                Name (_ADR, 0x00160000)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     Store (Package (0x04)
                         {
                             "device-id", 
                             Buffer (0x04)
                             {
-                                0x3A, 0x8C, 0x00, 0x00
+                                 0x3A, 0x8C, 0x00, 0x00
                             }, 
 
                             "vendor-id", 
                             Buffer (0x04)
                             {
-                                0x86, 0x80, 0x00, 0x00
+                                 0x86, 0x80, 0x00, 0x00
                             }
                         }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
@@ -7159,27 +7155,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (HDM0)
             {
-                Name (_ADR, 0x00030000)
-                Method (_DSM, 4, NotSerialized)
+                Name (_ADR, 0x00030000)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     Store (Package (0x06)
                         {
                             "hda-gfx", 
                             Buffer (0x0A)
                             {
-                                "onboard-1"
+                                "onboard-2"
                             }, 
 
                             "layout-id", 
                             Buffer (0x04)
                             {
-                                0x01, 0x00, 0x00, 0x00
+                                 0x01, 0x00, 0x00, 0x00
                             }, 
 
                             "PinConfigurations", 
                             Buffer (0x04)
                             {
-                                0xE0, 0x00, 0x56, 0x28
+                                 0xE0, 0x00, 0x56, 0x28
                             }
                         }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
@@ -7190,7 +7186,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Scope (\_GPE)
         {
-            Method (_L1D, 0, NotSerialized)
+            Method (_L1D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
             {
                 \_SB.PCI0.LPCB.SIOH ()
                 Notify (\_SB.PWRB, 0x02)
@@ -7199,18 +7195,18 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (PNLF)
         {
-            Name (_HID, EisaId ("APP0002"))
-            Name (_CID, "backlight")
-            Name (_UID, 0x0A)
-            Name (_STA, 0x0B)
+            Name (_HID, EisaId ("APP0002"))  // _HID: Hardware ID
+            Name (_CID, "backlight")  // _CID: Compatible ID
+            Name (_UID, 0x0A)  // _UID: Unique ID
+            Name (_STA, 0x0B)  // _STA: Status
         }
 
         Device (PWRB)
         {
-            Name (_HID, EisaId ("PNP0C0C"))
-            Name (_UID, 0xAA)
-            Name (_STA, 0x0B)
-            Method (_PRW, 0, NotSerialized)
+            Name (_HID, EisaId ("PNP0C0C"))  // _HID: Hardware ID
+            Name (_UID, 0xAA)  // _UID: Unique ID
+            Name (_STA, 0x0B)  // _STA: Status
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x1D, 0x03))
             }
@@ -7243,39 +7239,39 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         OperationRegion (PMIO, SystemIO, PMBS, 0x80)
         Field (PMIO, ByteAcc, NoLock, Preserve)
         {
-                    Offset (0x28), 
-                    Offset (0x2A), 
+            Offset (0x28), 
+            Offset (0x2A), 
                 ,   3, 
             GPE3,   1, 
                 ,   7, 
             GPEB,   1, 
-                    Offset (0x3C), 
+            Offset (0x3C), 
                 ,   1, 
             UPRW,   1, 
-                    Offset (0x42), 
+            Offset (0x42), 
                 ,   1, 
             GPEC,   1
         }
 
         Field (PMIO, ByteAcc, NoLock, WriteAsZeros)
         {
-                    Offset (0x20), 
-                    Offset (0x22), 
+            Offset (0x20), 
+            Offset (0x22), 
                 ,   3, 
             GPS3,   1, 
                 ,   7, 
             GPSB,   1, 
-                    Offset (0x64), 
+            Offset (0x64), 
                 ,   9, 
             SCIS,   1, 
-                    Offset (0x66)
+            Offset (0x66)
         }
 
         OperationRegion (PMLP, SystemIO, Add (PMBS, 0x80), 0x20)
         Field (PMLP, ByteAcc, NoLock, Preserve)
         {
-                    Offset (0x10), 
-                    Offset (0x11), 
+            Offset (0x10), 
+            Offset (0x11), 
             GE08,   1, 
                 ,   8, 
             GE17,   1, 
@@ -7285,12 +7281,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             GE45,   1, 
                 ,   5, 
             GE51,   1, 
-                    Offset (0x20)
+            Offset (0x20)
         }
 
         Field (PMLP, ByteAcc, NoLock, WriteAsZeros)
         {
-                    Offset (0x01), 
+            Offset (0x01), 
             GS08,   1, 
                 ,   8, 
             GS17,   1, 
@@ -7300,7 +7296,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             GS45,   1, 
                 ,   5, 
             GS51,   1, 
-                    Offset (0x10)
+            Offset (0x10)
         }
 
         OperationRegion (GPR, SystemIO, GPBS, 0x0400)
@@ -7314,7 +7310,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             GIO1,   8, 
             GIO2,   8, 
             GIO3,   8, 
-                    Offset (0x0C), 
+            Offset (0x0C), 
             GL00,   8, 
             GL01,   8, 
             GL02,   8, 
@@ -7322,13 +7318,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 ,   2, 
             GP27,   1, 
             GP28,   1, 
-                    Offset (0x10), 
-                    Offset (0x18), 
+            Offset (0x10), 
+            Offset (0x18), 
             GB00,   8, 
             GB01,   8, 
             GB02,   8, 
             GB03,   8, 
-                    Offset (0x2C), 
+            Offset (0x2C), 
             GIV0,   8, 
             GIV1,   8, 
             GIV2,   8, 
@@ -7345,7 +7341,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             GL05,   8, 
             GL06,   8, 
             GL07,   8, 
-                    Offset (0x40), 
+            Offset (0x40), 
             GU08,   8, 
             GU09,   8, 
             GU0A,   8, 
@@ -7363,7 +7359,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         OperationRegion (GPRL, SystemIO, GPBS, 0x40)
         Field (GPRL, ByteAcc, NoLock, Preserve)
         {
-                    Offset (0x01), 
+            Offset (0x01), 
             GO08,   1, 
             GO09,   1, 
                 ,   4, 
@@ -7374,8 +7370,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             GO45,   1, 
                 ,   5, 
             GO51,   1, 
-                    Offset (0x10), 
-                    Offset (0x30), 
+            Offset (0x10), 
+            Offset (0x30), 
             GR00,   32, 
             GR01,   32, 
             GR02,   32
@@ -7384,24 +7380,24 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         OperationRegion (RCRB, SystemMemory, SRCB, 0x4000)
         Field (RCRB, DWordAcc, Lock, Preserve)
         {
-                    Offset (0x1000), 
-                    Offset (0x2330), 
+            Offset (0x1000), 
+            Offset (0x2330), 
             AFEA,   32, 
             AFED,   32, 
             AFES,   16, 
             AFER,   16, 
-                    Offset (0x3000), 
-                    Offset (0x3404), 
+            Offset (0x3000), 
+            Offset (0x3404), 
             HPAS,   2, 
                 ,   5, 
             HPAE,   1, 
-                    Offset (0x3418), 
+            Offset (0x3418), 
                 ,   1, 
             ADSD,   1, 
             SATD,   1, 
             SMBD,   1, 
             HDAD,   1, 
-                    Offset (0x341A), 
+            Offset (0x341A), 
             RP1D,   1, 
             RP2D,   1, 
             RP3D,   1, 
@@ -7410,7 +7406,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             RP6D,   1, 
             RP7D,   1, 
             RP8D,   1, 
-                    Offset (0x359C), 
+            Offset (0x359C), 
             UP0D,   1, 
             UP1D,   1, 
             UP2D,   1, 
@@ -7426,7 +7422,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             UPCD,   1, 
             UPDD,   1, 
                 ,   1, 
-                    Offset (0x359E)
+            Offset (0x359E)
         }
 
         OperationRegion (IO_P, SystemIO, 0x1000, 0x04)
@@ -7453,7 +7449,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Return (TEMP)
             }
-			Return (Zero)        }
+            Return (Zero)
+        }
 
         Method (RDGP, 1, NotSerialized)
         {
@@ -7470,7 +7467,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Return (TEMP)
             }
-			Return (Zero)        }
+            Return (Zero)
+        }
 
         Method (WTGP, 2, NotSerialized)
         {
@@ -7643,50 +7641,50 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Name (OBFF, Zero)
         Device (GLAN)
         {
-            Name (_ADR, 0x00190000)
-            Method (_PRW, 0, NotSerialized)
+            Name (_ADR, 0x00190000)  // _ADR: Address
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x0D, 0x04))
             }
 
-            Method (_DSM, 4, NotSerialized)
+            Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
                 Store (Package (0x0E)
                     {
                         "built-in", 
                         Buffer (0x01)
                         {
-                            0x00
+                             0x00
                         }, 
 
                         "model", 
-                        Buffer ()
+                        Buffer (0x08)
                         {
-                            "I217-V"
+                            "Unknown"
                         }, 
 
                         "device_type", 
                         Buffer (0x09)
                         {
-                            "ethernet"
+                            "Ethernet"
                         }, 
 
                         "device-id", 
                         Buffer (0x04)
                         {
-                            0x3B, 0x15, 0x00, 0x00
+                             0x3B, 0x15, 0x00, 0x00
                         }, 
 
                         "vendor-id", 
                         Buffer (0x04)
                         {
-                            0x86, 0x80, 0x00, 0x00
+                             0x86, 0x80, 0x00, 0x00
                         }, 
 
                         "name", 
-                        Buffer ()
+                        Buffer (0x0D)
                         {
-                            "Intel Corporation, Ethernet Connection I217-V"
+                            "pci8086,153b"
                         }, 
 
                         "compatible", 
@@ -7699,25 +7697,25 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Local0)
             }
 
-            Name (_SUN, 0x00000002)
+            Name (_SUN, 0x00000002)  // _SUN: Slot User Number
         }
 
         Device (EHC1)
         {
-            Name (_ADR, 0x001D0000)
+            Name (_ADR, 0x001D0000)  // _ADR: Address
             OperationRegion (PWKE, PCI_Config, 0x54, 0x12)
             Field (PWKE, DWordAcc, NoLock, Preserve)
             {
-                        Offset (0x01), 
+                Offset (0x01), 
                 PMEE,   1, 
                     ,   6, 
                 PMES,   1, 
-                        Offset (0x0E), 
+                Offset (0x0E), 
                     ,   1, 
                 PWUC,   8
             }
 
-            Method (_PSW, 1, NotSerialized)
+            Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
             {
                 If (Arg0)
                 {
@@ -7729,23 +7727,23 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_S3D, 0, NotSerialized)
+            Method (_S3D, 0, NotSerialized)  // _S3D: S3 Device State
             {
                 Return (0x02)
             }
 
-            Method (_S4D, 0, NotSerialized)
+            Method (_S4D, 0, NotSerialized)  // _S4D: S4 Device State
             {
                 Return (0x02)
             }
 
             Device (HUBN)
             {
-                Name (_ADR, Zero)
+                Name (_ADR, Zero)  // _ADR: Address
                 Device (PR01)
                 {
-                    Name (_ADR, One)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, One)  // _ADR: Address
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCA, Package (0x04)
                         {
@@ -7757,14 +7755,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCA)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         Return (PLDP)
@@ -7772,8 +7770,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR11)
                     {
-                        Name (_ADR, One)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, One)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -7785,14 +7783,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -7801,8 +7799,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR12)
                     {
-                        Name (_ADR, 0x02)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x02)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -7814,14 +7812,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -7830,8 +7828,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR13)
                     {
-                        Name (_ADR, 0x03)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x03)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -7843,14 +7841,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -7865,8 +7863,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR14)
                     {
-                        Name (_ADR, 0x04)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x04)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -7878,27 +7876,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -7910,14 +7908,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -7953,8 +7951,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR15)
                     {
-                        Name (_ADR, 0x05)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x05)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -7966,27 +7964,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -7998,14 +7996,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -8041,8 +8039,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR16)
                     {
-                        Name (_ADR, 0x06)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x06)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8054,27 +8052,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -8086,14 +8084,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -8129,8 +8127,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR17)
                     {
-                        Name (_ADR, 0x07)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x07)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8142,27 +8140,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -8174,14 +8172,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -8217,8 +8215,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR18)
                     {
-                        Name (_ADR, 0x08)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x08)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8230,14 +8228,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -8246,40 +8244,46 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_PRW, 0, NotSerialized)
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x0D, 0x04))
             }
             Method (_DSM, 4, NotSerialized)
             {
-                Store (Package (0x02)
-                {
-                    "device-id", 
-                    Buffer (0x04)
-                    {
-                        0x8c, 0x26, 0x00, 0x00   /*<--------- ID MAC------*/
-                    }
+                Store (Package (0x15) {
+                    "AAPL,slot-name", "Built In",
+                    "name", "Intel EHCI Controller",
+                    "model", Buffer(0x3E) {"Intel 8 Series Chipset Family USB Enhanced Host Controller #1"},
+                    "device_type", Buffer (0x0E) {"USB Controller"},
+                    "AAPL,current-available", 0x0834,
+                    "AAPL,current-extra", 0x0A8C,
+                    "AAPL,current-in-sleep", 0x03E8,
+                    "AAPL,current-extra-in-sleep", 0x0834,
+                    "AAPL,max-port-current-in-sleep", 0x0A8C,
+                    "AAPL,device-internal", 0x02,
+                    Buffer (One) {0x00}
                 }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
-            }        }
+            }
+        }
 
         Device (EHC2)
         {
-            Name (_ADR, 0x001A0000)
+            Name (_ADR, 0x001A0000)  // _ADR: Address
             OperationRegion (PWKE, PCI_Config, 0x54, 0x12)
             Field (PWKE, DWordAcc, NoLock, Preserve)
             {
-                        Offset (0x01), 
+                Offset (0x01), 
                 PMEE,   1, 
                     ,   6, 
                 PMES,   1, 
-                        Offset (0x0E), 
+                Offset (0x0E), 
                     ,   1, 
                 PWUC,   6
             }
 
-            Method (_PSW, 1, NotSerialized)
+            Method (_PSW, 1, NotSerialized)  // _PSW: Power State Wake
             {
                 If (Arg0)
                 {
@@ -8291,23 +8295,23 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_S3D, 0, NotSerialized)
+            Method (_S3D, 0, NotSerialized)  // _S3D: S3 Device State
             {
                 Return (0x02)
             }
 
-            Method (_S4D, 0, NotSerialized)
+            Method (_S4D, 0, NotSerialized)  // _S4D: S4 Device State
             {
                 Return (0x02)
             }
 
             Device (HUBN)
             {
-                Name (_ADR, Zero)
+                Name (_ADR, Zero)  // _ADR: Address
                 Device (PR01)
                 {
-                    Name (_ADR, One)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, One)  // _ADR: Address
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCA, Package (0x04)
                         {
@@ -8319,14 +8323,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCA)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x30, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         Return (PLDP)
@@ -8334,8 +8338,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR11)
                     {
-                        Name (_ADR, One)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, One)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8347,14 +8351,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -8363,8 +8367,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR12)
                     {
-                        Name (_ADR, 0x02)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x02)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8376,27 +8380,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -8408,14 +8412,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -8451,8 +8455,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR13)
                     {
-                        Name (_ADR, 0x03)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x03)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8464,27 +8468,27 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
+                        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
                         {
-                            Name (T_0, Zero)
+                            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                             If (LEqual (Arg0, Buffer (0x10)
                                     {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
+                                        /* 0000 */   0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B,
+                                        /* 0008 */   0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
                                     }))
                             {
                                 While (One)
@@ -8496,14 +8500,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x07
+                                                 0x07
                                             })
                                         }
                                         Else
                                         {
                                             Return (Buffer (One)
                                             {
-                                                0x00
+                                                 0x00
                                             })
                                         }
                                     }
@@ -8539,8 +8543,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR14)
                     {
-                        Name (_ADR, 0x04)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x04)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8552,14 +8556,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xE1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xE1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -8568,8 +8572,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR15)
                     {
-                        Name (_ADR, 0x05)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x05)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8581,14 +8585,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -8597,8 +8601,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                     Device (PR16)
                     {
-                        Name (_ADR, 0x06)
-                        Method (_UPC, 0, Serialized)
+                        Name (_ADR, 0x06)  // _ADR: Address
+                        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                         {
                             Name (UPCP, Package (0x04)
                             {
@@ -8610,14 +8614,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Return (UPCP)
                         }
 
-                        Method (_PLD, 0, Serialized)
+                        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                         {
                             Name (PLDP, Package (0x01)
                             {
                                 Buffer (0x10)
                                 {
-                                    /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                    /* 0008 */    0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                    /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                    /* 0008 */   0xB1, 0x1E, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                                 }
                             })
                             Return (PLDP)
@@ -8626,56 +8630,46 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_PRW, 0, NotSerialized)
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x0D, 0x04))
             }
             Method (_DSM, 4, NotSerialized)
             {
-                Store (Package (0x02)
-                {
-                    "device-id", 
-                    Buffer (0x04)
-                    {
-                        0x8c, 0x2d, 0x00, 0x00   /*<--------- ID MAC------*/
-                    }
+                Store (Package (0x15) {
+                    "AAPL,slot-name", "Built In",
+                    "name", "Intel EHCI Controller",
+                    "model", Buffer (0x3E) {"Intel 8 Series Chipset Family USB Enhanced Host Controller #2"},
+                    "device_type", Buffer (0x0E) {"USB Controller"},
+                    "AAPL,current-available", 0x0834,
+                    "AAPL,current-extra", 0x0A8C,
+                    "AAPL,current-in-sleep", 0x03E8,
+                    "AAPL,current-extra-in-sleep", 0x0834,
+                    "AAPL,max-port-current-in-sleep", 0x0A8C,
+                    "AAPL,device-internal", 0x02,
+                    Buffer (One) {0x00}
                 }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
-            }        }
-
-        Device (XHC)
-        {
-            Name (_ADR, 0x00140000)
-            Method (DEP, 0, NotSerialized)
-            {
-                ADBG ("XHC DEP Call")
-                If (LEqual (S0ID, One))
-                {
-                    ADBG ("XHC DEP")
-                    Return (Package (0x01)
-                    {
-                        PEPD
-                    })
-                }
-                Else
-                {
-                    ADBG ("XHC DEP NULL")
-                    Return (Zero)
-                }
             }
+        }
+
+        Device (XHC1)
+        {
+            Name (_ADR, 0x00140000)  // _ADR: Address
+            
 
             OperationRegion (XPRT, PCI_Config, Zero, 0x0100)
             Field (XPRT, DWordAcc, NoLock, Preserve)
             {
-                        Offset (0x10), 
+                Offset (0x10), 
                 MEMB,   32, 
-                        Offset (0x74), 
-                        Offset (0x75), 
+                Offset (0x74), 
+                Offset (0x75), 
                 PMEE,   1, 
                     ,   6, 
                 PMES,   1, 
-                        Offset (0xD0), 
+                Offset (0xD0), 
                 PR2,    32, 
                 PR2M,   32, 
                 PR3,    32, 
@@ -8687,8 +8681,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 If (LEqual (Arg0, Buffer (0x10)
                         {
-                            /* 0000 */    0xA9, 0x12, 0x95, 0x7C, 0x05, 0x17, 0xB4, 0x4C, 
-                            /* 0008 */    0xAF, 0x7D, 0x50, 0x6A, 0x24, 0x23, 0xAB, 0x71
+                            /* 0000 */   0xA9, 0x12, 0x95, 0x7C, 0x05, 0x17, 0xB4, 0x4C,
+                            /* 0008 */   0xAF, 0x7D, 0x50, 0x6A, 0x24, 0x23, 0xAB, 0x71
                         }))
                 {
                     Return (One)
@@ -8776,24 +8770,24 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_S3D, 0, NotSerialized)
+            Method (_S3D, 0, NotSerialized)  // _S3D: S3 Device State
             {
                 Return (0x02)
             }
 
-            Method (_S4D, 0, NotSerialized)
+            Method (_S4D, 0, NotSerialized)  // _S4D: S4 Device State
             {
                 Return (0x02)
             }
 
             Device (RHUB)
             {
-                Name (_ADR, Zero)
+                Name (_ADR, Zero)  // _ADR: Address
                 Device (HS01)
                 {
-                    Name (_ADR, One)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, One)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -8810,14 +8804,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -8832,9 +8826,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS02)
                 {
-                    Name (_ADR, 0x02)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x02)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -8851,14 +8845,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -8873,9 +8867,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS03)
                 {
-                    Name (_ADR, 0x03)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x03)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -8892,14 +8886,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -8919,9 +8913,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS04)
                 {
-                    Name (_ADR, 0x04)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x04)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -8938,14 +8932,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -8960,9 +8954,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS05)
                 {
-                    Name (_ADR, 0x05)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x05)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -8979,14 +8973,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9001,9 +8995,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS06)
                 {
-                    Name (_ADR, 0x06)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x06)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9020,14 +9014,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9042,9 +9036,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS07)
                 {
-                    Name (_ADR, 0x07)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x07)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9061,14 +9055,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x80, 0x03, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9083,9 +9077,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS08)
                 {
-                    Name (_ADR, 0x08)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x08)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9102,14 +9096,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x00, 0x04, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9124,9 +9118,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS09)
                 {
-                    Name (_ADR, 0x09)
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_ADR, 0x09)  // _ADR: Address
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9143,14 +9137,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x80, 0x04, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x80, 0x04, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9170,7 +9164,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS10)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9182,7 +9176,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_STA, 0, Serialized)
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9194,7 +9188,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9211,14 +9205,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x00, 0x05, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9233,7 +9227,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS11)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9245,7 +9239,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_STA, 0, Serialized)
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9257,7 +9251,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9274,14 +9268,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9296,7 +9290,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS12)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9308,7 +9302,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_STA, 0, Serialized)
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9320,7 +9314,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9337,14 +9331,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9359,7 +9353,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS13)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9371,7 +9365,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_STA, 0, Serialized)
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9383,7 +9377,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9400,14 +9394,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9422,8 +9416,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS14)
                 {
-                    Name (_ADR, 0x0E)
-                    Method (_STA, 0, Serialized)
+                    Name (_ADR, 0x0E)  // _ADR: Address
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9435,7 +9429,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9452,14 +9446,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9474,8 +9468,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (HS15)
                 {
-                    Name (_ADR, 0x0F)
-                    Method (_STA, 0, Serialized)
+                    Name (_ADR, 0x0F)  // _ADR: Address
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9487,7 +9481,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9504,14 +9498,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x81, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x1C, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9526,7 +9520,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP1)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9538,8 +9532,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9556,14 +9550,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9578,7 +9572,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP2)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9590,8 +9584,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9608,14 +9602,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x69, 0x0C, 0x00, 0x01, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9630,7 +9624,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP3)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9642,8 +9636,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9660,14 +9654,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x80, 0x01, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9682,7 +9676,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP4)
                 {
-                    Method (_ADR, 0, Serialized)
+                    Method (_ADR, 0, Serialized)  // _ADR: Address
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9694,8 +9688,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Name (_STA, 0x0F)
-                    Method (_UPC, 0, Serialized)
+                    Name (_STA, 0x0F)  // _STA: Status
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9712,14 +9706,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9734,8 +9728,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP5)
                 {
-                    Name (_ADR, 0x14)
-                    Method (_STA, 0, Serialized)
+                    Name (_ADR, 0x14)  // _ADR: Address
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9747,7 +9741,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9764,14 +9758,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x80, 0x02, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9786,8 +9780,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Device (SSP6)
                 {
-                    Name (_ADR, 0x15)
-                    Method (_STA, 0, Serialized)
+                    Name (_ADR, 0x15)  // _ADR: Address
+                    Method (_STA, 0, Serialized)  // _STA: Status
                     {
                         If (LEqual (And (CDID, 0xF000), 0x8000))
                         {
@@ -9799,7 +9793,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }
                     }
 
-                    Method (_UPC, 0, Serialized)
+                    Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
                     {
                         Name (UPCP, Package (0x04)
                         {
@@ -9816,14 +9810,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (UPCP)
                     }
 
-                    Method (_PLD, 0, Serialized)
+                    Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
                     {
                         Name (PLDP, Package (0x01)
                         {
                             Buffer (0x10)
                             {
-                                /* 0000 */    0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                /* 0008 */    0x71, 0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00
+                                /* 0000 */   0x01, 0xC6, 0x72, 0x00, 0x00, 0x00, 0x00, 0x00,
+                                /* 0008 */   0x71, 0x0C, 0x00, 0x03, 0x00, 0x00, 0x00, 0x00
                             }
                         })
                         CreateBitField (DerefOf (Index (PLDP, Zero)), 0x40, VIS)
@@ -9837,82 +9831,80 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_PRW, 0, NotSerialized)
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
             {
                 Return (GPRW (0x0D, 0x04))
             }
-        }
-
-        Device (HDEF)
-        {
-            Name (_ADR, 0x001B0000)
-            OperationRegion (HDAR, PCI_Config, 0x4C, 0x10)
-            Field (HDAR, WordAcc, NoLock, Preserve)
-            {
-                DCKA,   1, 
-                        Offset (0x01), 
-                DCKM,   1, 
-                    ,   6, 
-                DCKS,   1, 
-                        Offset (0x08), 
-                        Offset (0x09), 
-                PMEE,   1, 
-                    ,   6, 
-                PMES,   1
-            }
-
-            Method (_PRW, 0, NotSerialized)
-            {
-                Return (GPRW (0x0D, 0x04))
-            }
-
             Method (_DSM, 4, NotSerialized)
             {
-                Store (Package (0x06)
-                    {
-                        "device-id",
-                        Buffer (0x04) { 0x8c, 0x20, 0x00, 0x00 },
-                            "codec-id",
-                            Buffer (0x04)
-                            {
-                                0x85, 0x08, 0xEC, 0x10
-                            },
-
-                            "layout-id", 
-                            Buffer (0x04)
-                            {
-                                0x01, 0x00, 0x00, 0x00
-                            }, 
-                            
-                            "device-type",
-                            Buffer ()
-                            {
-                                "ALC898"
-                            },
-                        
-                        "MaximumBootBeepVolume", 
-                        Buffer (0x01)
-                        {
-                            0x01
-                        }, 
-
-                        "PinConfigurations", 
-                        Zero
-                    }, Local0)
+                Store (Package (0x15) {
+                    "AAPL,slot-name", "Built In",
+                    "name", "Intel XHCI Controller",
+                    "model", Buffer (0x37) {"Intel 8 Series Chipset Family USB xHCI Host Controller"},
+                    "device_type", Buffer (0x0E) {"USB Controller"},
+                    "AAPL,current-available", 0x0834,
+                    "AAPL,current-extra", 0x0A8C,
+                    "AAPL,current-in-sleep", 0x03E8,
+                    "AAPL,current-extra-in-sleep", 0x0834,
+                    "AAPL,max-port-current-in-sleep", 0x0A8C,
+                    "AAPL,device-internal", 0x02,
+                    Buffer (One) {0x00}
+                }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
         }
 
-        Device (SAT0)
+        Device (HDEF)
         {
-            Name (_ADR, 0x001F0002)
+            Name (_ADR, 0x001B0000)  // _ADR: Address
+            OperationRegion (HDAR, PCI_Config, 0x4C, 0x10)
+            Field (HDAR, WordAcc, NoLock, Preserve)
+            {
+                DCKA,   1, 
+                Offset (0x01), 
+                DCKM,   1, 
+                    ,   6, 
+                DCKS,   1, 
+                Offset (0x08), 
+                Offset (0x09), 
+                PMEE,   1, 
+                    ,   6, 
+                PMES,   1
+            }
+
+            Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
+            {
+                Return (GPRW (0x0D, 0x04))
+            }
+            Method (_DSM, 4, NotSerialized)
+            {
+                Store (Package (0x10) {
+                    "AAPL,slot-name", "Built In",
+                    "name", "Realtek Audio Controller",
+                    "model", Buffer () {"Realtek ALC898 Audio Controller"},
+                    "device_type", Buffer (0x10) {"Audio Controller"},
+                    "layout-id", Buffer (0x04) {0x01,0x00,0x00,0x00},
+                    "PinConfigurations", Buffer (Zero) {},
+                    "MaximumBootBeepVolume", Buffer(One) {0x40},
+                    "hda-gfx", Buffer (0x0A) {"onboard-1"}
+                }, Local0)
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }
+
+            
+        }
+
+        Device (SATA)
+        {
+            Name (_ADR, 0x001F0002)  // _ADR: Address
             Name (FDEV, Zero)
             Name (FDRP, Zero)
             Device (PRT0)
             {
-                Name (_ADR, 0xFFFF)
-                Method (_SDD, 1, NotSerialized)
+                Name (_ADR, 0xFFFF)  // _ADR: Address
+                Method (_SDD, 1, NotSerialized)  // _SDD: Set Device Data
                 {
                     CreateByteField (Arg0, 0x9D, BFDS)
                     ToInteger (BFDS, FDEV)
@@ -9920,21 +9912,21 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)
+                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS0, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
                     {
                         Name (PIB1, Buffer (0x07)
                         {
-                            0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                             0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
                         })
                         Return (PIB1)
                     }
 
                     Name (PIB2, Buffer (0x07)
                     {
-                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                     })
                     Return (PIB2)
                 }
@@ -9942,10 +9934,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (PRT1)
             {
-                Name (_ADR, 0x0001FFFF)
+                Name (_ADR, 0x0001FFFF)  // _ADR: Address
                 Name (FDEV, Zero)
                 Name (FDRP, Zero)
-                Method (DEP, 0, NotSerialized)
+                Method (_DEP, 0, NotSerialized)  // _DEP: Dependencies
                 {
                     ADBG ("SAta DEP")
                     If (LAnd (LEqual (S0ID, One), And (PEPY, 0x02)))
@@ -9959,11 +9951,11 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Else
                     {
                         ADBG ("SAta DEP NULL")
-                        Return (Zero)
+                        Return (Package (Zero) {})
                     }
                 }
 
-                Method (_SDD, 1, NotSerialized)
+                Method (_SDD, 1, NotSerialized)  // _SDD: Set Device Data
                 {
                     CreateByteField (Arg0, 0x9D, BFDS)
                     ToInteger (BFDS, FDEV)
@@ -9971,21 +9963,21 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)
+                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS1, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
                     {
                         Name (PIB1, Buffer (0x07)
                         {
-                            0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                             0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
                         })
                         Return (PIB1)
                     }
 
                     Name (PIB2, Buffer (0x07)
                     {
-                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                     })
                     Return (PIB2)
                 }
@@ -9993,10 +9985,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (PRT3)
             {
-                Name (_ADR, 0x0003FFFF)
+                Name (_ADR, 0x0003FFFF)  // _ADR: Address
                 Name (FDEV, Zero)
                 Name (FDRP, Zero)
-                Method (_SDD, 1, NotSerialized)
+                Method (_SDD, 1, NotSerialized)  // _SDD: Set Device Data
                 {
                     CreateByteField (Arg0, 0x9D, BFDS)
                     ToInteger (BFDS, FDEV)
@@ -10004,58 +9996,45 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     ToInteger (BFRP, FDRP)
                 }
 
-                Method (_GTF, 0, NotSerialized)
+                Method (_GTF, 0, NotSerialized)  // _GTF: Get Task File
                 {
                     If (LAnd (LAnd (LEqual (DVS3, One), LEqual (And (FDEV, One
                         ), One)), LEqual (And (FDRP, 0x80), 0x80)))
                     {
                         Name (PIB1, Buffer (0x07)
                         {
-                            0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
+                             0x10, 0x09, 0x00, 0x00, 0x00, 0xB0, 0xEF
                         })
                         Return (PIB1)
                     }
 
                     Name (PIB2, Buffer (0x07)
                     {
-                        0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
+                         0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
                     })
                     Return (PIB2)
                 }
             }
-
             Method (_DSM, 4, NotSerialized)
             {
-                Store (Package (0x06)
-                    {
-                        "device-id", 
-                        Buffer (0x04)
-                        {
-                            0x02, 0x8C, 0x00, 0x00
-                        }, 
-
-                        "vendor-id", 
-                        Buffer (0x04)
-                        {
-                            0x86, 0x80, 0x00, 0x00
-                        }, 
-
-                        "empty", 
-                        Zero
-                    }, Local0)
+                Store (Package (0x08) {
+                    "AAPL,slot-name", "Built In",
+                    "name", "Intel AHCI Controller",
+                    "model", Buffer (0x2D) {"Intel 8 Series Chipset Family SATA Controller"},
+                    "device_type", Buffer (0x0F) {"AHCI Controller"},
+                }, Local0)
                 DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                 Return (Local0)
             }
+
+            
         }
 
-        Device (SAT1)
-        {
-            Name (_ADR, 0x001F0005)
-        }
+        
 
         Device (SBUS)
         {
-            Name (_ADR, 0x001F0003)
+            Name (_ADR, 0x001F0003)  // _ADR: Address
             OperationRegion (SMBP, PCI_Config, 0x40, 0xC0)
             Field (SMBP, DWordAcc, NoLock, Preserve)
             {
@@ -10074,7 +10053,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Field (SMBI, ByteAcc, NoLock, Preserve)
             {
                 HSTS,   8, 
-                        Offset (0x02), 
+                Offset (0x02), 
                 HCON,   8, 
                 HCOM,   8, 
                 TXSA,   8, 
@@ -10391,13 +10370,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (BUS0)
             {
-                Name (_CID, "smbus")
-                Name (_ADR, Zero)
+                Name (_CID, "smbus")  // _CID: Compatible ID
+                Name (_ADR, Zero)  // _ADR: Address
                 Device (DVL0)
                 {
-                    Name (_ADR, 0x57)
-                    Name (_CID, "diagsvault")
-                    Method (_DSM, 4, NotSerialized)
+                    Name (_ADR, 0x57)  // _ADR: Address
+                    Name (_CID, "diagsvault")  // _CID: Compatible ID
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
                         Store (Package (0x02)
                             {
@@ -10468,9 +10447,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 ,   3, 
             PEXS,   1, 
             WAKS,   1, 
-                    Offset (0x03), 
+            Offset (0x03), 
             PWBT,   1, 
-                    Offset (0x04)
+            Offset (0x04)
         }
 
         OperationRegion (SLPR, SystemIO, SMCR, 0x08)
@@ -10480,13 +10459,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             SLPE,   1, 
                 ,   31, 
             SLPX,   1, 
-                    Offset (0x08)
+            Offset (0x08)
         }
     }
 
     Scope (_SB.PCI0.RP01)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10494,7 +10473,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP02)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10502,7 +10481,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP03)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10510,7 +10489,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP04)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10518,7 +10497,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP05)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10526,7 +10505,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP06)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10534,7 +10513,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP07)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10542,7 +10521,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_SB.PCI0.RP08)
     {
-        Method (_PRW, 0, NotSerialized)
+        Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
         {
             Return (GPRW (0x09, 0x04))
         }
@@ -10554,28 +10533,28 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         CADR,   3, 
             ,   1, 
         CBDR,   3, 
-                Offset (0x01), 
+        Offset (0x01), 
         LTDR,   2, 
             ,   2, 
         FDDR,   1, 
-                Offset (0x02), 
+        Offset (0x02), 
         CALE,   1, 
         CBLE,   1, 
         LTLE,   1, 
         FDLE,   1, 
-                Offset (0x03), 
+        Offset (0x03), 
         GLLE,   1, 
         GHLE,   1, 
         KCLE,   1, 
         MCLE,   1, 
         C1LE,   1, 
         C2LE,   1, 
-                Offset (0x04)
+        Offset (0x04)
     }
 
     Method (UXDV, 1, Serialized)
     {
-        Name (T_0, Zero)
+        Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
         Store (0xFF, Local0)
         While (One)
         {
@@ -10642,7 +10621,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Method (RRIO, 4, Serialized)
     {
-        Name (T_0, Zero)
+        Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
         While (One)
         {
             Store (Add (Arg0, Zero), T_0)
@@ -10931,8 +10910,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (NFC1)
         {
-            Name (_HID, EisaId ("SKTD000"))
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, EisaId ("SKTD000"))  // _HID: Hardware ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (LEqual (NFCE, 0x03))
                 {
@@ -10947,8 +10926,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (NFC2)
         {
-            Name (_HID, EisaId ("NXP5442"))
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, EisaId ("NXP5442"))  // _HID: Hardware ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (LEqual (NFCE, 0x02))
                 {
@@ -10963,8 +10942,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (NFC3)
         {
-            Name (_HID, EisaId ("ICV0A12"))
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, EisaId ("ICV0A12"))  // _HID: Hardware ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (LEqual (NFCE, One))
                 {
@@ -11027,12 +11006,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Method (ADBG, 1, Serialized)
     {
+        
         If (CondRefOf (MDBG))
         {
             Return (MDBG)
         }
-
         Return (Zero)
+
     }
 
     OperationRegion (SPRT, SystemIO, 0xB2, 0x02)
@@ -11041,13 +11021,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         SSMP,   8
     }
 
-    Method (_PIC, 1, NotSerialized)
+    Method (_PIC, 1, NotSerialized)  // _PIC: Interrupt Model
     {
         Store (Arg0, GPIC)
         Store (Arg0, PICM)
     }
 
-    Method (_PTS, 1, NotSerialized)
+    Method (_PTS, 1, NotSerialized)  // _PTS: Prepare To Sleep
     {
         If (LEqual (Arg0, 0x05)) {}
         Else
@@ -11139,7 +11119,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         }
     }
 
-    Method (_WAK, 1, Serialized)
+    Method (_WAK, 1, Serialized)  // _WAK: Wake
     {
         If (LOr (LLess (Arg0, One), LGreater (Arg0, 0x05)))
         {
@@ -11368,7 +11348,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         If (LOr (LEqual (Arg0, 0x03), LEqual (Arg0, 0x04)))
         {
-            \_SB.PCI0.XHC.XWAK ()
+            \_SB.PCI0.XHC1.XWAK ()
         }
 
         Return (Package (0x02)
@@ -11497,9 +11477,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     OperationRegion (MBAR, SystemMemory, Add (ShiftLeft (\_SB.PCI0.MHBR, 0x0F), 0x5000), 0x1000)
     Field (MBAR, ByteAcc, NoLock, Preserve)
     {
-                Offset (0x938), 
+        Offset (0x938), 
         PWRU,   4, 
-                Offset (0x9A0), 
+        Offset (0x9A0), 
         PPL1,   15, 
         PL1E,   1, 
         CLP1,   1
@@ -11535,7 +11515,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Store (Local1, PPL1)
         Store (One, PL1E)
         Store (One, CLP1)
-		Return (Zero)    }
+        Return (Zero)
+    }
 
     Method (RPL1, 0, Serialized)
     {
@@ -11574,9 +11555,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (BIND)
         {
-            Name (_HID, "INT33D2")
-            Name (_CID, "PNP0C40")
-            Method (_STA, 0, Serialized)
+            Name (_HID, "INT33D2")  // _HID: Hardware ID
+            Name (_CID, "PNP0C40")  // _CID: Compatible ID
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 If (LAnd (And (IUBE, One), LEqual (OSYS, 0x07DC)))
                 {
@@ -11589,9 +11570,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (CIND)
         {
-            Name (_HID, "INT33D3")
-            Name (_CID, "PNP0C60")
-            Method (_STA, 0, Serialized)
+            Name (_HID, "INT33D3")  // _HID: Hardware ID
+            Name (_CID, "PNP0C60")  // _CID: Compatible ID
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 If (LAnd (And (IUCE, One), LEqual (OSYS, 0x07DC)))
                 {
@@ -11604,9 +11585,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (DIND)
         {
-            Name (_HID, "INT33D4")
-            Name (_CID, "PNP0C70")
-            Method (_STA, 0, Serialized)
+            Name (_HID, "INT33D4")  // _HID: Hardware ID
+            Name (_CID, "PNP0C70")  // _CID: Compatible ID
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 If (LAnd (And (IUDE, One), LEqual (OSYS, 0x07DC)))
                 {
@@ -11635,7 +11616,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Return (PFIA)
         }
 
-        Method (_INI, 0, NotSerialized)
+        Method (_INI, 0, NotSerialized)  // _INI: Initialize
         {
             Store (0x07D0, OSYS)
             If (CondRefOf (\OOSI, Local0))
@@ -11756,7 +11737,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Name (OSCI, Zero)
         Name (OSCO, Zero)
-        Method (_OSC, 4, Serialized)
+        Method (_OSC, 4, Serialized)  // _OSC: Operating System Capabilities
         {
             If (LNotEqual (OSCM (Arg0, Arg1, Arg2, Arg3), Zero))
             {
@@ -11767,8 +11748,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             CreateDWordField (Arg3, 0x04, CAP0)
             If (LEqual (Arg0, Buffer (0x10)
                     {
-                        /* 0000 */    0x6E, 0xB0, 0x11, 0x08, 0x27, 0x4A, 0xF9, 0x44, 
-                        /* 0008 */    0x8D, 0x60, 0x3C, 0xBB, 0xC2, 0x2E, 0x7B, 0x48
+                        /* 0000 */   0x6E, 0xB0, 0x11, 0x08, 0x27, 0x4A, 0xF9, 0x44,
+                        /* 0008 */   0x8D, 0x60, 0x3C, 0xBB, 0xC2, 0x2E, 0x7B, 0x48
                     }))
             {
                 If (LEqual (Arg1, One))
@@ -11816,9 +11797,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (PEPD)
         {
-            Name (_HID, "INT33A1")
-            Name (_CID, EisaId ("PNP0D80"))
-            Name (_UID, One)
+            Name (_HID, "INT33A1")  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0D80"))  // _CID: Compatible ID
+            Name (_UID, One)  // _UID: Unique ID
             Name (PEPP, Zero)
             Name (DEVS, Package (0x03)
             {
@@ -11830,7 +11811,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Package (0x01)
                 {
-                    "\\_SB.PCI0.SAT0.PRT1"
+                    "\\_SB.PCI0.SATA.PRT1"
                 }
             })
             Name (DEVX, Package (0x08)
@@ -11843,7 +11824,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Package (0x02)
                 {
-                    "\\_SB.PCI0.SAT0.PRT1", 
+                    "\\_SB.PCI0.SATA.PRT1", 
                     0xFFFFFFFF
                 }, 
 
@@ -11873,7 +11854,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                 Package (0x02)
                 {
-                    "\\_SB.PCI0.XHC", 
+                    "\\_SB.PCI0.XHC1", 
                     0xFFFFFFFF
                 }, 
 
@@ -11883,7 +11864,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     0xFFFFFFFF
                 }
             })
-            Method (_STA, 0, NotSerialized)
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (LGreaterEqual (OSYS, 0x07DC))
                 {
@@ -11899,20 +11880,20 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Zero)
             }
 
-            Method (_DSM, 4, Serialized)
+            Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
             {
-                Name (T_0, Zero)
+                Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
                 If (LEqual (Arg0, Buffer (0x10)
                         {
-                            /* 0000 */    0xE0, 0xBF, 0xFE, 0xB8, 0xF8, 0xBA, 0x4B, 0x45, 
-                            /* 0008 */    0xAE, 0xCD, 0x49, 0xFB, 0x91, 0x13, 0x7B, 0x21
+                            /* 0000 */   0xE0, 0xBF, 0xFE, 0xB8, 0xF8, 0xBA, 0x4B, 0x45,
+                            /* 0008 */   0xAE, 0xCD, 0x49, 0xFB, 0x91, 0x13, 0x7B, 0x21
                         }))
                 {
                     If (LEqual (Arg2, Zero))
                     {
                         Return (Buffer (One)
                         {
-                            0x07
+                             0x07
                         })
                     }
 
@@ -11949,7 +11930,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                             One, 
                                             Package (0x01)
                                             {
-                                                "\\_SB.PCI0.SAT0.PRT1"
+                                                "\\_SB.PCI0.SATA.PRT1"
                                             }
                                         })
                                     }
@@ -12029,8 +12010,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (BTKL)
         {
-            Name (_HID, "INT3420")
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, "INT3420")  // _HID: Hardware ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 If (OOSI ("Windows 2012"))
                 {
@@ -12043,12 +12024,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Zero)
             }
 
-            Method (_PS0, 0, Serialized)
+            Method (_PS0, 0, Serialized)  // _PS0: Power State 0
             {
                 And (GL0A, 0x7F, GL0A)
             }
 
-            Method (_PS3, 0, Serialized)
+            Method (_PS3, 0, Serialized)  // _PS3: Power State 3
             {
                 Or (GL0A, 0x80, GL0A)
             }
@@ -12065,30 +12046,30 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (PDRC)
         {
-            Name (_HID, EisaId ("PNP0C02"))
-            Name (_UID, One)
+            Name (_HID, EisaId ("PNP0C02"))  // _HID: Hardware ID
+            Name (_UID, One)  // _UID: Unique ID
             Name (BUF0, ResourceTemplate ()
             {
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00004000,         // Address Length
-                    )
+                    _Y20)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00008000,         // Address Length
-                    )
+                    _Y23)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    )
+                    _Y24)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    )
+                    _Y25)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00000000,         // Address Length
-                    )
+                    _Y26)
                 Memory32Fixed (ReadWrite,
                     0xFED20000,         // Address Base
                     0x00020000,         // Address Length
@@ -12112,35 +12093,35 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    )
+                    _Y21)
                 Memory32Fixed (ReadWrite,
                     0x00000000,         // Address Base
                     0x00001000,         // Address Length
-                    )
+                    _Y22)
             })
-            Method (_CRS, 0, Serialized)
+            Method (_CRS, 0, Serialized)  // _CRS: Current Resource Settings
             {
-                CreateDWordField (BUF0, 0x04, RBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y20._BAS, RBR0)  // _BAS: Base Address
                 ShiftLeft (^^LPCB.RCBA, 0x0E, RBR0)
-                CreateDWordField (BUF0, 0x7C, TBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y21._BAS, TBR0)  // _BAS: Base Address
                 Store (TBAB, TBR0)
-                CreateDWordField (BUF0, 0x80, TBLN)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y21._LEN, TBLN)  // _LEN: Length
                 If (LEqual (TBAB, Zero))
                 {
                     Store (Zero, TBLN)
                 }
 
-                CreateDWordField (BUF0, 0x88, SNR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y22._BAS, SNR0)  // _BAS: Base Address
                 Store (SRMB, SNR0)
-                CreateDWordField (BUF0, 0x10, MBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y23._BAS, MBR0)  // _BAS: Base Address
                 ShiftLeft (MHBR, 0x0F, MBR0)
-                CreateDWordField (BUF0, 0x1C, DBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y24._BAS, DBR0)  // _BAS: Base Address
                 ShiftLeft (DIBR, 0x0C, DBR0)
-                CreateDWordField (BUF0, 0x28, EBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y25._BAS, EBR0)  // _BAS: Base Address
                 ShiftLeft (EPBR, 0x0C, EBR0)
-                CreateDWordField (BUF0, 0x34, XBR0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y26._BAS, XBR0)  // _BAS: Base Address
                 ShiftLeft (PXBR, 0x1A, XBR0)
-                CreateDWordField (BUF0, 0x38, XSZ0)
+                CreateDWordField (BUF0, \_SB.PCI0.PDRC._Y26._LEN, XSZ0)  // _LEN: Length
                 ShiftRight (0x10000000, PXSZ, XSZ0)
                 Return (BUF0)
             }
@@ -12157,7 +12138,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Scope (_GPE)
     {
-        Method (_L09, 0, NotSerialized)
+        Method (_L09, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             If (LEqual (RP1D, Zero))
             {
@@ -12227,7 +12208,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (_L0D, 0, NotSerialized)
+        Method (_L0D, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             If (LAnd (\_SB.PCI0.EHC1.PMEE, \_SB.PCI0.EHC1.PMES))
             {
@@ -12243,11 +12224,11 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Notify (\_SB.PCI0.EHC2, 0x02)
             }
 
-            If (LAnd (\_SB.PCI0.XHC.PMEE, \_SB.PCI0.XHC.PMES))
+            If (LAnd (\_SB.PCI0.XHC1.PMEE, \_SB.PCI0.XHC1.PMES))
             {
-                Store (One, \_SB.PCI0.XHC.PMES)
-                Store (Zero, \_SB.PCI0.XHC.PMEE)
-                Notify (\_SB.PCI0.XHC, 0x02)
+                Store (One, \_SB.PCI0.XHC1.PMES)
+                Store (Zero, \_SB.PCI0.XHC1.PMEE)
+                Notify (\_SB.PCI0.XHC1, 0x02)
             }
 
             If (LAnd (\_SB.PCI0.HDEF.PMEE, \_SB.PCI0.HDEF.PMES))
@@ -12260,7 +12241,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Notify (\_SB.PCI0.GLAN, 0x02)
         }
 
-        Method (_L01, 0, NotSerialized)
+        Method (_L01, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             Add (L01C, One, L01C)
             P8XH (Zero, One)
@@ -12452,7 +12433,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (_L02, 0, NotSerialized)
+        Method (_L02, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             Store (Zero, GPEC)
             If (CondRefOf (DTSE))
@@ -12473,7 +12454,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (_L06, 0, NotSerialized)
+        Method (_L06, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
             {
@@ -12481,7 +12462,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             }
         }
 
-        Method (_L07, 0, NotSerialized)
+        Method (_L07, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
             Store (0x20, \_SB.PCI0.SBUS.HSTS)
         }
@@ -12535,12 +12516,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Name (YBT0, 0x5B)
         PowerResource (FN00, 0x00, 0x0000)
         {
-            Method (_STA, 0, Serialized)
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 Return (VFN0)
             }
 
-            Method (_ON, 0, Serialized)
+            Method (_ON, 0, Serialized)  // _ON_: Power On
             {
                 Store (One, VFN0)
                 If (LAnd (ECON, ETMD))
@@ -12550,7 +12531,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_OFF, 0, Serialized)
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
             {
                 Store (Zero, VFN0)
                 If (LAnd (ECON, ETMD))
@@ -12571,9 +12552,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (FAN0)
         {
-            Name (_HID, EisaId ("PNP0C0B"))
-            Name (_UID, Zero)
-            Name (_PR0, Package (0x01)
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, Zero)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
                 FN00
             })
@@ -12581,12 +12562,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         PowerResource (FN01, 0x00, 0x0000)
         {
-            Method (_STA, 0, Serialized)
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 Return (VFN1)
             }
 
-            Method (_ON, 0, Serialized)
+            Method (_ON, 0, Serialized)  // _ON_: Power On
             {
                 Store (One, VFN1)
                 If (LAnd (ECON, ETMD))
@@ -12599,7 +12580,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_OFF, 0, Serialized)
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
             {
                 Store (Zero, VFN1)
                 If (LAnd (ECON, ETMD))
@@ -12620,9 +12601,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (FAN1)
         {
-            Name (_HID, EisaId ("PNP0C0B"))
-            Name (_UID, One)
-            Name (_PR0, Package (0x01)
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, One)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
                 FN01
             })
@@ -12630,12 +12611,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         PowerResource (FN02, 0x00, 0x0000)
         {
-            Method (_STA, 0, Serialized)
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 Return (VFN2)
             }
 
-            Method (_ON, 0, Serialized)
+            Method (_ON, 0, Serialized)  // _ON_: Power On
             {
                 Store (One, VFN2)
                 If (LAnd (ECON, ETMD))
@@ -12648,7 +12629,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_OFF, 0, Serialized)
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
             {
                 Store (Zero, VFN2)
                 If (LAnd (ECON, ETMD))
@@ -12669,9 +12650,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (FAN2)
         {
-            Name (_HID, EisaId ("PNP0C0B"))
-            Name (_UID, 0x02)
-            Name (_PR0, Package (0x01)
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x02)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
                 FN02
             })
@@ -12679,12 +12660,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         PowerResource (FN03, 0x00, 0x0000)
         {
-            Method (_STA, 0, Serialized)
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 Return (VFN3)
             }
 
-            Method (_ON, 0, Serialized)
+            Method (_ON, 0, Serialized)  // _ON_: Power On
             {
                 Store (One, VFN3)
                 If (LAnd (ECON, ETMD))
@@ -12697,7 +12678,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_OFF, 0, Serialized)
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
             {
                 Store (Zero, VFN3)
                 If (LAnd (ECON, ETMD))
@@ -12718,9 +12699,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (FAN3)
         {
-            Name (_HID, EisaId ("PNP0C0B"))
-            Name (_UID, 0x03)
-            Name (_PR0, Package (0x01)
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x03)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
                 FN03
             })
@@ -12728,12 +12709,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         PowerResource (FN04, 0x00, 0x0000)
         {
-            Method (_STA, 0, Serialized)
+            Method (_STA, 0, Serialized)  // _STA: Status
             {
                 Return (VFN4)
             }
 
-            Method (_ON, 0, Serialized)
+            Method (_ON, 0, Serialized)  // _ON_: Power On
             {
                 Store (One, VFN4)
                 If (LAnd (ECON, ETMD))
@@ -12746,7 +12727,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Method (_OFF, 0, Serialized)
+            Method (_OFF, 0, Serialized)  // _OFF: Power Off
             {
                 Store (Zero, VFN4)
                 If (LAnd (ECON, ETMD))
@@ -12759,9 +12740,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Device (FAN4)
         {
-            Name (_HID, EisaId ("PNP0C0B"))
-            Name (_UID, 0x04)
-            Name (_PR0, Package (0x01)
+            Name (_HID, EisaId ("PNP0C0B"))  // _HID: Hardware ID
+            Name (_UID, 0x04)  // _UID: Unique ID
+            Name (_PR0, Package (0x01)  // _PR0: Power Resources for D0
             {
                 FN04
             })
@@ -12770,12 +12751,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         ThermalZone (TZ00)
         {
             Name (PTMP, 0x0BB8)
-            Method (_SCP, 1, Serialized)
+            Method (_SCP, 1, Serialized)  // _SCP: Set Cooling Policy
             {
                 Store (Arg0, CTYP)
             }
 
-            Method (_CRT, 0, Serialized)
+            Method (_CRT, 0, Serialized)  // _CRT: Critical Temperature
             {
                 If (CondRefOf (\_PR.ACRT))
                 {
@@ -12788,7 +12769,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Add (0x0AAC, Multiply (CRTT, 0x0A)))
             }
 
-            Method (_AC0, 0, Serialized)
+            Method (_AC0, 0, Serialized)  // _ACx: Active Cooling
             {
                 If (CondRefOf (\_PR.AAC0))
                 {
@@ -12801,47 +12782,47 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Add (0x0AAC, Multiply (ACTT, 0x0A)))
             }
 
-            Method (_AC1, 0, Serialized)
+            Method (_AC1, 0, Serialized)  // _ACx: Active Cooling
             {
                 Return (Add (0x0AAC, Multiply (ACT1, 0x0A)))
             }
 
-            Method (_AC2, 0, Serialized)
+            Method (_AC2, 0, Serialized)  // _ACx: Active Cooling
             {
                 Return (0x0AAC)
             }
 
-            Method (_AC3, 0, Serialized)
+            Method (_AC3, 0, Serialized)  // _ACx: Active Cooling
             {
                 Return (0x0AAC)
             }
 
-            Method (_AC4, 0, Serialized)
+            Method (_AC4, 0, Serialized)  // _ACx: Active Cooling
             {
                 Return (0x0AAC)
             }
 
-            Name (_AL0, Package (0x01)
+            Name (_AL0, Package (0x01)  // _ALx: Active List
             {
                 FAN0
             })
-            Name (_AL1, Package (0x01)
+            Name (_AL1, Package (0x01)  // _ALx: Active List
             {
                 FAN1
             })
-            Name (_AL2, Package (0x01)
+            Name (_AL2, Package (0x01)  // _ALx: Active List
             {
                 FAN2
             })
-            Name (_AL3, Package (0x01)
+            Name (_AL3, Package (0x01)  // _ALx: Active List
             {
                 FAN3
             })
-            Name (_AL4, Package (0x01)
+            Name (_AL4, Package (0x01)  // _ALx: Active List
             {
                 FAN4
             })
-            Method (_TMP, 0, Serialized)
+            Method (_TMP, 0, Serialized)  // _TMP: Temperature
             {
                 If (LNot (ETMD))
                 {
@@ -12895,12 +12876,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         ThermalZone (TZ01)
         {
             Name (PTMP, 0x0BB8)
-            Method (_SCP, 1, Serialized)
+            Method (_SCP, 1, Serialized)  // _SCP: Set Cooling Policy
             {
                 Store (Arg0, CTYP)
             }
 
-            Method (_CRT, 0, Serialized)
+            Method (_CRT, 0, Serialized)  // _CRT: Critical Temperature
             {
                 If (CondRefOf (\_PR.ACRT))
                 {
@@ -12913,7 +12894,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Add (0x0AAC, Multiply (CRTT, 0x0A)))
             }
 
-            Method (_TMP, 0, Serialized)
+            Method (_TMP, 0, Serialized)  // _TMP: Temperature
             {
                 If (LNot (ETMD))
                 {
@@ -12968,7 +12949,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (0x0BD6)
             }
 
-            Method (_PSL, 0, Serialized)
+            Method (_PSL, 0, Serialized)  // _PSL: Passive List
             {
                 If (LEqual (TCNT, 0x08))
                 {
@@ -13011,7 +12992,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 })
             }
 
-            Method (_PSV, 0, Serialized)
+            Method (_PSV, 0, Serialized)  // _PSV: Passive Temperature
             {
                 If (CondRefOf (\_PR.APSV))
                 {
@@ -13024,17 +13005,17 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Return (Add (0x0AAC, Multiply (PSVT, 0x0A)))
             }
 
-            Method (_TC1, 0, Serialized)
+            Method (_TC1, 0, Serialized)  // _TC1: Thermal Constant 1
             {
                 Return (TC1V)
             }
 
-            Method (_TC2, 0, Serialized)
+            Method (_TC2, 0, Serialized)  // _TC2: Thermal Constant 2
             {
                 Return (TC2V)
             }
 
-            Method (_TSP, 0, Serialized)
+            Method (_TSP, 0, Serialized)  // _TSP: Thermal Sampling Period
             {
                 Return (TSPV)
             }
@@ -13043,8 +13024,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Device (WCAM)
     {
-        Name (_ADR, One)
-        Method (_UPC, 0, Serialized)
+        Name (_ADR, One)  // _ADR: Address
+        Method (_UPC, 0, Serialized)  // _UPC: USB Port Capabilities
         {
             Name (UPCP, Package (0x04)
             {
@@ -13056,15 +13037,15 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Return (UPCP)
         }
 
-        Method (_PLD, 0, Serialized)
+        Method (_PLD, 0, Serialized)  // _PLD: Physical Location of Device
         {
             Name (PLDP, Package (0x01)
             {
                 Buffer (0x14)
                 {
-                    /* 0000 */    0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                    /* 0008 */    0x25, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                    /* 0010 */    0xC8, 0x00, 0xA0, 0x00
+                    /* 0000 */   0x82, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0008 */   0x25, 0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+                    /* 0010 */   0xC8, 0x00, 0xA0, 0x00
                 }
             })
             Return (PLDP)
@@ -13095,13 +13076,13 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         })
         Device (WMI1)
         {
-            Name (_HID, "PNP0C14")
-            Name (_UID, "MXM2")
+            Name (_HID, "PNP0C14")  // _HID: Hardware ID
+            Name (_UID, "MXM2")  // _UID: Unique ID
             Name (_WDG, Buffer (0x14)
             {
-                /* 0000 */    0x3C, 0x5C, 0xCB, 0xF6, 0xAE, 0x9C, 0xBD, 0x4E, 
-                /* 0008 */    0xB5, 0x77, 0x93, 0x1E, 0xA3, 0x2A, 0x2C, 0xC0, 
-                /* 0010 */    0x4D, 0x58, 0x01, 0x02
+                /* 0000 */   0x3C, 0x5C, 0xCB, 0xF6, 0xAE, 0x9C, 0xBD, 0x4E,
+                /* 0008 */   0xB5, 0x77, 0x93, 0x1E, 0xA3, 0x2A, 0x2C, 0xC0,
+                /* 0010 */   0x4D, 0x58, 0x01, 0x02
             })
             Method (WMMX, 3, NotSerialized)
             {
@@ -13118,19 +13099,20 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Device (_SB.TPM)
     {
-        Method (_HID, 0, NotSerialized)
+        Method (_HID, 0, NotSerialized)  // _HID: Hardware ID
         {
             If (TCMF) {}
             Else
             {
                 Return (0x0201D824)
             }
-			Return (Zero)        }
+            Return (Zero)
+        }
 
-        Name (_CID, EisaId ("PNP0C31"))
-        Name (_STR, Unicode ("TPM 1.2 Device"))
-        Name (_UID, One)
-        Name (_CRS, ResourceTemplate ()
+        Name (_CID, EisaId ("PNP0C31"))  // _CID: Compatible ID
+        Name (_STR, Unicode ("TPM 1.2 Device"))  // _STR: Description String
+        Name (_UID, One)  // _UID: Unique ID
+        Name (_CRS, ResourceTemplate ()  // _CRS: Current Resource Settings
         {
             DWordMemory (ResourceProducer, PosDecode, MinFixed, MaxFixed, NonCacheable, ReadWrite,
                 0x00000000,         // Granularity
@@ -13144,15 +13126,15 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         Field (TMMB, ByteAcc, Lock, Preserve)
         {
             ACCS,   8, 
-                    Offset (0x18), 
+            Offset (0x18), 
             TSTA,   8, 
             TBCA,   8, 
-                    Offset (0xF00), 
+            Offset (0xF00), 
             TVID,   16, 
             TDID,   16
         }
 
-        Method (_STA, 0, NotSerialized)
+        Method (_STA, 0, NotSerialized)  // _STA: Status
         {
             If (TPMF)
             {
@@ -13177,14 +13159,14 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             DAT,    8
         }
 
-        Method (_DSM, 4, Serialized)
+        Method (_DSM, 4, Serialized)  // _DSM: Device-Specific Method
         {
-            Name (T_1, Zero)
-            Name (T_0, Zero)
+            Name (T_1, Zero)  // _T_x: Emitted by ASL Compiler
+            Name (T_0, Zero)  // _T_x: Emitted by ASL Compiler
             If (LEqual (Arg0, Buffer (0x10)
                     {
-                        /* 0000 */    0xA6, 0xFA, 0xDD, 0x3D, 0x1B, 0x36, 0xB4, 0x4E, 
-                        /* 0008 */    0xA4, 0x24, 0x8D, 0x10, 0x08, 0x9D, 0x16, 0x53
+                        /* 0000 */   0xA6, 0xFA, 0xDD, 0x3D, 0x1B, 0x36, 0xB4, 0x4E,
+                        /* 0008 */   0xA4, 0x24, 0x8D, 0x10, 0x08, 0x9D, 0x16, 0x53
                     }))
             {
                 While (One)
@@ -13194,7 +13176,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     {
                         Return (Buffer (0x02)
                         {
-                            0xFF, 0x01
+                             0xFF, 0x01
                         })
                     }
                     Else
@@ -13374,8 +13356,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 If (LEqual (Arg0, Buffer (0x10)
                         {
-                            /* 0000 */    0xED, 0x54, 0x60, 0x37, 0x13, 0xCC, 0x75, 0x46, 
-                            /* 0008 */    0x90, 0x1C, 0x47, 0x56, 0xD7, 0xF2, 0xD4, 0x5D
+                            /* 0000 */   0xED, 0x54, 0x60, 0x37, 0x13, 0xCC, 0x75, 0x46,
+                            /* 0008 */   0x90, 0x1C, 0x47, 0x56, 0xD7, 0xF2, 0xD4, 0x5D
                         }))
                 {
                     While (One)
@@ -13385,7 +13367,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         {
                             Return (Buffer (One)
                             {
-                                0x03
+                                 0x03
                             })
                         }
                         Else
@@ -13422,7 +13404,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Return (Buffer (One)
             {
-                0x00
+                 0x00
             })
         }
     }
@@ -13431,8 +13413,8 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (PTMD)
         {
-            Name (_HID, EisaId ("INT3394"))
-            Name (_CID, EisaId ("PNP0C02"))
+            Name (_HID, EisaId ("INT3394"))  // _HID: Hardware ID
+            Name (_CID, EisaId ("PNP0C02"))  // _CID: Compatible ID
             Name (IVER, 0x00010000)
             Name (GSCV, 0x69)
             Method (GACI, 0, NotSerialized)
@@ -13516,7 +13498,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
 
                 Name (RPKG, Package (0x02) {})
-                Name (XMPT, Zero)
+                Name (XMPT, Buffer (Zero) {})
                 If (LEqual (Arg0, One))
                 {
                     Store (XMP1, XMPT)
@@ -13545,9 +13527,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (H_EC)
         {
-            Name (_HID, EisaId ("PNP0C09"))
-            Name (_UID, One)
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, EisaId ("PNP0C09"))  // _HID: Hardware ID
+            Name (_UID, One)  // _UID: Unique ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Store (0x03, ^^^GFX0.CLID)
                 Return (Zero)
@@ -13595,9 +13577,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (BAT0)
             {
-                Name (_HID, EisaId ("PNP0C0A"))
-                Name (_UID, Zero)
-                Method (_STA, 0, NotSerialized)
+                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
+                Name (_UID, Zero)  // _UID: Unique ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     Return (Zero)
                 }
@@ -13607,20 +13589,20 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Field (GNVS, AnyAcc, Lock, Preserve)
                 {
-                            Offset (0x1E), 
+                    Offset (0x1E), 
                     BNUM,   8, 
-                            Offset (0x20), 
+                    Offset (0x20), 
                     B1SC,   8, 
-                            Offset (0x23), 
+                    Offset (0x23), 
                     B1SS,   8
                 }
             }
 
             Device (BAT1)
             {
-                Name (_HID, EisaId ("PNP0C0A"))
-                Name (_UID, One)
-                Method (_STA, 0, NotSerialized)
+                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
+                Name (_UID, One)  // _UID: Unique ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     Return (Zero)
                 }
@@ -13630,18 +13612,18 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Field (GNVS, AnyAcc, Lock, Preserve)
                 {
-                            Offset (0x21), 
+                    Offset (0x21), 
                     B2SC,   8, 
-                            Offset (0x24), 
+                    Offset (0x24), 
                     B2SS,   8
                 }
             }
 
             Device (BAT2)
             {
-                Name (_HID, EisaId ("PNP0C0A"))
-                Name (_UID, 0x02)
-                Method (_STA, 0, NotSerialized)
+                Name (_HID, EisaId ("PNP0C0A"))  // _HID: Hardware ID
+                Name (_UID, 0x02)  // _UID: Unique ID
+                Method (_STA, 0, NotSerialized)  // _STA: Status
                 {
                     Return (Zero)
                 }
@@ -13651,10 +13633,10 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     Device (_SB.PCI0.DOCK)
     {
-        Name (_HID, "ABCD0000")
-        Name (_CID, EisaId ("PNP0C15"))
-        Name (_UID, 0x02)
-        Method (_STA, 0, NotSerialized)
+        Name (_HID, "ABCD0000")  // _HID: Hardware ID
+        Name (_CID, EisaId ("PNP0C15"))  // _CID: Compatible ID
+        Name (_UID, 0x02)  // _UID: Unique ID
+        Method (_STA, 0, NotSerialized)  // _STA: Status
         {
             Return (Zero)
         }
@@ -13664,15 +13646,15 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Device (LID0)
         {
-            Name (_HID, EisaId ("PNP0C0D"))
-            Method (_STA, 0, NotSerialized)
+            Name (_HID, EisaId ("PNP0C0D"))  // _HID: Hardware ID
+            Method (_STA, 0, NotSerialized)  // _STA: Status
             {
                 Return (Zero)
             }
         }
     }
 
-    Name (_S0, Package (0x04)
+    Name (_S0, Package (0x04)  // _S0_: S0 System State
     {
         Zero, 
         Zero, 
@@ -13681,7 +13663,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     })
     If (SS3)
     {
-        Name (_S3, Package (0x04)
+        Name (_S3, Package (0x04)  // _S3_: S3 System State
         {
             0x05, 
             Zero, 
@@ -13692,7 +13674,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
     If (SS4)
     {
-        Name (_S4, Package (0x04)
+        Name (_S4, Package (0x04)  // _S4_: S4 System State
         {
             0x06, 
             Zero, 
@@ -13701,7 +13683,7 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         })
     }
 
-    Name (_S5, Package (0x04)
+    Name (_S5, Package (0x04)  // _S5_: S5 System State
     {
         0x07, 
         Zero, 
@@ -13733,38 +13715,28 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     Method (PINI, 0, NotSerialized)
     {
     }
-
     Method (DTGP, 5, NotSerialized)
     {
         If (LEqual (Arg0, Buffer (0x10)
-                {
-                    /* 0000 */    0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44, 
-                    /* 0008 */    0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
-                }))
         {
-            If (LEqual (Arg1, One))
-            {
-                If (LEqual (Arg2, Zero))
-                {
-                    Store (Buffer (One)
-                        {
-                            0x03
-                        }, Arg4)
+            /* 0000 */	0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,
+            /* 0008 */	0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B
+        }))
+        {
+            If (LEqual (Arg1, One)) {
+                If (LEqual (Arg2, Zero)) {
+                    Store (Buffer (One) { 0x03 }, Arg4)
                     Return (One)
                 }
-
-                If (LEqual (Arg2, One))
-                {
+                If (LEqual (Arg2, One)) {
                     Return (One)
                 }
             }
         }
-
-        Store (Buffer (One)
-            {
-                0x00
-            }, Arg4)
+        Store (Buffer (One) { 0x00 }, Arg4)
         Return (Zero)
     }
+
+    
 }
 
