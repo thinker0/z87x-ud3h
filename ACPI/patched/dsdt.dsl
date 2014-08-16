@@ -8250,7 +8250,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-        }
+            Method (_DSM, 4, NotSerialized)
+            {
+                Store (Package (0x02)
+                {
+                    "device-id", 
+                    Buffer (0x04)
+                    {
+                        0x8c, 0x26, 0x00, 0x00   /*<--------- ID MAC------*/
+                    }
+                }, Local0)
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }        }
 
         Device (EHC2)
         {
@@ -8618,7 +8630,19 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Return (GPRW (0x0D, 0x04))
             }
-        }
+            Method (_DSM, 4, NotSerialized)
+            {
+                Store (Package (0x02)
+                {
+                    "device-id", 
+                    Buffer (0x04)
+                    {
+                        0x8c, 0x2d, 0x00, 0x00   /*<--------- ID MAC------*/
+                    }
+                }, Local0)
+                DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                Return (Local0)
+            }        }
 
         Device (XHC)
         {
