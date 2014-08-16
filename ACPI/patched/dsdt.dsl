@@ -2794,8 +2794,12 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (_STA, 0x0F)
                     Name (_CRS, ResourceTemplate ()
                     {
-                        IRQNoFlags ()
-                            {0,8,11}
+       					IRQNoFlags ()
+					          {0}
+					       IRQNoFlags ()
+					          {8}
+					       IRQNoFlags ()
+					          {11}
                         Memory32Fixed (ReadWrite,
                             0xFED00000,         // Address Base
                             0x00000400,         // Address Length
@@ -7098,11 +7102,26 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     Name (_ADR, 0x0000FFFE)
                     Method (_DSM, 4, NotSerialized)
                     {
-                        Store (Package (0x02)
+                        Store (Package (0x8)
                             {
-                                "empty", 
-                                Zero
-                            }, Local0)
+                                "device_type", 
+                                Buffer (0x08)
+                                {
+                                    "display"
+                                }, 
+
+                                "model", 
+                                Buffer ()
+                                {
+                                    "Intel HD Graphics 4600"
+                                }, 
+
+                                "built-in", 
+                                Buffer (One)
+                                {
+                                    0x00
+                                }
+								,								"AAPL,ig-platform-id",								Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d }                            }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)
                     }
@@ -7641,15 +7660,15 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }, 
 
                         "model", 
-                        Buffer (0x08)
+                        Buffer ()
                         {
-                            "Unknown"
+                            "I217-V"
                         }, 
 
                         "device_type", 
                         Buffer (0x09)
                         {
-                            "Ethernet"
+                            "ethernet"
                         }, 
 
                         "device-id", 
@@ -7665,9 +7684,9 @@ DefinitionBlock ("./dsdt.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }, 
 
                         "name", 
-                        Buffer (0x0D)
+                        Buffer ()
                         {
-                            "pci8086,153b"
+                            "Intel Corporation, Ethernet Connection I217-V"
                         }, 
 
                         "compatible", 
