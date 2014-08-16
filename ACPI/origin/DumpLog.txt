@@ -1,0 +1,113 @@
+90:055  47:038  Found BIOS RSDP at F0000
+90:055  0:000  Printing ACPI tables from RSDP F0000 ...
+90:055  0:000   F0000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+90:055  0:000    (Xsdt: 7E1C2080, Rsdt: 7E1C2028)
+90:055  0:000    7E1C2080: 'XSDT', 'A M I', Rev: 1, Len: 124
+90:055  0:000    7E1C2028: 'RSDT', 'A M I', Rev: 1, Len: 80
+90:055  0:000    Tables in Xsdt: 11
+90:055  0:000    0. 7E1CE080: 'FACP', 'A M I', Rev: 5, Len: 268
+90:055  0:000        (Dsdt: 7E1C2190, Facs: 7E1EA080, XDsdt: 7E1C2190, XFacs: 0)
+90:055  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880
+90:055  0:000        7E1EA080: 'FACS', Ver: 2, Len: 64
+90:055  0:000    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146
+90:055  0:000    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68
+90:055  0:000    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337
+90:055  0:000    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+90:055  0:000    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60
+90:055  0:000    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56
+90:055  0:000    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877
+90:055  0:000    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953
+90:055  0:000    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56
+90:055  0:000    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52
+90:055  0:000    Tables in Rsdt: 11
+90:055  0:000    0. 7E1C2108: 'FACP', 'A M I', Rev: 2, Len: 132
+90:055  0:000        (Dsdt: 7E1C2190, Facs: 7E1EA040)
+90:055  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880
+90:056  0:000        7E1EA040: 'FACS', Ver: 0, Len: 64
+90:056  0:000    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146
+90:056  0:000    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68
+90:056  0:000    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337
+90:056  0:000    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+90:056  0:000    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60
+90:056  0:000    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56
+90:056  0:000    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877
+90:056  0:000    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953
+90:056  0:000    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56
+90:056  0:000    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52
+90:056  0:000  Found UEFI Acpi 2.0 RSDP at 7E1C2000
+90:056  0:000  Saving ACPI tables from RSDP 7E1C2000 to EFI\CLOVER\ACPI\origin ...
+90:056  0:000   7E1C2000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36 -> RSDP.aml
+90:062  0:005    (Xsdt: 7E1C2080, Rsdt: 7E1C2028)
+90:062  0:000    7E1C2080: 'XSDT', 'A M I', Rev: 1, Len: 124 -> XSDT.aml
+90:064  0:002    7E1C2028: 'RSDT', 'A M I', Rev: 1, Len: 80 -> RSDT.aml
+90:067  0:002    Tables in Xsdt: 11
+90:067  0:000    0. 7E1CE080: 'FACP', 'A M I', Rev: 5, Len: 268 -> FACP.aml
+90:070  0:002        (Dsdt: 7E1C2190, Facs: 7E1EA080, XDsdt: 7E1C2190, XFacs: 0)
+90:070  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880 -> DSDT.aml
+90:075  0:005        7E1EA080: 'FACS', Ver: 2, Len: 64 -> FACS.aml
+90:078  0:002    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146 -> APIC.aml
+90:081  0:002    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68 -> FPDT.aml
+90:084  0:002    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337 -> SSDT-0.aml
+90:086  0:002    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+ Found hidden SSDT 4 pcs
+90:086  0:000        * 7C483A98: '$', '', Rev: 0, Len: 23117  24 05 00 10 4D 5A 00 00 00 00 00 00 00 00 00 00       * 7E0F1618: 'SSDT', 'ApIst', Rev: 1, Len: 1450  53 53 44 54 AA 05 00 00 01 D0 50 6D 52 65 66 00 Internal length = 1450 -> SSDT-2x.aml
+90:089  0:002        * 7E0F1C18: 'SSDT', 'Cpu0Cst', Rev: 1, Len: 979  53 53 44 54 D3 03 00 00 01 B0 50 6D 52 65 66 00 Internal length = 979 -> SSDT-3x.aml
+90:092  0:002        * 7E0F0D98: 'SSDT', 'ApCst', Rev: 1, Len: 281  53 53 44 54 19 01 00 00 01 EC 50 6D 52 65 66 00 Internal length = 281 -> SSDT-4x.aml
+90:095  0:002   -> SSDT-1.aml
+90:100  0:005    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60 -> MCFG.aml
+90:103  0:002    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56 -> HPET.aml
+90:105  0:002    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877 -> SSDT-5.aml
+90:108  0:002    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953 -> SSDT-6.aml
+90:111  0:002    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56 -> BGRT.aml
+90:114  0:002    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52 -> MATS.aml
+90:116  0:002    Tables in Rsdt: 11
+90:116  0:000    0. 7E1C2108: 'FACP', 'A M I', Rev: 2, Len: 132 -> RSDT-FACP.aml
+90:119  0:002        (Dsdt: 7E1C2190, Facs: 7E1EA040)
+90:119  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880
+90:120  0:000        7E1EA040: 'FACS', Ver: 0, Len: 64 -> RSDT-FACS.aml
+90:124  0:004    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146
+90:124  0:000    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68
+90:124  0:000    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337
+90:124  0:000    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+90:124  0:000    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60
+90:124  0:000    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56
+90:124  0:000    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877
+90:124  0:000    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953
+90:124  0:000    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56
+90:124  0:000    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52
+90:124  0:000  Found UEFI Acpi 1.0 RSDP at 7E1C2000
+90:124  0:000  Printing ACPI tables from RSDP 7E1C2000 ...
+90:124  0:000   7E1C2000: 'RSD PTR ', Rev: 2 (Acpi 2.0 or newer), Len: 36
+90:124  0:000    (Xsdt: 7E1C2080, Rsdt: 7E1C2028)
+90:124  0:000    7E1C2080: 'XSDT', 'A M I', Rev: 1, Len: 124
+90:124  0:000    7E1C2028: 'RSDT', 'A M I', Rev: 1, Len: 80
+90:124  0:000    Tables in Xsdt: 11
+90:124  0:000    0. 7E1CE080: 'FACP', 'A M I', Rev: 5, Len: 268
+90:124  0:000        (Dsdt: 7E1C2190, Facs: 7E1EA080, XDsdt: 7E1C2190, XFacs: 0)
+90:124  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880
+90:125  0:000        7E1EA080: 'FACS', Ver: 2, Len: 64
+90:125  0:000    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146
+90:125  0:000    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68
+90:125  0:000    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337
+90:125  0:000    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+90:125  0:000    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60
+90:125  0:000    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56
+90:125  0:000    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877
+90:125  0:000    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953
+90:125  0:000    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56
+90:125  0:000    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52
+90:125  0:000    Tables in Rsdt: 11
+90:125  0:000    0. 7E1C2108: 'FACP', 'A M I', Rev: 2, Len: 132
+90:125  0:000        (Dsdt: 7E1C2190, Facs: 7E1EA040)
+90:125  0:000        7E1C2190: 'DSDT', 'A M I', Rev: 2, Len: 48880
+90:126  0:000        7E1EA040: 'FACS', Ver: 0, Len: 64
+90:126  0:000    1. 7E1CE190: 'APIC', 'A M I', Rev: 3, Len: 146
+90:126  0:000    2. 7E1CE228: 'FPDT', 'A M I', Rev: 1, Len: 68
+90:126  0:000    3. 7E1CE270: 'SSDT', 'Cpu0Ist', Rev: 1, Len: 1337
+90:126  0:000    4. 7E1CE7B0: 'SSDT', 'CpuPm', Rev: 1, Len: 2776
+90:126  0:000    5. 7E1CF288: 'MCFG', '', Rev: 1, Len: 60
+90:126  0:000    6. 7E1CF2C8: 'HPET', 'A M I', Rev: 1, Len: 56
+90:126  0:000    7. 7E1CF300: 'SSDT', 'SataTabl', Rev: 1, Len: 877
+90:126  0:000    8. 7E1CF670: 'SSDT', 'SaSsdt ', Rev: 1, Len: 12953
+90:126  0:000    9. 7E1D2910: 'BGRT', 'A M I', Rev: 0, Len: 56
+90:126  0:000    10. 7E1D2948: 'MATS', 'A M I', Rev: 2, Len: 52
