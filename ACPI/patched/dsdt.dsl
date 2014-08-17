@@ -7118,7 +7118,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     If (LEqual (Arg2, Zero)) { 
-                        Return (Buffer() { 0x03 } ) 
+                        Return (Buffer(One) { 0x03 } ) 
                     }
                     Store (Package (0x0E)
                     {
@@ -7164,7 +7164,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
                     If (LEqual (Arg2, Zero)) { 
-                        Return (Buffer() { 0x03 } ) 
+                        Return (Buffer(One) { 0x03 } ) 
                     }
                     Store (Package (0x12)
                         {
