@@ -7111,12 +7111,15 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Name (_ADR, 0x00020000)  // _ADR: Address
                 
-                Device (IGPU)
-                {
-                    Name (_ADR, 0xFFFE)  // _ADR: Address
-                }
+//                Device (IGPU)
+//                {
+//                    Name (_ADR, 0xFFFE)  // _ADR: Address
+//                }
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
+                    If (LEqual (Arg2, Zero)) { 
+                        Return (Buffer() { 0x03 } ) 
+                    }
                     Store (Package (0x0E)
                     {
                         "AAPL,slot-name", 
@@ -7155,40 +7158,14 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }                
             }
 
-            Device (MCHC)
-            {
-                Name (_ADR, Zero)  // _ADR: Address
-            }
-
-            Device (IMEI)
-            {
-                Name (_ADR, 0x00160000)  // _ADR: Address
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                {
-                    Store (Package (0x04)
-                        {
-                            "device-id", 
-                            Buffer (0x04)
-                            {
-                                 0x3A, 0x8C, 0x00, 0x00
-                            }, 
-
-                            "vendor-id", 
-                            Buffer (0x04)
-                            {
-                                 0x86, 0x80, 0x00, 0x00
-                            }
-                        }, Local0)
-                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                    Return (Local0)
-                }
-            }
-
             Device (HDAU)
             {
                 Name (_ADR, 0x00030000)  // _ADR: Address
                 Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                 {
+                    If (LEqual (Arg2, Zero)) { 
+                        Return (Buffer() { 0x03 } ) 
+                    }
                     Store (Package (0x12)
                         {
                         "AAPL,slot-name", 
@@ -7235,6 +7212,35 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             Buffer (0x04)
                             {
                                  0xE0, 0x00, 0x56, 0x28
+                            }
+                        }, Local0)
+                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                    Return (Local0)
+                }
+            }
+
+            Device (MCHC)
+            {
+                Name (_ADR, Zero)  // _ADR: Address
+            }
+
+            Device (IMEI)
+            {
+                Name (_ADR, 0x00160000)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    Store (Package (0x04)
+                        {
+                            "device-id", 
+                            Buffer (0x04)
+                            {
+                                 0x3A, 0x8C, 0x00, 0x00
+                            }, 
+
+                            "vendor-id", 
+                            Buffer (0x04)
+                            {
+                                 0x86, 0x80, 0x00, 0x00
                             }
                         }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
