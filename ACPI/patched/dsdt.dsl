@@ -7112,48 +7112,49 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Device (IGPU)
             {
                 Name (_ADR, 0x00020000)  // _ADR: Address
+                
                 Device (GFX0)
                 {
                     Name (_ADR, 0xFFFE)  // _ADR: Address
-                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                    {
-                        Store (Package (0x0E)
-                        {
-                            "AAPL,slot-name", 
-                            "Built In", 
-                            "name", 
-                            "Intel Graphics Controller", 
-                            "model", 
-                            Buffer (0x17)
-                            {
-                                "Intel HD Graphics 4600"
-                            }, 
-
-                            "device_type", 
-                            Buffer (0x14)
-                            {
-                                "Graphics Controller"
-                            }, 
-
-                            "device-id", 
-                            Buffer (0x04)
-                            {
-                                 0x12, 0x04, 0x00, 0x00
-                            }, 
-
-                            "AAPL,ig-platform-id", 
-                            Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d },
-
-                            "hda-gfx", 
-                            Buffer (0x0A)
-                            {
-                                "onboard-2"
-                            }
-                        }, Local0)
-                        DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                        Return (Local0)
-                    }
                 }
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    Store (Package (0x0E)
+                    {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "Intel Graphics Controller", 
+                        "model", 
+                        Buffer (0x17)
+                        {
+                            "Intel HD Graphics 4600"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x14)
+                        {
+                            "Graphics Controller"
+                        }, 
+
+                        "device-id", 
+                        Buffer (0x04)
+                        {
+                             0x12, 0x04, 0x00, 0x00
+                        }, 
+
+                        "AAPL,ig-platform-id", 
+                        Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d },
+
+                        "hda-gfx", 
+                        Buffer (0x0A)
+                        {
+                            "onboard-2"
+                        }
+                    }, Local0)
+                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                    Return (Local0)
+                }                
             }
 
             Device (MCHC)
