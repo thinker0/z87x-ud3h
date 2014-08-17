@@ -271,20 +271,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_against_assertions</string>
-				<key>Find</key>
-				<data>
-				U291bmQgYXNzZXJ0aW9uIA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Orange_icon_fix_patch</string>
 				<key>Find</key>
 				<data>
