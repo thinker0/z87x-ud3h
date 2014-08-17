@@ -7120,7 +7120,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     If (LEqual (Arg2, Zero)) { 
                         Return (Buffer(One) { 0x03 } ) 
                     }
-                    Store (Package (0x0E)
+                    Store (Package ()
                     {
                         "AAPL,slot-name", 
                         "Built In", 
@@ -7151,7 +7151,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Buffer (0x0A)
                         {
                             "onboard-2"
-                        }
+                        },
+                        "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                        "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                        "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                        "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 }
                     }, Local0)
                     DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                     Return (Local0)
@@ -10035,7 +10039,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "layout-id", 
                         Buffer (0x04)
                         {
-                             0x01, 0x00, 0x00, 0x00
+                             0x02, 0x00, 0x00, 0x00
                         }, 
 
                         "PinConfigurations", 
