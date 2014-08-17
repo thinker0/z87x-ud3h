@@ -29,13 +29,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
      *     iasl -e <ssdt1.aml,ssdt2.aml...> -d <dsdt.aml>
      *     iasl -e <dsdt.aml,ssdt2.aml...> -d <ssdt1.aml>
      */
-    External (_SB_.PCI0.GFX0)
-    
-    External (_SB_.PCI0.GFX0.GLID, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
-    External (_SB_.PCI0.GFX0.GSCI, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
-    External (_SB_.PCI0.GFX0.IUEH, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
-
     External (_SB_.PCI0.IGPU)
+    
+    External (_SB_.PCI0.IGPU.GLID, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.IGPU.GSCI, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
+    External (_SB_.PCI0.IGPU.IUEH, MethodObj)    // Warning: Unresolved Method, guessing 1 arguments (may be incorrect, see warning above)
     External (_SB_.PCI0.IGPU.HDAU, MethodObj)
     External (_SB_.PCI0.IGPU.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
 
@@ -63,11 +61,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.IFFS.FFSS)
     External (_SB_.PCCD)
     External (_SB_.PCCD.PENB)
-    External (_SB_.PCI0.GFX0.CLID)
-    External (_SB_.PCI0.GFX0.DD1F)
-    External (_SB_.PCI0.GFX0.GSSE)
-    External (_SB_.PCI0.GFX0.STAT)
-    External (_SB_.PCI0.GFX0.TCHE)
+    External (_SB_.PCI0.IGPU.CLID)
+    External (_SB_.PCI0.IGPU.DD1F)
+    External (_SB_.PCI0.IGPU.GSSE)
+    External (_SB_.PCI0.IGPU.STAT)
+    External (_SB_.PCI0.IGPU.TCHE)
     External (_SB_.PCI0.IGPU.PEGP)
     External (D1F0)
     External (D1F1)
@@ -7113,7 +7111,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Name (_ADR, 0x00020000)  // _ADR: Address
                 
-                Device (GFX0)
+                Device (IGPU)
                 {
                     Name (_ADR, 0xFFFE)  // _ADR: Address
                 }
@@ -11296,17 +11294,17 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         ADBG ("_WAK")
         If (And (ICNF, 0x10))
         {
-            If (And (\_SB.PCI0.GFX0.TCHE, 0x0100))
+            If (And (\_SB.PCI0.IGPU.TCHE, 0x0100))
             {
                 If (LEqual (\_SB.IAOE.ITMR, One))
                 {
                     If (LAnd (And (\_SB.IAOE.IBT1, One), And (\_SB.IAOE.WKRS, 0x02)))
                     {
-                        Store (Or (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFFFFFFFFFC), One), \_SB.PCI0.GFX0.STAT)
+                        Store (Or (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFFFFFFFFFC), One), \_SB.PCI0.IGPU.STAT)
                     }
                     Else
                     {
-                        Store (And (\_SB.PCI0.GFX0.STAT, 0xFFFFFFFFFFFFFFFC), \_SB.PCI0.GFX0.STAT)
+                        Store (And (\_SB.PCI0.IGPU.STAT, 0xFFFFFFFFFFFFFFFC), \_SB.PCI0.IGPU.STAT)
                     }
                 }
                 Else
@@ -11366,12 +11364,12 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
         {
             If (And (GBSX, 0x40))
             {
-                \_SB.PCI0.GFX0.IUEH (0x06)
+                \_SB.PCI0.IGPU.IUEH (0x06)
             }
 
             If (And (GBSX, 0x80))
             {
-                \_SB.PCI0.GFX0.IUEH (0x07)
+                \_SB.PCI0.IGPU.IUEH (0x07)
             }
 
             If (LAnd (DTSE, LGreater (TCNT, One)))
@@ -11409,12 +11407,12 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     {
                         If (LEqual (LIDS (), Zero))
                         {
-                            Store (0x80000000, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000000, \_SB.PCI0.IGPU.CLID)
                         }
 
                         If (LEqual (LIDS (), One))
                         {
-                            Store (0x80000003, \_SB.PCI0.GFX0.CLID)
+                            Store (0x80000003, \_SB.PCI0.IGPU.CLID)
                         }
                     }
 
@@ -11971,7 +11969,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 0x02, 
                 Package (One)
                 {
-                    "\\_SB.PCI0.GFX0"
+                    "\\_SB.PCI0.IGPU"
                 }, 
 
                 Package (One)
@@ -11983,7 +11981,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Package (0x02)
                 {
-                    "\\_SB.PCI0.GFX0", 
+                    "\\_SB.PCI0.IGPU", 
                     0xFFFFFFFF
                 }, 
 
@@ -12082,7 +12080,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                                         One, 
                                         Package (One)
                                         {
-                                            "\\_SB.PCI0.GFX0"
+                                            "\\_SB.PCI0.IGPU"
                                         }
                                     })
                                 }
@@ -12297,7 +12295,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         If (LEqual (And (DIDX, 0x0F00), 0x0400))
         {
-            Notify (\_SB.PCI0.GFX0.DD1F, Arg0)
+            Notify (\_SB.PCI0.IGPU.DD1F, Arg0)
         }
     }
 
@@ -12621,9 +12619,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
         Method (_L06, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
         {
-            If (LAnd (\_SB.PCI0.GFX0.GSSE, LNot (GSMI)))
+            If (LAnd (\_SB.PCI0.IGPU.GSSE, LNot (GSMI)))
             {
-                \_SB.PCI0.GFX0.GSCI ()
+                \_SB.PCI0.IGPU.GSCI ()
             }
         }
 
@@ -12644,9 +12642,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Store (\_SB.PCI0.LPCB.H_EC.LSTE, LIDS)
                 If (IGDS)
                 {
-                    If (\_SB.PCI0.GFX0.GLID (LIDS ()))
+                    If (\_SB.PCI0.IGPU.GLID (LIDS ()))
                     {
-                        Or (0x80000000, \_SB.PCI0.GFX0.CLID, \_SB.PCI0.GFX0.CLID)
+                        Or (0x80000000, \_SB.PCI0.IGPU.CLID, \_SB.PCI0.IGPU.CLID)
                     }
                 }
 
@@ -13697,7 +13695,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Name (_UID, One)  // _UID: Unique ID
             Method (_STA, 0, NotSerialized)  // _STA: Status
             {
-                Store (0x03, ^^^GFX0.CLID)
+                Store (0x03, ^^^IGPU.CLID)
                 Return (Zero)
             }
 
