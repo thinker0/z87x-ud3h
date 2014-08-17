@@ -14,9 +14,19 @@
 			<dict>
 				<key>AddDTGP_0001</key>
 				<true/>
+				<key>AddHDMI_8000000</key>
+				<true/>
+				<key>AddIMEI_80000</key>
+				<true/>
 				<key>AddMCHC_0008</key>
 				<true/>
+				<key>FIX_INTELGFX_100000</key>
+				<true/>
 				<key>FakeLPC_0020</key>
+				<true/>
+				<key>FiX_TMR_40000</key>
+				<true/>
+				<key>FiX_WAK_200000</key>
 				<true/>
 				<key>FixAirport_4000</key>
 				<true/>
@@ -48,9 +58,7 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>SaSsdt </string>
+				<string>DMAR</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -66,7 +74,9 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>DMAR</string>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>SaSsdt </string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -236,6 +246,20 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				Zj0AAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				Zj0AAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Orange_icon_fix_patch</string>
 				<key>Find</key>
 				<data>
@@ -253,55 +277,27 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				QcdHCAAAQAA=
+				dTpIiwU9nQAA
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				QcdHCAAAAAA=
+				6zpIiwU9nQAA
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
+				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Find</key>
 				<data>
-				dU1Ii7voAQAA
+				AAAAD4UHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleUSBXHCI</string>
+				<string>configurePM BT</string>
 				<key>Replace</key>
 				<data>
-				601Ii7voAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Trim enabler patch</string>
-				<key>Find</key>
-				<data>
-				QVBQTEUgU1NEAA==
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
-				Zj0AAQ==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				Zj0AAA==
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -323,13 +319,41 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				dTpIiwU9nQAA
+				QcdHCAAAQAA=
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				6zpIiwU9nQAA
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Trim enabler patch</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NEAA==
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				xoDIAAAAAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				xoDIAAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -348,30 +372,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Find</key>
-				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>configurePM BT</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				xoDIAAAAAQ==
+				dU1Ii7voAQAA
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				xoDIAAAAAA==
+				601Ii7voAQAA
 				</data>
 			</dict>
 		</array>
