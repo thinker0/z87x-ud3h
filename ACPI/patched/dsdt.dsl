@@ -7701,7 +7701,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     {
         Name (LTRE, Zero)
         Name (OBFF, Zero)
-        Device (GLAN)
+        Device (GIGE)
         {
             Name (_ADR, 0x00190000)  // _ADR: Address
             Method (_PRW, 0, NotSerialized)  // _PRW: Power Resources for Wake
@@ -7720,9 +7720,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }, 
 
                         "model", 
-                        Buffer (0x08)
+                        Buffer ()
                         {
-                            "Unknown"
+                            "Intel Corporation, Ethernet Connection I217-V"
                         }, 
 
                         "device_type", 
@@ -7734,7 +7734,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "device-id", 
                         Buffer (0x04)
                         {
-                             0x3B, 0x15, 0x00, 0x00
+                             0x3b, 0x15, 0x00, 0x00
                         }, 
 
                         "vendor-id", 
@@ -7744,9 +7744,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }, 
 
                         "name", 
-                        Buffer (0x0D)
+                        Buffer ()
                         {
-                            "pci8086,153b"
+                            "ethernet"
                         }, 
 
                         "compatible", 
@@ -12402,7 +12402,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Notify (\_SB.PCI0.HDEF, 0x02)
             }
 
-            Notify (\_SB.PCI0.GLAN, 0x02)
+            Notify (\_SB.PCI0.GIGE, 0x02)
         }
 
         Method (_L01, 0, NotSerialized)  // _Lxx: Level-Triggered GPE
