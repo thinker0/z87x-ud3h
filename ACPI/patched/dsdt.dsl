@@ -7163,7 +7163,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "hda-gfx", 
                         Buffer (0x0A)
                         {
-                            "onboard-2"
+                            "onboard-1"
                         },
                         "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
                         "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
