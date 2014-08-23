@@ -41,6 +41,8 @@
 				<key>FixShutdown_0004</key>
 				<true/>
 			</dict>
+			<key>Name</key>
+			<string>DSDT.aml</string>
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
@@ -48,9 +50,13 @@
 		<array>
 			<dict>
 				<key>Signature</key>
+				<string>DMAR</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>SaSsdt </string>
+				<string>CpuPm</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -62,11 +68,7 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>CpuPm</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
+				<string>SaSsdt </string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -74,9 +76,13 @@
 		<key>PatchAPIC</key>
 		<true/>
 		<key>ResetAddress</key>
-		<string>0xfffffffffec00000</string>
+		<string>0xfec00000</string>
+		<key>ResetValue</key>
+		<string>0x0000</string>
 		<key>SSDT</key>
 		<dict>
+			<key>C3Latency</key>
+			<string>0xfa</string>
 			<key>DropOem</key>
 			<true/>
 			<key>EnableC6</key>
@@ -88,6 +94,8 @@
 				<key>PStates</key>
 				<true/>
 			</dict>
+			<key>PluginType</key>
+			<string>1</string>
 			<key>UseSystemIO</key>
 			<true/>
 		</dict>
@@ -95,9 +103,9 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 kext-dev-mode=1</string>
+		<string>dart=0 nvda_drv=1 kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
-		<string>WinBOOT</string>
+		<string>WinBoot</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Log</key>
@@ -134,26 +142,22 @@
 		<key>FakeID</key>
 		<dict>
 			<key>ATI</key>
-			<string>0x0</string>
+			<string>0x0000</string>
 			<key>IMEI</key>
 			<string>0x8c3a8086</string>
 			<key>IntelGFX</key>
-			<string>0x0</string>
+			<string>0x0000</string>
 			<key>LAN</key>
 			<string>0x153b8086</string>
 			<key>NVidia</key>
-			<string>0x0</string>
+			<string>0x0000</string>
 			<key>SATA</key>
 			<string>0x8c028086</string>
 			<key>WIFI</key>
-			<string>0x0</string>
+			<string>0x0000</string>
 			<key>XHCI</key>
 			<string>0x8c318086</string>
 		</dict>
-		<key>ForceHPET</key>
-		<true/>
-		<key>LpcTune</key>
-		<true/>
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
@@ -206,41 +210,8 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
-		<key>CustomEDID</key>
-		<data>
-		eQUAAAEAAAAHAAAAQwEAAAcAAAACAQwA0EEDCgAAAAABAQYAAAJ//wQAEAAA
-		AG0AbwBkAGUAbAAAABoAAABJbnRlbCBIRCBHcmFwaGljcyA0NjAwHAAAAGQA
-		ZQB2AGkAYwBlAF8AdAB5AHAAZQAAAAsAAABkaXNwbGF5LAAAAHMAdQBiAHMA
-		eQBzAHQAZQBtAC0AdgBlAG4AZABvAHIALQBpAGQAAAAIAAAAaxAAACwAAABB
-		AEEAUABMACwAaQBnAC0AcABsAGEAdABmAG8AcgBtAC0AaQBkAAAACAAAAAMA
-		Ig0kAAAAQQBBAFAATAAwADAALABEAHUAYQBsAEwAaQBuAGsAAAAFAAAAASAA
-		AABBAEEAUABMACwASABhAHMAUABhAG4AZQBsAAAACAAAAAEAAAAWAAAAYgB1
-		AGkAbAB0AC0AaQBuAAAABQAAAACAAAAAAgAAAAIBDADQQQMKAAAAAAEBBgAA
-		A3//BAAwAAAATQBhAHgAaQBtAHUAbQBCAG8AbwB0AEIAZQBlAHAAVgBvAGwA
-		dQBtAGUAAAAFAAAAACgAAABQAGkAbgBDAG8AbgBmAGkAZwB1AHIAYQB0AGkA
-		bwBuAHMAAAAFAAAAAIIAAAADAAAAAgEMANBBAwoAAAAAAQEGAAAUf/8EACAA
-		AABBAEEAUABMACwAYwBsAG8AYwBrAC0AaQBkAAAABQAAAAAcAAAAZABlAHYA
-		aQBjAGUAXwB0AHkAcABlAAAACAAAAFhIQ0kWAAAAYgB1AGkAbAB0AC0AaQBu
-		AAAABQAAAAAgAQAABgAAAAIBDADQQQMKAAAAAAEBBgAAGn//BAAgAAAAQQBB
-		AFAATAAsAGMAbABvAGMAawAtAGkAZAAAAAUAAAABHAAAAGQAZQB2AGkAYwBl
-		AF8AdAB5AHAAZQAAAAgAAABFSENJMgAAAEEAQQBQAEwALABjAHUAcgByAGUA
-		bgB0AC0AYQB2AGEAaQBsAGEAYgBsAGUAAAAGAAAAsAQqAAAAQQBBAFAATAAs
-		AGMAdQByAHIAZQBuAHQALQBlAHgAdAByAGEAAAAGAAAAvAIwAAAAQQBBAFAA
-		TAAsAGMAdQByAHIAZQBuAHQALQBpAG4ALQBzAGwAZQBlAHAAAAAGAAAA6AMW
-		AAAAYgB1AGkAbAB0AC0AaQBuAAAABQAAAACAAAAAAgAAAAIBDADQQQMKAAAA
-		AAEBBgAAG3//BAAwAAAATQBhAHgAaQBtAHUAbQBCAG8AbwB0AEIAZQBlAHAA
-		VgBvAGwAdQBtAGUAAAAFAAAAACgAAABQAGkAbgBDAG8AbgBmAGkAZwB1AHIA
-		YQB0AGkAbwBuAHMAAAAFAAAAAGgAAAACAAAAAgEMANBBAwoAAAAAAQEGAAIc
-		AQEGAAAAf/8EABwAAABkAGUAdgBpAGMAZQBfAHQAeQBwAGUAAAANAAAAZXRo
-		ZXJuZXQAFgAAAGIAdQBpAGwAdAAtAGkAbgAAAAUAAAABIAEAAAYAAAACAQwA
-		0EEDCgAAAAABAQYAAB1//wQAIAAAAEEAQQBQAEwALABjAGwAbwBjAGsALQBp
-		AGQAAAAFAAAAAhwAAABkAGUAdgBpAGMAZQBfAHQAeQBwAGUAAAAIAAAARUhD
-		STIAAABBAEEAUABMACwAYwB1AHIAcgBlAG4AdAAtAGEAdgBhAGkAbABhAGIA
-		bABlAAAABgAAALAEKgAAAEEAQQBQAEwALABjAHUAcgByAGUAbgB0AC0AZQB4
-		AHQAcgBhAAAABgAAALwCMAAAAEEAQQBQAEwALABjAHUAcgByAGUAbgB0AC0A
-		aQBuAC0AcwBsAGUAZQBwAAAABgAAAOgDFgAAAGIAdQBpAGwAdAAtAGkAbgAA
-		AAUAAAAA
-		</data>
+		<key>DualLink</key>
+		<integer>1</integer>
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
@@ -250,6 +221,8 @@
 			<key>NVidia</key>
 			<true/>
 		</dict>
+		<key>InjectEDID</key>
+		<true/>
 		<key>PatchVBios</key>
 		<true/>
 		<key>ig-platform-id</key>
@@ -271,20 +244,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_against_assertions</string>
-				<key>Find</key>
-				<data>
-				U291bmQgYXNzZXJ0aW9uIA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Orange_icon_fix_patch</string>
 				<key>Find</key>
 				<data>
@@ -302,27 +261,27 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				QcdHCAAAQAA=
+				Zj0AAQ==
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				QcdHCAAAAAA=
+				Zj0AAA==
 				</data>
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
+				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Find</key>
 				<data>
-				dU1Ii7voAQAA
+				AAAAD4UHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleUSBXHCI</string>
+				<string>configurePM BT</string>
 				<key>Replace</key>
 				<data>
-				601Ii7voAQAA
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -337,20 +296,6 @@
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
-				Zj0AAQ==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				Zj0AAA==
 				</data>
 			</dict>
 			<dict>
@@ -372,20 +317,6 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				dTpIiwU9nQAA
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				6zpIiwU9nQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
 				gUkIAABAAA==
 				</data>
 				<key>Name</key>
@@ -397,16 +328,44 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
+				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				AAAAD4UHAQAA
+				QcdHCAAAQAA=
 				</data>
 				<key>Name</key>
-				<string>configurePM BT</string>
+				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				AAAAD4QHAQAA
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_against_assertions</string>
+				<key>Find</key>
+				<data>
+				U291bmQgYXNzZXJ0aW9uIA==
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				dU1Ii7voAQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				601Ii7voAQAA
 				</data>
 			</dict>
 			<dict>
@@ -421,6 +380,20 @@
 				<key>Replace</key>
 				<data>
 				xoDIAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				dTpIiwU9nQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				6zpIiwU9nQAA
 				</data>
 			</dict>
 		</array>
