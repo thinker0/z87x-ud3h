@@ -14,21 +14,9 @@
 			<dict>
 				<key>AddDTGP_0001</key>
 				<true/>
-				<key>AddHDMI_8000000</key>
-				<true/>
-				<key>AddIMEI_80000</key>
-				<true/>
 				<key>AddMCHC_0008</key>
 				<true/>
-				<key>FIX_INTELGFX_100000</key>
-				<true/>
-				<key>FIX_S3D_2000000</key>
-				<true/>
 				<key>FakeLPC_0020</key>
-				<true/>
-				<key>FiX_TMR_40000</key>
-				<true/>
-				<key>FiX_WAK_200000</key>
 				<true/>
 				<key>FixAirport_4000</key>
 				<true/>
@@ -62,13 +50,7 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>IsctTabl</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>SaSsdt</string>
+				<string>SaSsdt </string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -84,15 +66,7 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>SataTabl</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>LakeTiny</string>
+				<string>DMAR</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -121,9 +95,9 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 nvda_drv=1 kext-dev-mode=1</string>
+		<string>dart=0 kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
-		<string>WinBoot</string>
+		<string>WinBOOT</string>
 		<key>Legacy</key>
 		<string>PBR</string>
 		<key>Log</key>
@@ -155,9 +129,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>Detect</string>
-			<key>ResetHDA</key>
-			<true/>
+			<string>Yes</string>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -234,6 +206,41 @@
 	</dict>
 	<key>Graphics</key>
 	<dict>
+		<key>CustomEDID</key>
+		<data>
+		eQUAAAEAAAAHAAAAQwEAAAcAAAACAQwA0EEDCgAAAAABAQYAAAJ//wQAEAAA
+		AG0AbwBkAGUAbAAAABoAAABJbnRlbCBIRCBHcmFwaGljcyA0NjAwHAAAAGQA
+		ZQB2AGkAYwBlAF8AdAB5AHAAZQAAAAsAAABkaXNwbGF5LAAAAHMAdQBiAHMA
+		eQBzAHQAZQBtAC0AdgBlAG4AZABvAHIALQBpAGQAAAAIAAAAaxAAACwAAABB
+		AEEAUABMACwAaQBnAC0AcABsAGEAdABmAG8AcgBtAC0AaQBkAAAACAAAAAMA
+		Ig0kAAAAQQBBAFAATAAwADAALABEAHUAYQBsAEwAaQBuAGsAAAAFAAAAASAA
+		AABBAEEAUABMACwASABhAHMAUABhAG4AZQBsAAAACAAAAAEAAAAWAAAAYgB1
+		AGkAbAB0AC0AaQBuAAAABQAAAACAAAAAAgAAAAIBDADQQQMKAAAAAAEBBgAA
+		A3//BAAwAAAATQBhAHgAaQBtAHUAbQBCAG8AbwB0AEIAZQBlAHAAVgBvAGwA
+		dQBtAGUAAAAFAAAAACgAAABQAGkAbgBDAG8AbgBmAGkAZwB1AHIAYQB0AGkA
+		bwBuAHMAAAAFAAAAAIIAAAADAAAAAgEMANBBAwoAAAAAAQEGAAAUf/8EACAA
+		AABBAEEAUABMACwAYwBsAG8AYwBrAC0AaQBkAAAABQAAAAAcAAAAZABlAHYA
+		aQBjAGUAXwB0AHkAcABlAAAACAAAAFhIQ0kWAAAAYgB1AGkAbAB0AC0AaQBu
+		AAAABQAAAAAgAQAABgAAAAIBDADQQQMKAAAAAAEBBgAAGn//BAAgAAAAQQBB
+		AFAATAAsAGMAbABvAGMAawAtAGkAZAAAAAUAAAABHAAAAGQAZQB2AGkAYwBl
+		AF8AdAB5AHAAZQAAAAgAAABFSENJMgAAAEEAQQBQAEwALABjAHUAcgByAGUA
+		bgB0AC0AYQB2AGEAaQBsAGEAYgBsAGUAAAAGAAAAsAQqAAAAQQBBAFAATAAs
+		AGMAdQByAHIAZQBuAHQALQBlAHgAdAByAGEAAAAGAAAAvAIwAAAAQQBBAFAA
+		TAAsAGMAdQByAHIAZQBuAHQALQBpAG4ALQBzAGwAZQBlAHAAAAAGAAAA6AMW
+		AAAAYgB1AGkAbAB0AC0AaQBuAAAABQAAAACAAAAAAgAAAAIBDADQQQMKAAAA
+		AAEBBgAAG3//BAAwAAAATQBhAHgAaQBtAHUAbQBCAG8AbwB0AEIAZQBlAHAA
+		VgBvAGwAdQBtAGUAAAAFAAAAACgAAABQAGkAbgBDAG8AbgBmAGkAZwB1AHIA
+		YQB0AGkAbwBuAHMAAAAFAAAAAGgAAAACAAAAAgEMANBBAwoAAAAAAQEGAAIc
+		AQEGAAAAf/8EABwAAABkAGUAdgBpAGMAZQBfAHQAeQBwAGUAAAANAAAAZXRo
+		ZXJuZXQAFgAAAGIAdQBpAGwAdAAtAGkAbgAAAAUAAAABIAEAAAYAAAACAQwA
+		0EEDCgAAAAABAQYAAB1//wQAIAAAAEEAQQBQAEwALABjAGwAbwBjAGsALQBp
+		AGQAAAAFAAAAAhwAAABkAGUAdgBpAGMAZQBfAHQAeQBwAGUAAAAIAAAARUhD
+		STIAAABBAEEAUABMACwAYwB1AHIAcgBlAG4AdAAtAGEAdgBhAGkAbABhAGIA
+		bABlAAAABgAAALAEKgAAAEEAQQBQAEwALABjAHUAcgByAGUAbgB0AC0AZQB4
+		AHQAcgBhAAAABgAAALwCMAAAAEEAQQBQAEwALABjAHUAcgByAGUAbgB0AC0A
+		aQBuAC0AcwBsAGUAZQBwAAAABgAAAOgDFgAAAGIAdQBpAGwAdAAtAGkAbgAA
+		AAUAAAAA
+		</data>
 		<key>Inject</key>
 		<dict>
 			<key>ATI</key>
@@ -243,16 +250,10 @@
 			<key>NVidia</key>
 			<true/>
 		</dict>
-		<key>InjectEDID</key>
-		<true/>
 		<key>PatchVBios</key>
 		<true/>
-		<key>VRAM</key>
-		<integer>1024</integer>
-		<key>VideoPorts</key>
-		<integer>4</integer>
 		<key>ig-platform-id</key>
-		<string>0x0D220003</string>
+		<string>0D220003</string>
 	</dict>
 	<key>KernelAndKextPatches</key>
 	<dict>
@@ -270,30 +271,16 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Mac_Pro5.1</string>
+				<string>Patch_against_assertions</string>
 				<key>Find</key>
 				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
+				U291bmQgYXNzZXJ0aW9uIA==
 				</data>
 				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
+				<string>AppleHDA</string>
 				<key>Replace</key>
 				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Trim enabler patch</string>
-				<key>Find</key>
-				<data>
-				QVBQTEUgU1NEAA==
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAA==
+				AAAAAAAAAAAAAAAAAAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -312,6 +299,104 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				QcdHCAAAQAA=
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				dU1Ii7voAQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				601Ii7voAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Trim enabler patch</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NEAA==
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				Zj0AAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				Zj0AAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Mac_Pro5.1</string>
+				<key>Find</key>
+				<data>
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
+				</data>
+				<key>Name</key>
+				<string>AppleTyMCEDriver</string>
+				<key>Replace</key>
+				<data>
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				dTpIiwU9nQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				6zpIiwU9nQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				gUkIAABAAA==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				gUkIAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Find</key>
 				<data>
@@ -322,6 +407,20 @@
 				<key>Replace</key>
 				<data>
 				AAAAD4QHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				xoDIAAAAAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				xoDIAAAAAA==
 				</data>
 			</dict>
 		</array>
