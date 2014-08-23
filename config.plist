@@ -52,11 +52,13 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>CpuPm</string>
+				<string>Cpu0Ist</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>DMAR</string>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>CpuPm</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -66,9 +68,7 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>DMAR</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -221,6 +221,8 @@
 			<key>NVidia</key>
 			<true/>
 		</dict>
+		<key>InjectEDID</key>
+		<true/>
 		<key>PatchVBios</key>
 		<true/>
 		<key>ig-platform-id</key>
@@ -245,41 +247,13 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				dTpIiwU9nQAA
+				gUkIAABAAA==
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				6zpIiwU9nQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Mac_Pro5.1</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Find</key>
-				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>configurePM BT</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
+				gUkIAAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -298,16 +272,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Trim enabler patch</string>
+				<string>Mac_Pro5.1</string>
 				<key>Find</key>
 				<data>
-				QVBQTEUgU1NEAA==
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
 				</data>
 				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
+				<string>AppleTyMCEDriver</string>
 				<key>Replace</key>
 				<data>
-				AAAAAAAAAAAAAA==
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -329,6 +303,48 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
+				dU1Ii7voAQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				601Ii7voAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Trim enabler patch</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NEAA==
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				dTpIiwU9nQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				6zpIiwU9nQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
 				xoDIAAAAAQ==
 				</data>
 				<key>Name</key>
@@ -340,30 +356,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
+				<string>IOBluetoothHostControllerUSBTransport</string>
 				<key>Find</key>
 				<data>
-				Zj0AAQ==
+				AAAAD4UHAQAA
 				</data>
 				<key>Name</key>
-				<string>AppleUSBXHCI</string>
+				<string>configurePM BT</string>
 				<key>Replace</key>
 				<data>
-				Zj0AAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
-				gUkIAABAAA==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				gUkIAAAAAA==
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -385,13 +387,13 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				dU1Ii7voAQAA
+				Zj0AAQ==
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				601Ii7voAQAA
+				Zj0AAA==
 				</data>
 			</dict>
 		</array>
