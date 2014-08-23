@@ -7077,6 +7077,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Device (PEGP)
             {
                 Name (_ADR, 0x00010000)  // _ADR: Address
+                Name (_PRW, Package (0x02)
+                {
+                    0x09, 
+                    0x05
+                })
                 Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                 {
                     If (PICM)
@@ -7085,51 +7090,95 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                     }
                     Return (PR02 ())
                 }
-/*
-                Device (GFX0) {
+                Device (GFX0)
+                {
                     Name (_ADR, Zero)
-                    Name (_SUN, One)
-                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    Method (_DSM, 4, NotSerialized)
                     {
-                        If (LEqual (Arg2, Zero)) { 
-                            Return (Buffer(One) { 0x03 } ) 
-                        }
                         Store (Package ()
-                        {
-                            "AAPL,slot-name", 
-                            "Built In", 
-                            "name", 
-                            "GeForce GT 220", 
-                            "model", 
-                            Buffer ()
                             {
-                                "NVIDIA Corporation, GT216 [GeForce GT 220]"
-                            }, 
+                                "AAPL,slot-name", 
+                                "PCI x16", 
+                                "@0,compatible", 
+                                Buffer (0x0B)
+                                {
+                                    "NVDA,NVMac"
+                                }, 
 
-                            "device_type", 
-                            Buffer (0x14)
-                            {
-                                "Graphics Controller"
-                            }, 
+                                "@0,device_type", 
+                                Buffer (0x08)
+                                {
+                                    "display"
+                                }, 
 
-                            "device-id", 
-                            Buffer (0x04)
-                            {
-                                 0x20, 0x0A, 0x00, 0x00
-                            }, 
-                            "hda-gfx", 
-                            Buffer (0x0A)
-                            {
-                                "onboard-2"
-                            },
-                            "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                            "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                        }, Local0)
+                                "@0,name", 
+                                Buffer (0x0F)
+                                {
+                                    "NVDA,Display-A"
+                                }, 
+
+                                "@1,compatible", 
+                                Buffer (0x0B)
+                                {
+                                    "NVDA,NVMac"
+                                }, 
+
+                                "@1,device_type", 
+                                Buffer (0x08)
+                                {
+                                    "display"
+                                }, 
+
+                                "@1,name", 
+                                Buffer (0x0F)
+                                {
+                                    "NVDA,Display-B"
+                                }, 
+
+                                "NVCAP", 
+                                Buffer (0x18)
+                                {
+
+                                    /* 0000 */    0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x0c, 0x00,
+                                    /* 0000 */    0x13, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x07,
+                                    /* 0010 */    0x00, 0x00, 0x00, 0x00
+                                }, 
+
+                                "VRAM,totalsize", 
+                                Buffer (0x04)
+                                {
+                                    0x00, 0x00, 0x00, 0x20
+                                }, 
+
+                                "device_type", 
+                                Buffer (0x0C)
+                                {
+                                    "NVDA,Parent"
+                                }, 
+
+                                "model", 
+                                Buffer (0x16)
+                                {
+                                    "nVidia GeForce GT 220"
+                                }, 
+
+                                "rom-revision", 
+                                Buffer ()
+                                {
+                                    "70.16.2E.00.07"
+                                }, 
+
+                                "hda-gfx", 
+                                Buffer (0x0A)
+                                {
+                                    "onboard-1"
+                                }
+                            }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)
                     }
                 }
-*/
+
                 Device (HDAU)
                 {
                     Name (_ADR, One)
@@ -7140,7 +7189,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             "device-id", 
                             Buffer () { 0xe2, 0x0b, 0x00, 0x00 }, 
                             "layout-id", Buffer() { 0x0c, 0x00, 0x00, 0x00 },
-                            "hda-gfx", Buffer() { "onboard-2" }
+                            "hda-gfx", Buffer() { "onboard-1" }
                         })
                     }
                 }
