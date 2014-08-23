@@ -62,19 +62,19 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
+				<string>IsctTabl</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
 				<string>SaSsdt</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>LakeTiny</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>SataTabl</string>
+				<string>Cpu0Ist</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -86,7 +86,13 @@
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
-				<string>Cpu0Ist</string>
+				<string>SataTabl</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>LakeTiny</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -115,7 +121,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>dart=0 kext-dev-mode=1</string>
+		<string>dart=0 nvda_drv=1 kext-dev-mode=1</string>
 		<key>DefaultVolume</key>
 		<string>WinBoot</string>
 		<key>Legacy</key>
@@ -264,30 +270,16 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
+				<string>Mac_Pro5.1</string>
 				<key>Find</key>
 				<data>
-				AAAAD4UHAQAA
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
 				</data>
 				<key>Name</key>
-				<string>configurePM BT</string>
+				<string>AppleTyMCEDriver</string>
 				<key>Replace</key>
 				<data>
-				AAAAD4QHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Orange_icon_fix_patch</string>
-				<key>Find</key>
-				<data>
-				RXh0ZXJuYWw=
-				</data>
-				<key>Name</key>
-				<string>AppleAHCIPort</string>
-				<key>Replace</key>
-				<data>
-				SW50ZXJuYWw=
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -306,16 +298,30 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Mac_Pro5.1</string>
+				<string>Orange_icon_fix_patch</string>
 				<key>Find</key>
 				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
+				RXh0ZXJuYWw=
 				</data>
 				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
+				<string>AppleAHCIPort</string>
 				<key>Replace</key>
 				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
+				SW50ZXJuYWw=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IOBluetoothHostControllerUSBTransport</string>
+				<key>Find</key>
+				<data>
+				AAAAD4UHAQAA
+				</data>
+				<key>Name</key>
+				<string>configurePM BT</string>
+				<key>Replace</key>
+				<data>
+				AAAAD4QHAQAA
 				</data>
 			</dict>
 		</array>
