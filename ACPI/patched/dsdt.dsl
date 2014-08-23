@@ -37,6 +37,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.PCI0.IGPU.HDAU, MethodObj)
     External (_SB_.PCI0.IGPU.HPME, MethodObj)    // Warning: Unresolved Method, guessing 0 arguments (may be incorrect, see warning above)
 
+    External (_SB_.PCI0.PEGP)
     External (_SB_.PCI0.PEG1)
     External (_SB_.PCI0.PEG2)
     
@@ -66,7 +67,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.PCI0.IGPU.GSSE)
     External (_SB_.PCI0.IGPU.STAT)
     External (_SB_.PCI0.IGPU.TCHE)
-    External (_SB_.PCI0.IGPU.GFX0)
+    External (_SB_.PCI0.PEGP.GFX0)
     External (D1F0)
     External (D1F1)
     External (D1F2)
@@ -7076,16 +7077,18 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             Device (PEGP)
             {
                 Name (_ADR, 0x00010000)  // _ADR: Address
+                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
+                {
+                    If (PICM)
+                    {
+                        Return (AR02 ())
+                    }
+                    Return (PR02 ())
+                }
+/*
                 Device (GFX0) {
                     Name (_ADR, Zero)
-                    Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
-                    {
-                        If (PICM)
-                        {
-                            Return (AR02 ())
-                        }
-                        Return (PR02 ())
-                    }
+                    Name (_SUN, One)
                     Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
                     {
                         If (LEqual (Arg2, Zero)) { 
@@ -7126,7 +7129,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (Local0)
                     }
                 }
-
+*/
                 Device (HDAU)
                 {
                     Name (_ADR, One)
@@ -12435,7 +12438,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 \_SB.PCI0.IGPU.HPME ()
                 Notify (\_SB.PCI0.IGPU, 0x02)
-                Notify (\_SB.PCI0.IGPU.GFX0, 0x02)
+                Notify (\_SB.PCI0.PEGP.GFX0, 0x02)
             }
 
             If (LEqual (D1F1, One))
