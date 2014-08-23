@@ -7075,8 +7075,9 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Device (PEGP)
             {
-                Device (GFX0) {
                 Name (_ADR, 0x00010000)  // _ADR: Address
+                Device (GFX0) {
+                    Name (_ADR, Zero)
                     Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                     {
                         If (PICM)
@@ -7120,8 +7121,6 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                             },
                             "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
                             "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                            "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                            "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
                         }, Local0)
                         DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
                         Return (Local0)
@@ -7137,7 +7136,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         Return (Package() {
                             "device-id", 
                             Buffer () { 0xe2, 0x0b, 0x00, 0x00 }, 
-                            "layout-id", Buffer() { 0x03, 0x00, 0x00, 0x00 },
+                            "layout-id", Buffer() { 0x0c, 0x00, 0x00, 0x00 },
                             "hda-gfx", Buffer() { "onboard-2" }
                         })
                     }
@@ -7184,8 +7183,8 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 
                 Device (IGPU)
                 {
-                    Name (_ADR, 0xFFFE)  // _ADR: Address
-	                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    //Name (_ADR, 0xFFFE)  // _ADR: Address
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
 	                {
 	                    If (LEqual (Arg2, Zero)) { 
 	                        Return (Buffer(One) { 0x03 } ) 
@@ -10110,7 +10109,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "layout-id", 
                         Buffer (0x04)
                         {
-                             12, 0x00, 0x00, 0x00
+                             0x02, 0x00, 0x00, 0x00
                         }, 
 
                         "PinConfigurations", 
