@@ -66,7 +66,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
     External (_SB_.PCI0.IGPU.GSSE)
     External (_SB_.PCI0.IGPU.STAT)
     External (_SB_.PCI0.IGPU.TCHE)
-    External (_SB_.PCI0.IGPU.PEGP)
+    External (_SB_.PCI0.IGPU.GFX0)
     External (D1F0)
     External (D1F1)
     External (D1F2)
@@ -7073,18 +7073,76 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 }
             }
 
-            Device (P0P2)
+            Device (PEGP)
             {
+                Device (GFX0) {
                 Name (_ADR, 0x00010000)  // _ADR: Address
-                Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
-                {
-                    If (PICM)
+                    Method (_PRT, 0, NotSerialized)  // _PRT: PCI Routing Table
                     {
-                        Return (AR02 ())
+                        If (PICM)
+                        {
+                            Return (AR02 ())
+                        }
+                        Return (PR02 ())
                     }
+                    Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                    {
+                        If (LEqual (Arg2, Zero)) { 
+                            Return (Buffer(One) { 0x03 } ) 
+                        }
+                        Store (Package ()
+                        {
+                            "AAPL,slot-name", 
+                            "Built In", 
+                            "name", 
+                            "GeForce GT 220", 
+                            "model", 
+                            Buffer ()
+                            {
+                                "NVIDIA Corporation, GT216 [GeForce GT 220]"
+                            }, 
 
-                    Return (PR02 ())
+                            "device_type", 
+                            Buffer (0x14)
+                            {
+                                "Graphics Controller"
+                            }, 
+
+                            "device-id", 
+                            Buffer (0x04)
+                            {
+                                 0x20, 0x0A, 0x00, 0x00
+                            }, 
+                            "hda-gfx", 
+                            Buffer (0x0A)
+                            {
+                                "onboard-2"
+                            },
+                            "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                            "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                            "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                            "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+                        }, Local0)
+                        DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                        Return (Local0)
+                    }
                 }
+
+                Device (HDAU)
+                {
+                    Name (_ADR, One)
+                    Method (_DSM, 4, NotSerialized)
+                    {
+                        If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
+                        Return (Package() {
+                            "device-id", 
+                            Buffer () { 0xe2, 0x0b, 0x00, 0x00 }, 
+                            "layout-id", Buffer() { 0x03, 0x00, 0x00, 0x00 },
+                            "hda-gfx", Buffer() { "onboard-2" }
+                        })
+                    }
+                }
+
             }
 
             Device (P0PA)
@@ -7124,116 +7182,116 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Name (_ADR, 0x00020000)  // _ADR: Address
                 
-//                Device (IGPU)
-//                {
-//                    Name (_ADR, 0xFFFE)  // _ADR: Address
-//                }
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                Device (IGPU)
                 {
-                    If (LEqual (Arg2, Zero)) { 
-                        Return (Buffer(One) { 0x03 } ) 
-                    }
-                    Store (Package ()
-                    {
-                        "AAPL,slot-name", 
-                        "Built In", 
-                        "name", 
-                        "Intel Graphics Controller", 
-                        "model", 
-                        Buffer (0x17)
-                        {
-                            "Intel HD Graphics 4600"
-                        }, 
+                    Name (_ADR, 0xFFFE)  // _ADR: Address
+	                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+	                {
+	                    If (LEqual (Arg2, Zero)) { 
+	                        Return (Buffer(One) { 0x03 } ) 
+	                    }
+	                    Store (Package ()
+	                    {
+	                        "AAPL,slot-name", 
+	                        "Built In", 
+	                        "name", 
+	                        "Intel Graphics Controller", 
+	                        "model", 
+	                        Buffer (0x17)
+	                        {
+	                            "Intel HD Graphics 4600"
+	                        }, 
 
-                        "device_type", 
-                        Buffer (0x14)
-                        {
-                            "Graphics Controller"
-                        }, 
+	                        "device_type", 
+	                        Buffer (0x14)
+	                        {
+	                            "Graphics Controller"
+	                        }, 
 
-                        "device-id", 
-                        Buffer (0x04)
-                        {
-                             0x12, 0x04, 0x00, 0x00
-                        }, 
+	                        "device-id", 
+	                        Buffer (0x04)
+	                        {
+	                             0x12, 0x04, 0x00, 0x00
+	                        }, 
 
-                        "AAPL,ig-platform-id", 
-                        Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d },
+	                        "AAPL,ig-platform-id", 
+	                        Buffer (0x04) { 0x03, 0x00, 0x22, 0x0d },
 
-                        "hda-gfx", 
-                        Buffer (0x0A)
-                        {
-                            "onboard-1"
-                        },
-                        "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                        "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                        "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-                        "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 }
-                    }, Local0)
-                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                    Return (Local0)
-                }                
-            }
-
-            Device (HDAU)
-            {
-                Name (_ADR, 0x00030000)  // _ADR: Address
-                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-                {
-                    If (LEqual (Arg2, Zero)) { 
-                        Return (Buffer(One) { 0x03 } ) 
-                    }
-                    Store (Package (0x12)
-                        {
-                        "AAPL,slot-name", 
-                        "Built In", 
-                        "name", 
-                        "HD Audio Controller", 
-                        "model", 
-                        Buffer ()
-                        {
-                            "Intel Corporation, Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller"
-                        }, 
-
-                        "device_type", 
-                        Buffer (0x11)
-                        {
-                            "Audio Controller"
-                        }, 
-
-                        "device-id", 
-                        Buffer (0x04)
-                        {
-                             0x0c, 0x0c, 0x00, 0x00
-                        }, 
-
-                        "MaximumBootBeepVolume", 
-                        Buffer (One)
-                        {
-                             0x40
-                        }, 
-                            
-                            "hda-gfx", 
-                            Buffer (0x0A)
-                            {
-                                "onboard-1"
-                            }, 
-
-                            "layout-id", 
-                            Buffer (0x04)
-                            {
-                                 0x03, 0x00, 0x00, 0x00
-                            }, 
-
-                            "PinConfigurations", 
-                            Buffer (0x04)
-                            {
-                                 0xE0, 0x00, 0x56, 0x28
-                            }
-                        }, Local0)
-                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-                    Return (Local0)
+	                        "hda-gfx", 
+	                        Buffer (0x0A)
+	                        {
+	                            "onboard-1"
+	                        },
+	                        "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+	                        "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+	                        "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
+	                        "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 }
+	                    }, Local0)
+	                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+	                    Return (Local0)
+	                }                                    
                 }
+
+	            Device (HDAU)
+	            {
+	                Name (_ADR, 0x00030000)  // _ADR: Address
+	                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+	                {
+	                    If (LEqual (Arg2, Zero)) { 
+	                        Return (Buffer(One) { 0x03 } ) 
+	                    }
+	                    Store (Package ()
+	                        {
+	                        "AAPL,slot-name", 
+	                        "Built In", 
+	                        "name", 
+	                        "HD Audio Controller", 
+	                        "model", 
+	                        Buffer ()
+	                        {
+	                            "Intel Corporation, Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller"
+	                        }, 
+
+	                        "device_type", 
+	                        Buffer (0x11)
+	                        {
+	                            "Audio Controller"
+	                        }, 
+
+	                        "device-id", 
+	                        Buffer (0x04)
+	                        {
+	                             0x0c, 0x0c, 0x00, 0x00
+	                        }, 
+
+	//                        "MaximumBootBeepVolume", 
+	//                        Buffer (One)
+	//                        {
+	//                             0x40
+	//                        }, 
+	                            
+	                            "hda-gfx", 
+	                            Buffer (0x0A)
+	                            {
+	                                "onboard-1"
+	                            }, 
+
+	                            "layout-id", 
+	                            Buffer (0x04)
+	                            {
+	                                 0x03, 0x00, 0x00, 0x00
+	                            }, 
+
+	                            "PinConfigurations", 
+	                            Buffer (0x04)
+	                            {
+	                                 0xE0, 0x00, 0x56, 0x28
+	                            }
+	                        }, Local0)
+	                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+	                    Return (Local0)
+	                }
+	            }
             }
 
             Device (MCHC)
@@ -10031,7 +10089,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
-                Store (Package (0x10)
+                Store (Package ()
                     {
                         "AAPL,slot-name", 
                         "Built In", 
@@ -10052,16 +10110,16 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "layout-id", 
                         Buffer (0x04)
                         {
-                             0x02, 0x00, 0x00, 0x00
+                             12, 0x00, 0x00, 0x00
                         }, 
 
                         "PinConfigurations", 
                         Buffer (Zero) {}, 
-                        "MaximumBootBeepVolume", 
-                        Buffer (One)
-                        {
-                             0x40
-                        }, 
+//                        "MaximumBootBeepVolume", 
+//                        Buffer (One)
+//                        {
+//                             0x40
+//                        }, 
 
                         "hda-gfx", 
                         Buffer (0x0A)
@@ -12378,7 +12436,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 \_SB.PCI0.IGPU.HPME ()
                 Notify (\_SB.PCI0.IGPU, 0x02)
-                Notify (\_SB.PCI0.IGPU.PEGP, 0x02)
+                Notify (\_SB.PCI0.IGPU.GFX0, 0x02)
             }
 
             If (LEqual (D1F1, One))
