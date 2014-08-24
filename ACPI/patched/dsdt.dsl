@@ -10142,6 +10142,8 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
             {
                 Store (Package ()
                     {
+                        "built-in", 
+                        Buffer (One) { 0x00 }, 
                         "AAPL,slot-name", 
                         "Built In", 
                         "name", 
@@ -10165,7 +10167,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         }, 
 
                         "PinConfigurations", 
-                        Buffer (Zero) {}, 
+                        Buffer (Zero) { 0x00 }, 
 //                        "MaximumBootBeepVolume", 
 //                        Buffer (One)
 //                        {
