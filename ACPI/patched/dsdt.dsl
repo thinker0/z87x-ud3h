@@ -7093,8 +7093,16 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                 Device (GFX0)
                 {
                     Name (_ADR, Zero)
+                    Name (_SUN, One)  // _SUN: Slot User Number
                     Method (_DSM, 4, NotSerialized)
                     {
+                        If (LEqual (Arg2, Zero))
+                        {
+                            Return (Buffer (One)
+                            {
+                                 0x03
+                            })
+                        }
                         Store (Package ()
                             {
                                 "AAPL,slot-name", 
@@ -7187,7 +7195,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         If (LEqual (Arg2, Zero)) { Return (Buffer(One) { 0x03 } ) }
                         Return (Package() {
                             "device-id", 
-                            Buffer () { 0xe2, 0x0b, 0x00, 0x00 }, 
+                            Buffer () { 0x01, 0x0b, 0x00, 0x00 }, 
                             "layout-id", Buffer() { 0x0c, 0x00, 0x00, 0x00 },
                             "hda-gfx", Buffer() { "onboard-1" }
                         })
@@ -7271,7 +7279,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 	                        "hda-gfx", 
 	                        Buffer (0x0A)
 	                        {
-	                            "onboard-1"
+	                            "onboard-2"
 	                        },
 	                        "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
 	                        "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
@@ -7324,13 +7332,13 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 	                            "hda-gfx", 
 	                            Buffer (0x0A)
 	                            {
-	                                "onboard-1"
+	                                "onboard-2"
 	                            }, 
 
 	                            "layout-id", 
 	                            Buffer (0x04)
 	                            {
-	                                 0x03, 0x00, 0x00, 0x00
+	                                 0x01, 0x00, 0x00, 0x00
 	                            }, 
 
 	                            "PinConfigurations", 
@@ -10140,10 +10148,15 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
             Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
             {
+                If (LEqual (Arg2, Zero))
+                {
+                    Return (Buffer (One)
+                    {
+                         0x03
+                    })
+                }                
                 Store (Package ()
                     {
-                        "built-in", 
-                        Buffer (One) { 0x00 }, 
                         "AAPL,slot-name", 
                         "Built In", 
                         "name", 
@@ -10163,11 +10176,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "layout-id", 
                         Buffer (0x04)
                         {
-                             0x02, 0x00, 0x00, 0x00
+                             0x01, 0x00, 0x00, 0x00
                         }, 
 
                         "PinConfigurations", 
-                        Buffer (Zero) { 0x00 }, 
+                        Buffer (Zero) {}, 
 //                        "MaximumBootBeepVolume", 
 //                        Buffer (One)
 //                        {
