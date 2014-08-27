@@ -7290,69 +7290,69 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 	                    Return (Local0)
 	                }                                    
                 }
-
-	            Device (HDAU)
-	            {
-	                Name (_ADR, 0x00030000)  // _ADR: Address
-	                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
-	                {
-	                    If (LEqual (Arg2, Zero)) { 
-	                        Return (Buffer(One) { 0x03 } ) 
-	                    }
-	                    Store (Package ()
-	                        {
-	                        "AAPL,slot-name", 
-	                        "Built In", 
-	                        "name", 
-	                        "HD Audio Controller", 
-	                        "model", 
-	                        Buffer ()
-	                        {
-	                            "Intel Corporation, Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller"
-	                        }, 
-
-	                        "device_type", 
-	                        Buffer (0x11)
-	                        {
-	                            "Audio Controller"
-	                        }, 
-
-	                        "device-id", 
-	                        Buffer (0x04)
-	                        {
-	                             0x0c, 0x0c, 0x00, 0x00
-	                        }, 
-
-	//                        "MaximumBootBeepVolume", 
-	//                        Buffer (One)
-	//                        {
-	//                             0x40
-	//                        }, 
-	                            
-	                            "hda-gfx", 
-	                            Buffer (0x0A)
-	                            {
-	                                "onboard-2"
-	                            }, 
-
-	                            "layout-id", 
-	                            Buffer (0x04)
-	                            {
-	                                 0x01, 0x00, 0x00, 0x00
-	                            }, 
-
-	                            "PinConfigurations", 
-	                            Buffer (0x04)
-	                            {
-	                                 0xE0, 0x00, 0x56, 0x28
-	                            }
-	                        }, Local0)
-	                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
-	                    Return (Local0)
-	                }
-	            }
             }
 
+            Device (HDAU)
+            {
+                Name (_ADR, 0x00030000)  // _ADR: Address
+                Method (_DSM, 4, NotSerialized)  // _DSM: Device-Specific Method
+                {
+                    If (LEqual (Arg2, Zero)) { 
+                        Return (Buffer(One) { 0x03 } ) 
+                    }
+                    Store (Package ()
+                        {
+                        "AAPL,slot-name", 
+                        "Built In", 
+                        "name", 
+                        "HD Audio Controller", 
+                        "model", 
+                        Buffer ()
+                        {
+                            "Intel Corporation, Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller"
+                        }, 
+
+                        "device_type", 
+                        Buffer (0x11)
+                        {
+                            "Audio Controller"
+                        }, 
+
+                        "device-id", 
+                        Buffer (0x04)
+                        {
+                             0x0c, 0x0c, 0x00, 0x00
+                        }, 
+
+                        "MaximumBootBeepVolume", 
+                        Buffer (One)
+                        {
+                             0x40
+                        }, 
+                            
+                        "hda-gfx", 
+                        Buffer (0x0A)
+                        {
+                            "onboard-1"
+                        }, 
+
+                        "layout-id", 
+                        Buffer (0x04)
+                        {
+                             0x01, 0x00, 0x00, 0x00
+                        }, 
+
+                        "PinConfigurations", 
+                        Buffer (0x04)
+                        {
+                             0xE0, 0x00, 0x56, 0x28
+                        }
+                    }, Local0)
+                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
+                    Return (Local0)
+                }
+            }    
+            
             Device (MCHC)
             {
                 Name (_ADR, Zero)  // _ADR: Address
