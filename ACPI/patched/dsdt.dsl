@@ -7281,10 +7281,10 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 	                        {
 	                            "onboard-2"
 	                        },
-	                        "@0,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-	                        "@1,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-	                        "@2,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 },
-	                        "@3,connector-type", Buffer() { 0x00, 0x08, 0x00, 0x00 }
+	                        "@0,connector-type", Buffer() { 0x00, 0x04, 0x00, 0x00 },
+	                        "@1,connector-type", Buffer() { 0x00, 0x04, 0x00, 0x00 },
+	                        "@2,connector-type", Buffer() { 0x00, 0x04, 0x00, 0x00 },
+	                        "@3,connector-type", Buffer() { 0x00, 0x04, 0x00, 0x00 }
 	                    }, Local0)
 	                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))
 	                    Return (Local0)
@@ -10164,7 +10164,7 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
                         "model", 
                         Buffer (0x20)
                         {
-                            "Realtek ALC898 Audio Controller"
+                            "Realtek ALC899 Audio Controller"
                         }, 
 
                         "device_type", 
@@ -10181,11 +10181,11 @@ DefinitionBlock ("iASLXFokiZ.aml", "DSDT", 2, "Apple ", "A M I", 0x000000F9)
 
                         "PinConfigurations", 
                         Buffer (Zero) {}, 
-//                        "MaximumBootBeepVolume", 
-//                        Buffer (One)
-//                        {
-//                             0x40
-//                        }, 
+                        "MaximumBootBeepVolume", 
+                        Buffer (One)
+                        {
+                             0x40
+                        }, 
 
                         "hda-gfx", 
                         Buffer (0x0A)
