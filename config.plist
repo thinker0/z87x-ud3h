@@ -52,15 +52,7 @@
 		<array>
 			<dict>
 				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>Cpu0Ist</string>
-			</dict>
-			<dict>
-				<key>Signature</key>
-				<string>SSDT</string>
-				<key>TableId</key>
-				<string>SaSsdt </string>
+				<string>DMAR</string>
 			</dict>
 			<dict>
 				<key>Signature</key>
@@ -70,7 +62,15 @@
 			</dict>
 			<dict>
 				<key>Signature</key>
-				<string>DMAR</string>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>Cpu0Ist</string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>SaSsdt </string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -246,6 +246,20 @@
 		<array>
 			<dict>
 				<key>Comment</key>
+				<string>IOBluetoothHostControllerUSBTransport</string>
+				<key>Find</key>
+				<data>
+				AAAAD4UHAQAA
+				</data>
+				<key>Name</key>
+				<string>configurePM BT</string>
+				<key>Replace</key>
+				<data>
+				AAAAD4QHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Patch_against_assertions</string>
 				<key>Find</key>
 				<data>
@@ -260,16 +274,16 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Orange_icon_fix_patch</string>
+				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				RXh0ZXJuYWw=
+				Zj0AAQ==
 				</data>
 				<key>Name</key>
-				<string>AppleAHCIPort</string>
+				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				SW50ZXJuYWw=
+				Zj0AAA==
 				</data>
 			</dict>
 			<dict>
@@ -291,13 +305,27 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				dU1Ii7voAQAA
+				QcdHCAAAQAA=
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				601Ii7voAQAA
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Orange_icon_fix_patch</string>
+				<key>Find</key>
+				<data>
+				RXh0ZXJuYWw=
+				</data>
+				<key>Name</key>
+				<string>AppleAHCIPort</string>
+				<key>Replace</key>
+				<data>
+				SW50ZXJuYWw=
 				</data>
 			</dict>
 			<dict>
@@ -319,13 +347,13 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				Zj0AAQ==
+				dU1Ii7voAQAA
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				Zj0AAA==
+				601Ii7voAQAA
 				</data>
 			</dict>
 			<dict>
@@ -340,34 +368,6 @@
 				<key>Replace</key>
 				<data>
 				AAAAAAAAAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Find</key>
-				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>configurePM BT</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
-				QcdHCAAAQAA=
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				QcdHCAAAAAA=
 				</data>
 			</dict>
 			<dict>
