@@ -36,6 +36,8 @@
 				<true/>
 				<key>FixLAN_2000</key>
 				<true/>
+				<key>FixRegions_10000000</key>
+				<true/>
 				<key>FixSATA_0400</key>
 				<true/>
 				<key>FixSBUS_0080</key>
@@ -50,10 +52,6 @@
 		</dict>
 		<key>DropTables</key>
 		<array>
-			<dict>
-				<key>Signature</key>
-				<string>DMAR</string>
-			</dict>
 			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
@@ -71,6 +69,10 @@
 				<string>SSDT</string>
 				<key>TableId</key>
 				<string>SaSsdt </string>
+			</dict>
+			<dict>
+				<key>Signature</key>
+				<string>DMAR</string>
 			</dict>
 		</array>
 		<key>HaltEnabler</key>
@@ -139,7 +141,7 @@
 		<key>Audio</key>
 		<dict>
 			<key>Inject</key>
-			<string>Detect</string>
+			<string>1</string>
 		</dict>
 		<key>FakeID</key>
 		<dict>
@@ -246,30 +248,16 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
+				<string>Mac_Pro5.1</string>
 				<key>Find</key>
 				<data>
-				AAAAD4UHAQAA
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
 				</data>
 				<key>Name</key>
-				<string>configurePM BT</string>
+				<string>AppleTyMCEDriver</string>
 				<key>Replace</key>
 				<data>
-				AAAAD4QHAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_against_assertions</string>
-				<key>Find</key>
-				<data>
-				U291bmQgYXNzZXJ0aW9uIA==
-				</data>
-				<key>Name</key>
-				<string>AppleHDA</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAAAAAAAAAA==
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
 				</data>
 			</dict>
 			<dict>
@@ -284,6 +272,34 @@
 				<key>Replace</key>
 				<data>
 				Zj0AAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Trim enabler patch</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NEAA==
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_ALC898</string>
+				<key>Find</key>
+				<data>
+				hQjsEA==
+				</data>
+				<key>Name</key>
+				<string>AppleHDA</string>
+				<key>Replace</key>
+				<data>
+				mQjsEA==
 				</data>
 			</dict>
 			<dict>
@@ -305,13 +321,27 @@
 				<string>Patch_to_USB3.0_Mav</string>
 				<key>Find</key>
 				<data>
-				QcdHCAAAQAA=
+				dU1Ii7voAQAA
 				</data>
 				<key>Name</key>
 				<string>AppleUSBXHCI</string>
 				<key>Replace</key>
 				<data>
-				QcdHCAAAAAA=
+				601Ii7voAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.9/HD4600 HDMI Audio 2/2 </string>
+				<key>Find</key>
+				<data>
+				DAoAAA==
+				</data>
+				<key>Name</key>
+				<string>AppleHDAController</string>
+				<key>Replace</key>
+				<data>
+				DAwAAA==
 				</data>
 			</dict>
 			<dict>
@@ -326,48 +356,6 @@
 				<key>Replace</key>
 				<data>
 				SW50ZXJuYWw=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Mac_Pro5.1</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch_to_USB3.0_Mav</string>
-				<key>Find</key>
-				<data>
-				dU1Ii7voAQAA
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				601Ii7voAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Trim enabler patch</string>
-				<key>Find</key>
-				<data>
-				QVBQTEUgU1NEAA==
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAAAA==
 				</data>
 			</dict>
 			<dict>
@@ -396,6 +384,76 @@
 				<key>Replace</key>
 				<data>
 				xoDIAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.9.2/Azul/Port 07/DP&gt;HDMI</string>
+				<key>Find</key>
+				<data>
+				AwYIAAAEAAARAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AwYIAAAIAAAGAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>IOBluetoothHostControllerUSBTransport</string>
+				<key>Find</key>
+				<data>
+				AAAAD4UHAQAA
+				</data>
+				<key>Name</key>
+				<string>configurePM BT</string>
+				<key>Replace</key>
+				<data>
+				AAAAD4QHAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.9/HD4600 HDMI Audio 1/2</string>
+				<key>Find</key>
+				<data>
+				CwwAAA==
+				</data>
+				<key>Name</key>
+				<string>AppleHDAController</string>
+				<key>Replace</key>
+				<data>
+				DAwAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>10.9.2/Azul/Port 06/DP&gt;HDMI</string>
+				<key>Find</key>
+				<data>
+				AgQKAAAEAACHAAAA
+				</data>
+				<key>Name</key>
+				<string>AppleIntelFramebufferAzul</string>
+				<key>Replace</key>
+				<data>
+				AgQKAAAIAAAGAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch_to_USB3.0_Mav</string>
+				<key>Find</key>
+				<data>
+				QcdHCAAAQAA=
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				QcdHCAAAAAA=
 				</data>
 			</dict>
 		</array>
